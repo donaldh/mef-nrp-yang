@@ -1,0 +1,1 @@
+This is a gist with the generated YANG files that we get from the MEF NRP_Interface model
