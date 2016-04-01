@@ -1,0 +1,57 @@
+module CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns {
+    namespace "uri:onf:CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns";
+    prefix CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns;
+    revision 2016-04-01{}
+    list Component {
+        config true;
+        ordered-by system;
+        uses G_Component;
+    }
+    grouping G_Component {
+        status deprecated;
+        list _port {
+            config true;
+            ordered-by system;
+            uses G_Port;
+            min-elements 1;
+        }
+        list _attributePackageList {
+            config true;
+            ordered-by system;
+            uses G_AttributePackage;
+        }
+        leaf _boundComponent {
+            type leafref {
+                path '/Component/';
+            }
+        }
+        leaf _encapsulatedSystem {
+            type leafref {
+                path '/System/';
+            }
+        }
+    }
+    grouping G_Port {
+        status deprecated;
+        leaf Role {
+            type string;
+            default true;
+        }
+        leaf _boundPort {
+            type leafref {
+                path '/Component/_port/';
+            }
+        }
+    }
+    list System {
+        config true;
+        ordered-by system;
+        uses G_System;
+    }
+    grouping G_System {
+        status deprecated;
+    }
+    grouping G_AttributePackage {
+        status deprecated;
+    }
+}

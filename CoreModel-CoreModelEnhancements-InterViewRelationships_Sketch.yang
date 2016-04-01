@@ -1,0 +1,43 @@
+module CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch {
+    namespace "uri:onf:CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch";
+    prefix CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch;
+    revision 2016-04-01{}
+    list Sketch_FC {
+        config true;
+        ordered-by system;
+        uses G_Sketch_FC;
+    }
+    grouping G_Sketch_FC {
+        status deprecated;
+        leaf _supportingFcInOtherViewRef {
+            type leafref {
+                path '/Sketch_FC/';
+            }
+        }
+        leaf-list _suportedFcInOtherView {
+            ordered-by system;
+            type leafref {
+                path '/Sketch_FC/';
+            }
+        }
+    }
+    list Sketch_LTP {
+        config true;
+        ordered-by system;
+        uses G_Sketch_LTP;
+    }
+    grouping G_Sketch_LTP {
+        status deprecated;
+        leaf _supportingLtpInOtherViewRef {
+            type leafref {
+                path '/Sketch_LTP/';
+            }
+        }
+        leaf-list _supportedLtpInOtherViewRef {
+            ordered-by system;
+            type leafref {
+                path '/Sketch_LTP/';
+            }
+        }
+    }
+}

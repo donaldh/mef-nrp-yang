@@ -1,0 +1,437 @@
+module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule {
+    namespace "uri:onf:CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule";
+    prefix CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule;
+    import CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
+        prefix CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages;
+    }
+    revision 2016-04-01{}
+    grouping G_MultiSwitchedUniFlow {
+        status current;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        list _ingressFcPort {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_IngressFcPortSet;
+            min-elements 1;
+        }
+        list _egressFcPort {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_EgressFcPortSet;
+            min-elements 1;
+        }
+        container switchControl {
+            config true;
+            uses G_ConfigurationAndSwitchControl;
+        }
+        leaf ingressFcPortSet {
+            type leafref {
+                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_ingressFcPort/id';
+            }
+        }
+        leaf egressFcPortSet {
+            type leafref {
+                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_egressFcPort/id';
+            }
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_IngressFcPortSet {
+        status current;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_EgressFcPortSet {
+        status current;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_ConfigurationAndSwitchControl {
+        status deprecated;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_GlobalClass;
+        list switchControlRule {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_ControlRule;
+            min-elements 1;
+        }
+        leaf-list switch {
+            ordered-by system;
+            type string;
+            min-elements 1;
+        }
+        leaf-list egressSelection {
+            ordered-by system;
+            type string;
+            min-elements 1;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_FcSpec {
+        status current;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_GlobalClass;
+        list multiSwitchedUniFlow {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_MultiSwitchedUniFlow;
+            min-elements 1;
+        }
+        list switchControl {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_ConfigurationAndSwitchControl;
+        }
+        list fcPortSpec {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_FcPortSetSpec;
+            min-elements 1;
+        }
+        leaf fcSwitchGroupSpec {
+            type leafref {
+                path '/ConfigurationGroupSpec/';
+            }
+        }
+        container ltpAssociationRule {
+            config true;
+            uses G_LtpAssociationRule;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    list ConfigurationGroupSpec {
+        config true;
+        ordered-by system;
+        uses G_ConfigurationGroupSpec;
+    }
+    grouping G_ConfigurationGroupSpec {
+        status deprecated;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_GlobalClass;
+        container switchControl {
+            config true;
+            uses G_ConfigurationAndSwitchControl;
+        }
+        container fcSpec {
+            config true;
+            uses G_FcSpec;
+        }
+        container ltpAssociationRule {
+            config true;
+            uses G_LtpAssociationRule;
+        }
+    }
+    grouping G_ControlRule {
+        status deprecated;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        leaf switchControl_switch_1 {
+            type string;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_FcPortSetSpec {
+        status current;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        leaf-list ingressFcPortSet {
+            ordered-by system;
+            type leafref {
+                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_ingressFcPort/id';
+            }
+        }
+        leaf-list egressFcPortSet {
+            ordered-by system;
+            type leafref {
+                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_egressFcPort/id';
+            }
+        }
+        leaf ltpAssociationRule {
+            type leafref {
+                path '/ConfigurationGroupSpec/fcSpec/ltpAssociationRule/';
+            }
+        }
+        leaf role {
+            type string;
+            default true;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_LtpAssociationRule {
+        status current;
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+    }
+    list SwitchPropertySpec_Pac {
+        status deprecated;
+        config true;
+    }
+    list IngressFcPortSetSpec_Pac {
+        status deprecated;
+        config true;
+    }
+    list LpSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_LpSpec;
+    }
+    grouping G_LpSpec {
+        status deprecated;
+        container _adapterSpec {
+            config true;
+            uses G_ConnectionPointAndAdapterSpec;
+        }
+        container _terminationSpec {
+            config true;
+            uses G_TerminationSpec;
+        }
+        list _adapterPropertySpecList {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_AdapterPropertySpec;
+        }
+        container _providerViewSpec {
+            config true;
+            uses G_ProviderViewSpec;
+        }
+        list _serverSpecList {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_ServerSpec;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_ClientSpec {
+        status deprecated;
+        leaf-list _mappingInteractionRuleRefList {
+            ordered-by system;
+            type leafref {
+                path '/LpSpec/_adapterPropertySpecList/_mappingInteractionRuleList/id';
+            }
+        }
+    }
+    grouping G_MappingInteractionRule {
+        status deprecated;
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_TerminationSpec {
+        status deprecated;
+        container _connectionSpec {
+            config true;
+            uses G_ConnectionSpec;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_AdapterPropertySpec {
+        status deprecated;
+        list _poolPropertySpecList {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_PoolPropertySpec;
+        }
+        leaf-list _mappingInteractionRuleRefList {
+            ordered-by system;
+            type leafref {
+                path '/LpSpec/_adapterPropertySpecList/_mappingInteractionRuleList/id';
+            }
+        }
+        list _mappingInteractionRuleList {
+            key 'id';
+            config true;
+            ordered-by system;
+            uses G_MappingInteractionRule;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_PoolPropertySpec {
+        status deprecated;
+        container _clientSpec {
+            config true;
+            uses G_ClientSpec;
+        }
+        leaf clientCapacity {
+            type string;
+            default true;
+        }
+        leaf-list _adapterPropertySpecRefList {
+            ordered-by system;
+            type leafref {
+                path '/LpSpec/_adapterPropertySpecList/id';
+            }
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_ConnectionSpec {
+        status deprecated;
+    }
+    grouping G_ConnectionPointAndAdapterSpec {
+        status deprecated;
+        leaf _connectionSpec {
+            type leafref {
+                path '/LpSpec/_terminationSpec/_connectionSpec/';
+            }
+        }
+        leaf id {
+            type string;
+        }
+    }
+    grouping G_ProviderViewSpec {
+        status deprecated;
+        leaf-list _poolPropertySpecList {
+            ordered-by system;
+            type leafref {
+                path '/LpSpec/_adapterPropertySpecList/_poolPropertySpecList/id';
+            }
+        }
+    }
+    grouping G_ServerSpec {
+        status deprecated;
+        leaf id {
+            type string;
+        }
+    }
+    list LtpSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_LtpSpec;
+    }
+    grouping G_LtpSpec {
+        status deprecated;
+        leaf-list _lpSpecList {
+            ordered-by system;
+            type leafref {
+                path '/LpSpec/id';
+            }
+            min-elements 1;
+        }
+        leaf id {
+            type string;
+        }
+    }
+    list LinkSpec {
+        config true;
+        ordered-by system;
+        uses G_LinkSpec;
+    }
+    grouping G_LinkSpec {
+        status deprecated;
+    }
+    list AnyEntityInstance {
+        status deprecated;
+        config true;
+        ordered-by system;
+        leaf-list _profileRefList {
+            ordered-by system;
+            type leafref {
+                path '/ProfileInstance/';
+            }
+        }
+        leaf _specRef {
+            type leafref {
+                path '/SpecInstance/';
+            }
+        }
+        leaf _class {
+            type leafref {
+                path '/AnyEntityClass/';
+            }
+        }
+    }
+    list ProfileInstance {
+        config true;
+        ordered-by system;
+        uses G_ProfileInstance;
+    }
+    grouping G_ProfileInstance {
+        status deprecated;
+        leaf _specInstanceRef {
+            type leafref {
+                path '/SpecInstance/';
+            }
+        }
+        leaf _profileClass {
+            type leafref {
+                path '/ProfileClass/';
+            }
+        }
+        leaf _class {
+            type leafref {
+                path '/AnyEntityClass/';
+            }
+        }
+    }
+    list SpecInstance {
+        config true;
+        ordered-by system;
+        uses G_SpecInstance;
+    }
+    grouping G_SpecInstance {
+        status deprecated;
+        leaf specClass {
+            type leafref {
+                path '/SpecClass/';
+            }
+        }
+        leaf _classRef {
+            type leafref {
+                path '/AnyEntityClass/';
+            }
+        }
+    }
+    list AnyEntityClass {
+        config true;
+        ordered-by system;
+        uses G_AnyEntityClass;
+    }
+    grouping G_AnyEntityClass {
+        status deprecated;
+    }
+    list SpecClass {
+        config true;
+        ordered-by system;
+        uses G_SpecClass;
+    }
+    grouping G_SpecClass {
+        status deprecated;
+        uses G_AnyEntityClass;
+    }
+    list ProfileClass {
+        config true;
+        ordered-by system;
+        uses G_ProfileClass;
+    }
+    grouping G_ProfileClass {
+        status deprecated;
+        uses G_AnyEntityClass;
+    }
+}
