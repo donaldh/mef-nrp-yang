@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_0tU-YNyQEeW6C_FaABjU5w/14" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_0tU-YNyQEeW6C_FaABjU5w/14 ../MEF%20Common%20Information%20Model%20Profile/OpenModel_Profile.profile.uml#_0tZP0NyQEeW6C_FaABjU5w">
+  <uml:Package xmi:id="_4PGK8LlwEeWThfpUfUgfAw" name="NetworkResource">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="__g_rQLlwEeWThfpUfUgfAw">
+      <importedPackage xmi:type="uml:Package" href="../OnfModel/CoreModel.uml#_oGqilVLNEeO75dO39GbF8Q"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_hCRjgNylEeW_M-JLVGfOJQ">
+      <importedPackage xmi:type="uml:Package" href="MEF7_3.uml#_xLY9cA4jEeWEzuFo1SUvMA"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_py-O8N_YEeW0_YDeTdRiSw">
+      <importedPackage xmi:type="uml:Model" href="../G.8052_v1.10/G.8052_v1.10-model.uml#_FOdHAJKmEdybINoKQq_hfQ"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Gx08UMXtEeWD-ti4RxNzCQ" name="Main">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KG9sIMXtEeWD-ti4RxNzCQ" name="ObjectClasses">
+        <packagedElement xmi:type="uml:Class" xmi:id="_3UQt0MqcEeWot_xi6Y1_nA" name="CeLPSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_eNjSoMqdEeWot_xi6Y1_nA">
+            <general xmi:type="uml:Class" href="../OnfModel/CoreModel.uml#_FU2nYBiSEeSh8KVgZCMyDw"/>
+          </generalization>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_RVx_0MtqEeWot_xi6Y1_nA" name="CeTerminSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_c5CnoMtqEeWot_xi6Y1_nA">
+            <general xmi:type="uml:Class" href="../OnfModel/CoreModel.uml#_JH4XoBiTEeSh8KVgZCMyDw"/>
+          </generalization>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Xo6x0MtqEeWot_xi6Y1_nA" name="CeConnPtAndAdaptSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_d03WsMtqEeWot_xi6Y1_nA">
+            <general xmi:type="uml:Class" href="../OnfModel/CoreModel.uml#_bJaN8BiUEeSh8KVgZCMyDw"/>
+          </generalization>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Rs-zYNvHEeW_M-JLVGfOJQ" name="CeLtpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_eTZhUNvHEeW_M-JLVGfOJQ">
+            <general xmi:type="uml:Class" href="../OnfModel/CoreModel.uml#_BIroQBiaEeSh8KVgZCMyDw"/>
+          </generalization>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_wrvKkNvHEeW_M-JLVGfOJQ" name="CeEndPointLpSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3cnBcNvHEeW_M-JLVGfOJQ" general="_3UQt0MqcEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_CVUQYNvIEeW_M-JLVGfOJQ" name="CeSpUniLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_u5CDkNvXEeW_M-JLVGfOJQ" general="_c036kNvXEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_xEB5UNvIEeW_M-JLVGfOJQ" name="CeEvcEndPointLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_24lR4NvIEeW_M-JLVGfOJQ" general="_wrvKkNvHEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_6NUZENvIEeW_M-JLVGfOJQ" name="CeEnniOvcEndPointLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_BoJy8NvJEeW_M-JLVGfOJQ" general="_wrvKkNvHEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_EVGhYNvJEeW_M-JLVGfOJQ" name="CeUniOvcEndPoint">
+          <generalization xmi:type="uml:Generalization" xmi:id="_HbzMkNvJEeW_M-JLVGfOJQ" general="_wrvKkNvHEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_rKjIANvJEeW_M-JLVGfOJQ" name="CeUniTerminSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_57cJcNvJEeW_M-JLVGfOJQ" general="_RVx_0MtqEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_u-mBYNvJEeW_M-JLVGfOJQ" name="CeSpUniTerminSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_4D5ZANvJEeW_M-JLVGfOJQ" general="_rKjIANvJEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_0n5MMNvJEeW_M-JLVGfOJQ" name="CeOpUniTerminSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5Uwj8NvJEeW_M-JLVGfOJQ" general="_rKjIANvJEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KXDAQNvKEeW_M-JLVGfOJQ" name="CeUniConnPtAndAdaptSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_eyKZkNvKEeW_M-JLVGfOJQ" general="_Xo6x0MtqEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_PFQb0NvKEeW_M-JLVGfOJQ" name="CeSpUniConnPtAndAdaptSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_VbqkQNvKEeW_M-JLVGfOJQ" general="_KXDAQNvKEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_TA380NvKEeW_M-JLVGfOJQ" name="CeOpUniConnPtAndAdaptSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_V-YPwNvKEeW_M-JLVGfOJQ" general="_KXDAQNvKEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_m2L6YNvKEeW_M-JLVGfOJQ" name="CeEvcEndPointConnPtAndAdaptSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_ToL3oNvOEeW_M-JLVGfOJQ" general="_7sxuwNvKEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_7sxuwNvKEeW_M-JLVGfOJQ" name="CeEndPointConnPtAndAdaptSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_1L1KQNvKEeW_M-JLVGfOJQ" general="_Xo6x0MtqEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_EFFdgNvLEeW_M-JLVGfOJQ" name="CeEnniLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_HGbuoNvLEeW_M-JLVGfOJQ" general="_3UQt0MqcEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_IMhM8NvLEeW_M-JLVGfOJQ" name="CeInniLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_KiIZcNvLEeW_M-JLVGfOJQ" general="_3UQt0MqcEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_UeKdYNvOEeW_M-JLVGfOJQ" name="CeUniOvcEndPointConnPtAndAdaptSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_jE42MNvOEeW_M-JLVGfOJQ" general="_7sxuwNvKEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_fu0SQNvOEeW_M-JLVGfOJQ" name="CeEnniOvcEndPointConnPtAndAdaptSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_jcXiENvOEeW_M-JLVGfOJQ" general="_7sxuwNvKEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_c036kNvXEeW_M-JLVGfOJQ" name="CeUniLpSpec" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_2_qo8NvWEeW_M-JLVGfOJQ" general="_3UQt0MqcEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_wHASkNvXEeW_M-JLVGfOJQ" name="CeOpUniLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_z8A1QNvXEeW_M-JLVGfOJQ" general="_c036kNvXEeW_M-JLVGfOJQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_qJS2oNvaEeW_M-JLVGfOJQ" name="CeEtyLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_uYWRANvaEeW_M-JLVGfOJQ" general="_3UQt0MqcEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_wHiHoN-0EeWKWce1WnQ71g" name="CeEvcFcPortSetSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_L9jPcN-5EeWKWce1WnQ71g" general="_8Py9IN-4EeWKWce1WnQ71g"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_9zTUEN-0EeWKWce1WnQ71g" name="CeFcSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_GmtGkN-5EeWKWce1WnQ71g">
+            <general xmi:type="uml:Class" href="../OnfModel/CoreModel.uml#_huOHsMrVEeOt57ZaJqAnzg"/>
+          </generalization>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_8Py9IN-4EeWKWce1WnQ71g" name="CeFcPortSetSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_JcUo0N-5EeWKWce1WnQ71g">
+            <general xmi:type="uml:Class" href="../OnfModel/CoreModel.uml#_EL4OsMrWEeOt57ZaJqAnzg"/>
+          </generalization>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AgD8oN-yEeWKWce1WnQ71g" name="CeEvcFcSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_IDKdgN-5EeWKWce1WnQ71g" general="_9zTUEN-0EeWKWce1WnQ71g"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_MdGf8N--EeWKWce1WnQ71g" name="CeOvcSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="__M54YN_BEeWKWce1WnQ71g" general="_9zTUEN-0EeWKWce1WnQ71g"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_PbCQsN--EeWKWce1WnQ71g" name="CeOvcFcPortSetSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="__ouRsN_BEeWKWce1WnQ71g" general="_8Py9IN-4EeWKWce1WnQ71g"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_bd0wUOIzEeW7jKmP9DNTwg" name="CeEthFrameAggregateLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_VkwZQOI1EeW7jKmP9DNTwg" general="_3UQt0MqcEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_aj07UOI1EeW7jKmP9DNTwg" name="CeEthFrameFlowLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_Uy4lgOI3EeW7jKmP9DNTwg" general="_3UQt0MqcEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_r1sZ0OI3EeW7jKmP9DNTwg" name="CeEthFrameAggregateTerminSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_9sZ8sOI3EeW7jKmP9DNTwg" general="_RVx_0MtqEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_FrLKEOI4EeW7jKmP9DNTwg" name="CeEthFrameAggregateConnPtAndAdaptSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_S8qOQOI4EeW7jKmP9DNTwg" general="_Xo6x0MtqEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_wA9D4OI4EeW7jKmP9DNTwg" name="CeEthFrameFlowConnPtAndAdaptLpSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_Ds0xkOI5EeW7jKmP9DNTwg" general="_Xo6x0MtqEeWot_xi6Y1_nA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_dVudAORrEeWP6ZKRyKAUBA" name="CeEthFc">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_jNzqsORrEeWP6ZKRyKAUBA">
+            <body>MEF NRM Classes with common Ethernet technology attributes</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_mAIoYORrEeWP6ZKRyKAUBA" general="_9zTUEN-0EeWKWce1WnQ71g"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_PiBAEORsEeWP6ZKRyKAUBA" name="CeEthFcPortSetSpec">
+          <generalization xmi:type="uml:Generalization" xmi:id="_b4DvsORsEeWP6ZKRyKAUBA" general="_8Py9IN-4EeWKWce1WnQ71g"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_DjoNsMqdEeWot_xi6Y1_nA" name="Diagrams">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_1IockNvbEeW_M-JLVGfOJQ">
+          <body>Examples of Object Instances</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_dLSdINygEeW_M-JLVGfOJQ">
+          <body>ONF not instantiated Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_dQefINygEeW_M-JLVGfOJQ">
+          <body>MEF NRM not instantiated Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zji4kNygEeW_M-JLVGfOJQ">
+          <body>ONF original Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zji4ktygEeW_M-JLVGfOJQ">
+          <body>MEF NRM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ZCJj4NyoEeW_M-JLVGfOJQ">
+          <body>Light blue Classes represent MEF NRM not instantiated Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sfyBQNyoEeW_M-JLVGfOJQ">
+          <body>MEF 7.3&#xD;
+- EthernetServiceInterface attributes&#xD;
+- UNI attributes&#xD;
+applicable to CeEtyLpSpec</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_R8id0N7yEeWKWce1WnQ71g">
+          <body>MEF 7.3 original Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_z4u8oN-ZEeWKWce1WnQ71g">
+          <body>Examples of Object Instances</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_z4vjsN-ZEeWKWce1WnQ71g">
+          <body>MEF NRM not instantiated Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_z4vjsd-ZEeWKWce1WnQ71g">
+          <body>ONF not instantiated Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_6_m4sN-ZEeWKWce1WnQ71g">
+          <body>MEF 7.3 original Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Ww84sN-aEeWKWce1WnQ71g">
+          <body>MEF 7.3 UNI attributes are being reorganized along three distinct classes, a common/root UNI class and two ancillary SP-UNI and Op-UNI classes.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_L8Sm0N-bEeWKWce1WnQ71g">
+          <body>26.2/uniOvcEndPointMap: “The value of the OVC End Point Map of Form U (U for UNI) is a list of one or more CE-VLAN ID values. A Service Frame is mapped to the OVC End Point if the CE-VLAN ID value of the Service Frame is in the list.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_XFrWEN-bEeWKWce1WnQ71g">
+          <body>26.2/uniSubscriberMegMipEnabled: “When the OVC End Point is at a UNI or in a VUNI and the value of the OVC End Point MIP Service Attribute is Enabled, the Operator CEN MUST instantiate a Subscriber Level MIP as described in MEF 30.1 for each of the EVCs supported by the OVC that associates the OVC End Point.”&#xD;
+Example of Service Only Attribute</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_YBuHkN-bEeWKWce1WnQ71g">
+          <body>26.2/uniMegMepList: “The value of the UNI Maintenance End Point List Service Attribute is a list of triples, one for each MEP that is instantiated. Each triple is of the form &lt;m,l,d> where m identifies the MEG, l equals the MEG Level, and d is the direction for the MEP, either Up or Down.”</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_x7GkwN-5EeWKWce1WnQ71g">
+          <body>MEF 7.3 original Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_x7HL0N-5EeWKWce1WnQ71g">
+          <body>ONF not instantiated Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_x7HL0d-5EeWKWce1WnQ71g">
+          <body>MEF NRM not instantiated Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_x7HL0t-5EeWKWce1WnQ71g">
+          <body>Examples of Object Instances</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Ve_XMN--EeWKWce1WnQ71g">
+          <body>MEF NRM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Ve_-QN--EeWKWce1WnQ71g">
+          <body>ONF original Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9ly7MOIzEeW7jKmP9DNTwg">
+          <body>These classes shall include all common Ethernet technology attributes, i.e. which are not really MEF exclusive</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qtGsAOI1EeW7jKmP9DNTwg">
+          <body>MEF NRM Classes with common Ethernet technology attributes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_kSEEYORoEeWP6ZKRyKAUBA">
+          <body>MEF NRM Classes with common Ethernet technology attributes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_j6bgIORrEeWP6ZKRyKAUBA">
+          <body>MEF NRM Classes with common Ethernet technology attributes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_yVWOgOVQEeWP6ZKRyKAUBA">
+          <body>MEF NRM Leaf Spec Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_RJW40OVSEeWP6ZKRyKAUBA">
+          <body>MEF NRM Leaf Spec Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_WVUnYOVSEeWP6ZKRyKAUBA">
+          <body>MEF NRM Leaf Spec Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_m6zfkOXZEeWP6ZKRyKAUBA">
+          <body>ITU-T G.8052 (and M.3160) original Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_bpmmMOXbEeWP6ZKRyKAUBA">
+          <body>ITU-T G.8052 (and M.3160) original Classes</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Rsox0N-8EeWKWce1WnQ71g" name="Associations">
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_gpJp4N-7EeWKWce1WnQ71g" client="_9zTUEN-0EeWKWce1WnQ71g">
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_ATDzQAvLEeWEzuFo1SUvMA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_PQC30N7xEeWKWce1WnQ71g" client="_DjoNsMqdEeWot_xi6Y1_nA">
+          <supplier xmi:type="uml:Package" href="#_DjoNsMqdEeWot_xi6Y1_nA"/>
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_t4TdCw7cEeWiKbVtrcwWWA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_psp5gN7xEeWKWce1WnQ71g" client="_7sxuwNvKEeW_M-JLVGfOJQ">
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_wReFwFvpEeW6cY5LLDDH2g"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_wPzA8N7yEeWKWce1WnQ71g" client="_u-mBYNvJEeW_M-JLVGfOJQ">
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_b7ovkGJAEeWUrun2VfIlmw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_hw0ckN-7EeWKWce1WnQ71g" client="_AgD8oN-yEeWKWce1WnQ71g">
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_MKoBcA7cEeWiKbVtrcwWWA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_bDyBIOCdEeW0_YDeTdRiSw" client="_UeKdYNvOEeW_M-JLVGfOJQ">
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_DQXy4NAhEeWuNf2VLdfDCg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_kK8IAOCfEeW0_YDeTdRiSw" client="_AgD8oN-yEeWKWce1WnQ71g">
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_MKoBcA7cEeWiKbVtrcwWWA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_FA7toOCgEeW0_YDeTdRiSw" client="_9zTUEN-0EeWKWce1WnQ71g">
+          <supplier xmi:type="uml:Class" href="MEF7_3.uml#_ATDzQAvLEeWEzuFo1SUvMA"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_8VmGQLlwEeWThfpUfUgfAw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zw594OIsEeW7jKmP9DNTwg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zw594eIsEeW7jKmP9DNTwg" key="Version" value="0.2.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zw594uIsEeW7jKmP9DNTwg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zw594-IsEeW7jKmP9DNTwg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zw595OIsEeW7jKmP9DNTwg" key="Date" value="2016-02-11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zw595eIsEeW7jKmP9DNTwg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8VoigLlwEeWThfpUfUgfAw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../MEF%20Common%20Information%20Model%20Profile/OpenModel_Profile.profile.uml#_0tZP0NyQEeW6C_FaABjU5w"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8VpJkLlwEeWThfpUfUgfAw" source="duplicatedProfile"/>
+      <appliedProfile xmi:type="uml:Profile" href="../MEF%20Common%20Information%20Model%20Profile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+  </uml:Package>
+  <OpenModel_Profile:OpenModelClass xmi:id="_3UTKEMqcEeWot_xi6Y1_nA" base_Class="_3UQt0MqcEeWot_xi6Y1_nA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_RVx_0ctqEeWot_xi6Y1_nA" base_Class="_RVx_0MtqEeWot_xi6Y1_nA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_Xo6x0ctqEeWot_xi6Y1_nA" base_Class="_Xo6x0MtqEeWot_xi6Y1_nA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_RtDr4NvHEeW_M-JLVGfOJQ" base_Class="_Rs-zYNvHEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_wrvKkdvHEeW_M-JLVGfOJQ" base_Class="_wrvKkNvHEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_CVU3cNvIEeW_M-JLVGfOJQ" base_Class="_CVUQYNvIEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_xEB5UdvIEeW_M-JLVGfOJQ" base_Class="_xEB5UNvIEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_6NUZEdvIEeW_M-JLVGfOJQ" base_Class="_6NUZENvIEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_EVGhYdvJEeW_M-JLVGfOJQ" base_Class="_EVGhYNvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_rKjIAdvJEeW_M-JLVGfOJQ" base_Class="_rKjIANvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_u-mocNvJEeW_M-JLVGfOJQ" base_Class="_u-mBYNvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_0n5zQNvJEeW_M-JLVGfOJQ" base_Class="_0n5MMNvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_KXDnUNvKEeW_M-JLVGfOJQ" base_Class="_KXDAQNvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_PFQb0dvKEeW_M-JLVGfOJQ" base_Class="_PFQb0NvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_TA4j4NvKEeW_M-JLVGfOJQ" base_Class="_TA380NvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_m2L6YdvKEeW_M-JLVGfOJQ" base_Class="_m2L6YNvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_7sxuwdvKEeW_M-JLVGfOJQ" base_Class="_7sxuwNvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_EFGEkNvLEeW_M-JLVGfOJQ" base_Class="_EFFdgNvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_IMhM8dvLEeW_M-JLVGfOJQ" base_Class="_IMhM8NvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_UeKdYdvOEeW_M-JLVGfOJQ" base_Class="_UeKdYNvOEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_fu05UNvOEeW_M-JLVGfOJQ" base_Class="_fu0SQNvOEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_c04hoNvXEeW_M-JLVGfOJQ" base_Class="_c036kNvXEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_wHASkdvXEeW_M-JLVGfOJQ" base_Class="_wHASkNvXEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_qJS2odvaEeW_M-JLVGfOJQ" base_Class="_qJS2oNvaEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_AgFKwN-yEeWKWce1WnQ71g" base_Class="_AgD8oN-yEeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_wHiusN-0EeWKWce1WnQ71g" base_Class="_wHiHoN-0EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9zT7IN-0EeWKWce1WnQ71g" base_Class="_9zTUEN-0EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_8Py9Id-4EeWKWce1WnQ71g" base_Class="_8Py9IN-4EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_MdHHAN--EeWKWce1WnQ71g" base_Class="_MdGf8N--EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_PbCQsd--EeWKWce1WnQ71g" base_Class="_PbCQsN--EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwu-wOIsEeW7jKmP9DNTwg" base_Class="_3UQt0MqcEeWot_xi6Y1_nA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwyCEOIsEeW7jKmP9DNTwg" base_Class="_RVx_0MtqEeWot_xi6Y1_nA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwyCEeIsEeW7jKmP9DNTwg" base_Class="_Xo6x0MtqEeWot_xi6Y1_nA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwypIOIsEeW7jKmP9DNTwg" base_Class="_Rs-zYNvHEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwypIeIsEeW7jKmP9DNTwg" base_Class="_wrvKkNvHEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwypIuIsEeW7jKmP9DNTwg" base_Class="_CVUQYNvIEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwzQMOIsEeW7jKmP9DNTwg" base_Class="_xEB5UNvIEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwzQMeIsEeW7jKmP9DNTwg" base_Class="_6NUZENvIEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwzQMuIsEeW7jKmP9DNTwg" base_Class="_EVGhYNvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwzQM-IsEeW7jKmP9DNTwg" base_Class="_rKjIANvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwzQNOIsEeW7jKmP9DNTwg" base_Class="_u-mBYNvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwz3QOIsEeW7jKmP9DNTwg" base_Class="_0n5MMNvJEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwz3QeIsEeW7jKmP9DNTwg" base_Class="_KXDAQNvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwz3QuIsEeW7jKmP9DNTwg" base_Class="_PFQb0NvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zwz3Q-IsEeW7jKmP9DNTwg" base_Class="_TA380NvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw0eUOIsEeW7jKmP9DNTwg" base_Class="_m2L6YNvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw0eUeIsEeW7jKmP9DNTwg" base_Class="_7sxuwNvKEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw0eUuIsEeW7jKmP9DNTwg" base_Class="_EFFdgNvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1FYOIsEeW7jKmP9DNTwg" base_Class="_IMhM8NvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1FYeIsEeW7jKmP9DNTwg" base_Class="_UeKdYNvOEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1FYuIsEeW7jKmP9DNTwg" base_Class="_fu0SQNvOEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1FY-IsEeW7jKmP9DNTwg" base_Class="_c036kNvXEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1FZOIsEeW7jKmP9DNTwg" base_Class="_wHASkNvXEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1scOIsEeW7jKmP9DNTwg" base_Class="_qJS2oNvaEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1sceIsEeW7jKmP9DNTwg" base_Class="_wHiHoN-0EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw1scuIsEeW7jKmP9DNTwg" base_Class="_9zTUEN-0EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw3hoOIsEeW7jKmP9DNTwg" base_Class="_8Py9IN-4EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw4IsOIsEeW7jKmP9DNTwg" base_Class="_AgD8oN-yEeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw4vwOIsEeW7jKmP9DNTwg" base_Class="_MdGf8N--EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_zw5W0OIsEeW7jKmP9DNTwg" base_Class="_PbCQsN--EeWKWce1WnQ71g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_bd1XYOIzEeW7jKmP9DNTwg" base_Class="_bd0wUOIzEeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_aj1iYOI1EeW7jKmP9DNTwg" base_Class="_aj07UOI1EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_r1sZ0eI3EeW7jKmP9DNTwg" base_Class="_r1sZ0OI3EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_FrLxIOI4EeW7jKmP9DNTwg" base_Class="_FrLKEOI4EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_wA9q8OI4EeW7jKmP9DNTwg" base_Class="_wA9D4OI4EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_dVvEEORrEeWP6ZKRyKAUBA" base_Class="_dVudAORrEeWP6ZKRyKAUBA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_PiBAEeRsEeWP6ZKRyKAUBA" base_Class="_PiBAEORsEeWP6ZKRyKAUBA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9b48YP_vEeWHWqRNz9GPFA" base_Class="_bd0wUOIzEeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9b8mwP_vEeWHWqRNz9GPFA" base_Class="_aj07UOI1EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9b_qEP_vEeWHWqRNz9GPFA" base_Class="_r1sZ0OI3EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9cCtYP_vEeWHWqRNz9GPFA" base_Class="_FrLKEOI4EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9cFwsP_vEeWHWqRNz9GPFA" base_Class="_wA9D4OI4EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9cI0AP_vEeWHWqRNz9GPFA" base_Class="_dVudAORrEeWP6ZKRyKAUBA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_9cL3UP_vEeWHWqRNz9GPFA" base_Class="_PiBAEORsEeWP6ZKRyKAUBA"/>
+</xmi:XMI>
