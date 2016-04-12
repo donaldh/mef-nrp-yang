@@ -1,0 +1,34 @@
+CoreModel.uml read success!
+Warning:The type of attribute 'costAlgorithm' of class 'CostCharacteristics' is undefined!
+Warning:The type of attribute '_ltppList' of class 'NetworkElement' is undefined!
+Warning:The type of attribute 'configuredClientCapacity' of class 'LayerProtocol' is undefined!
+Warning:The type of attribute 'terminationState' of class 'LayerProtocol' is undefined!
+Warning:The type of attribute 'id' of class 'FcRoute' is undefined!
+Warning:The type of attribute '_ltpp' of class 'LinkPort' is undefined!
+Warning:The type of attribute 'SwichRule' of class 'ConfigurationAndSwitchController' is undefined!
+Warning:The type of attribute 'profileProxyMode' of class 'ProfileProxy' is undefined!
+Warning:The type of attribute 'switchControl_switch_1' of class 'ControlRule' is undefined!
+Warning:The type of attribute 'role' of class 'FcPortSetSpec' is undefined!
+Warning:The type of attribute 'clientCapacity' of class 'PoolPropertySpec' is undefined!
+Warning:The type of attribute 'Role' of class 'Port' is undefined!
+NRP_Interface.uml read success!
+NetworkResource.uml read success!
+xmi translate to yang successfully!
+write CoreModel-CoreNetworkModule-TypeDefinitions
+write CoreModel-CoreNetworkModule-ObjectClasses
+write CoreModel-CoreFoundationModule-TypeDefinitions
+write CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages
+write CoreModel-CoreFoundationModule-StateModel
+write CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed
+write CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule
+write CoreModel-CoreModelEnhancements-ViewAbstractionRule_Sketch
+write CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns
+write CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch
+write NRP_Interface-TypeDefinitions
+write NRP_Interface-TypeDefinitions-TopologyPacs
+write NRP_Interface-TypeDefinitions-NRP_Types
+write NRP_Interface-ObjectClasses-NRP_SpecPackage
+write NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage
+write NRP_Interface-ObjectClasses-TopologyPacs
+write NetworkResource-Main-ObjectClasses
+

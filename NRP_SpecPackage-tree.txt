@@ -1,0 +1,1711 @@
+module: NRP_Interface-ObjectClasses-NRP_SpecPackage
+   +--rw NRP_TerminationSpec* [id]
+   |  +--rw _connectionSpec
+   |  |  +--rw id?   string
+   |  +--rw id                             string
+   |  +--rw nrp_physicalLayer?             NRP_Interface-TypeDefinitions-NRP_Types:NRP_PhysicalLayer
+   |  +--rw nrp_syncMode* [linkId]
+   |  |  +--rw linkId             string
+   |  |  +--rw syncModeEnabled?   boolean
+   |  +--rw nrp_numberOfLinks?             NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_resiliency?                NRP_Interface-TypeDefinitions-NRP_Types:NRP_InterfaceResiliency
+   |  +--rw nrp_portConvsIdToAggLinkMap
+   |  |  +--rw conversationId?   NRP_NaturalNumber
+   |  |  +--rw linkId?           NRP_NaturalNumber
+   |  +--rw nrp_maxFrameSize?              NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_linkOamEnabled?            boolean
+   |  +--rw nrp_tokenShareEnabled?         boolean
+   |  +--rw nrp_CeServiceAccessPoint*      -> /NRP_ConnAdaptSpec/id
+   |  +--rw nrp_envelope*                  -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_Envelope/nrp_envelopeId
+   |  +--rw nrp_serviceProviderUniId?      string
+   +--rw NRP_ENNI_TerminationSpec* [id]
+   |  +--rw _connectionSpec
+   |  |  +--rw id?   string
+   |  +--rw id                             string
+   |  +--rw nrp_physicalLayer?             NRP_Interface-TypeDefinitions-NRP_Types:NRP_PhysicalLayer
+   |  +--rw nrp_syncMode* [linkId]
+   |  |  +--rw linkId             string
+   |  |  +--rw syncModeEnabled?   boolean
+   |  +--rw nrp_numberOfLinks?             NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_resiliency?                NRP_Interface-TypeDefinitions-NRP_Types:NRP_InterfaceResiliency
+   |  +--rw nrp_portConvsIdToAggLinkMap
+   |  |  +--rw conversationId?   NRP_NaturalNumber
+   |  |  +--rw linkId?           NRP_NaturalNumber
+   |  +--rw nrp_maxFrameSize?              NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_linkOamEnabled?            boolean
+   |  +--rw nrp_tokenShareEnabled?         boolean
+   |  +--rw nrp_CeServiceAccessPoint*      -> /NRP_ConnAdaptSpec/id
+   |  +--rw nrp_envelope*                  -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_Envelope/nrp_envelopeId
+   |  +--rw nrp_serviceProviderUniId?      string
+   |  +--rw nrp_linkAggLinkMegEnabled?     string
+   +--rw NRP_INNI_TerminationSpec* [id]
+   |  +--rw _connectionSpec
+   |  |  +--rw id?   string
+   |  +--rw id                             string
+   |  +--rw nrp_physicalLayer?             NRP_Interface-TypeDefinitions-NRP_Types:NRP_PhysicalLayer
+   |  +--rw nrp_syncMode* [linkId]
+   |  |  +--rw linkId             string
+   |  |  +--rw syncModeEnabled?   boolean
+   |  +--rw nrp_numberOfLinks?             NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_resiliency?                NRP_Interface-TypeDefinitions-NRP_Types:NRP_InterfaceResiliency
+   |  +--rw nrp_portConvsIdToAggLinkMap
+   |  |  +--rw conversationId?   NRP_NaturalNumber
+   |  |  +--rw linkId?           NRP_NaturalNumber
+   |  +--rw nrp_maxFrameSize?              NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_linkOamEnabled?            boolean
+   |  +--rw nrp_tokenShareEnabled?         boolean
+   |  +--rw nrp_CeServiceAccessPoint*      -> /NRP_ConnAdaptSpec/id
+   |  +--rw nrp_envelope*                  -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_Envelope/nrp_envelopeId
+   |  +--rw nrp_serviceProviderUniId?      string
+   +--rw NRP_UNI_TerminationSpec* [id]
+   |  +--rw _connectionSpec
+   |  |  +--rw id?   string
+   |  +--rw id                               string
+   |  +--rw nrp_physicalLayer?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_PhysicalLayer
+   |  +--rw nrp_syncMode* [linkId]
+   |  |  +--rw linkId             string
+   |  |  +--rw syncModeEnabled?   boolean
+   |  +--rw nrp_numberOfLinks?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_resiliency?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_InterfaceResiliency
+   |  +--rw nrp_portConvsIdToAggLinkMap
+   |  |  +--rw conversationId?   NRP_NaturalNumber
+   |  |  +--rw linkId?           NRP_NaturalNumber
+   |  +--rw nrp_maxFrameSize?                NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_linkOamEnabled?              boolean
+   |  +--rw nrp_tokenShareEnabled?           boolean
+   |  +--rw nrp_CeServiceAccessPoint*        -> /NRP_ConnAdaptSpec/id
+   |  +--rw nrp_envelope*                    -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_Envelope/nrp_envelopeId
+   |  +--rw nrp_serviceProviderUniId?        string
+   |  +--rw nrp_defaultCeVlanId
+   |  |  +--rw vid?   NRP_PositiveInteger
+   |  +--rw nrp_uniMegEnabled?               boolean
+   |  +--rw nrp_elmiEnabled?                 boolean
+   |  +--rw nrp_serviceprovideruniprofile?   string
+   |  +--rw nrp_operatoruniprofile?          string
+   |  +--rw nrp_ingressBwpUni?               -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_egressBwpUni?                -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   +--rw NRP_EvcEndpoint_ConnAdaptSpec* [id]
+   |  +--rw _connectionSpec?                       -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/id
+   |  +--rw id                                     string
+   |  +--rw nrp_sourceMacAddressLimit
+   |  |  +--rw enabled?        boolean
+   |  |  +--rw limit?          NRP_NaturalNumber
+   |  |  +--rw timeInterval?   NRP_NaturalNumber
+   |  +--rw nrp_CeExternalInterface?               -> /NRP_TerminationSpec/id
+   |  +--rw nrp_egressMap
+   |  |  +--rw nrp_deiforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_deiValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_DeiOrDiscard
+   |  |  +--rw nrp_pcpforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_pcpValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PcpOrDiscard
+   |  |  +--rw id?                         string
+   |  +--rw nrp_eecIdentifier
+   |  |  +--rw nrp_pcpeecid
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?    string
+   |  |  +--rw nrp_dscpeecid
+   |  |  |  +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |  +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?     string
+   |  |  +--rw nrp_serviceaccesspointeecid
+   |  |  |  +--rw nrp_eecName?   string
+   |  |  +--rw id?                            string
+   |  +--rw nrp_coloridentifier
+   |  |  +--rw nrp_endPointColorId
+   |  |  |  +--rw nrp_color?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_pcpColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_deiColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_deiValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_despColorId
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_color?       NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  +--rw nrp_ingressBwpFlow?                    -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_egressBwpFlow?                     -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_cosidentifier
+   |  |  +--rw nrp_endPointCosId
+   |  |  |  +--rw nrp_cosName?                  string
+   |  |  |  +--rw nrp_l2cpprotocolidentifier* [id]
+   |  |  |     +--rw nrp_llcAddressL2cpId
+   |  |  |     |  +--rw nrp_llcAddress?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_etherTypeL2cpId
+   |  |  |     |  +--rw nrp_etherTypeValue?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     |  +--rw nrp_subType*          NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw id                      string
+   |  |  +--rw nrp_pcpCosId* [nrp_cosName]
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_cosName     string
+   |  |  +--rw nrp_dscpCosId* [nrp_cosName]
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cosName      string
+   |  +--rw nrp_ingressbwppercosname
+   |  |  +--rw nrp_cosName?   string
+   |  |  +--rw nrp_bwpflow
+   |  |     +--rw nrp_bwpFlowIndex?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_cir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cbs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_ebs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_couplingFlag?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_colorMode?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_ColorMode
+   |  |     +--rw nrp_rank?                 NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_tokenRequestOffset?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_bwpflowrank*          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/id
+   |  |     +--rw id?                       string
+   |  +--rw nrp_egressbwppereecname
+   |  |  +--rw nrp_eecName?   string
+   |  +--rw nrp_l2cpAddressSet?                    NRP_Interface-TypeDefinitions-NRP_Types:NRP_L2cpAddressSet
+   |  +--rw nrp_l2cpPeering* [protocolId]
+   |  |  +--rw destinationMacAddress?   string
+   |  |  +--rw protocolType?            NRP_ProtocolFrameType
+   |  |  +--rw linkId?                  string
+   |  |  +--rw protocolId               string
+   |  +--rw nrp_evcEndPointId?                     NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  +--rw nrp_testMegEnabled?                    boolean
+   |  +--rw nrp_evcEndPointRole?                   NRP_Interface-TypeDefinitions-NRP_Types:NRP_EvcEndPointRole
+   |  +--rw nrp_evcEndPointMap* [vid]
+   |  |  +--rw vid    NRP_PositiveInteger
+   |  +--rw nrp_subscriberMegMipEbabled?           boolean
+   |  +--rw nrp_elasticserviceconstraintprofile
+   |  |  +--rw nrp_cirUpperBound?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_cirEirLowerBound?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_cirEirUpperBound?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_modReqLimit?           NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_modIntervalLimit?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_currentCir?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_currentCbs?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_currentEir?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_currentEbs?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  +--rw nrp_currentCeVlanIdList* [vid]
+   |  |  |  +--rw vid    NRP_PositiveInteger
+   |  |  +--rw nrp_currentUniACeVlanId
+   |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  +--rw nrp_currentUniZCeVlanId
+   |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  +--rw id?                        string
+   |  +--rw nrp_evc?                               -> /NRP_EdgeCeFcSpec/uuid
+   +--rw NRP_IvcEndpoint_ConnAdaptSpec* [id]
+   |  +--rw _connectionSpec?               -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/id
+   |  +--rw id                             string
+   |  +--rw nrp_sourceMacAddressLimit
+   |  |  +--rw enabled?        boolean
+   |  |  +--rw limit?          NRP_NaturalNumber
+   |  |  +--rw timeInterval?   NRP_NaturalNumber
+   |  +--rw nrp_CeExternalInterface?       -> /NRP_TerminationSpec/id
+   |  +--rw nrp_egressMap
+   |  |  +--rw nrp_deiforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_deiValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_DeiOrDiscard
+   |  |  +--rw nrp_pcpforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_pcpValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PcpOrDiscard
+   |  |  +--rw id?                         string
+   |  +--rw nrp_eecIdentifier
+   |  |  +--rw nrp_pcpeecid
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?    string
+   |  |  +--rw nrp_dscpeecid
+   |  |  |  +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |  +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?     string
+   |  |  +--rw nrp_serviceaccesspointeecid
+   |  |  |  +--rw nrp_eecName?   string
+   |  |  +--rw id?                            string
+   |  +--rw nrp_coloridentifier
+   |  |  +--rw nrp_endPointColorId
+   |  |  |  +--rw nrp_color?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_pcpColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_deiColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_deiValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_despColorId
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_color?       NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  +--rw nrp_ingressBwpFlow?            -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_egressBwpFlow?             -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_cosidentifier
+   |  |  +--rw nrp_endPointCosId
+   |  |  |  +--rw nrp_cosName?                  string
+   |  |  |  +--rw nrp_l2cpprotocolidentifier* [id]
+   |  |  |     +--rw nrp_llcAddressL2cpId
+   |  |  |     |  +--rw nrp_llcAddress?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_etherTypeL2cpId
+   |  |  |     |  +--rw nrp_etherTypeValue?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     |  +--rw nrp_subType*          NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw id                      string
+   |  |  +--rw nrp_pcpCosId* [nrp_cosName]
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_cosName     string
+   |  |  +--rw nrp_dscpCosId* [nrp_cosName]
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cosName      string
+   |  +--rw nrp_ingressbwppercosname
+   |  |  +--rw nrp_cosName?   string
+   |  |  +--rw nrp_bwpflow
+   |  |     +--rw nrp_bwpFlowIndex?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_cir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cbs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_ebs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_couplingFlag?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_colorMode?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_ColorMode
+   |  |     +--rw nrp_rank?                 NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_tokenRequestOffset?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_bwpflowrank*          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/id
+   |  |     +--rw id?                       string
+   |  +--rw nrp_egressbwppereecname
+   |  |  +--rw nrp_eecName?   string
+   |  +--rw nrp_l2cpAddressSet?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_L2cpAddressSet
+   |  +--rw nrp_l2cpPeering* [protocolId]
+   |  |  +--rw destinationMacAddress?   string
+   |  |  +--rw protocolType?            NRP_ProtocolFrameType
+   |  |  +--rw linkId?                  string
+   |  |  +--rw protocolId               string
+   |  +--rw nrp_ivcEndPointId?             NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  +--rw nrp_testMegEnabled?            boolean
+   |  +--rw nrp_ivcEndPointRole?           NRP_Interface-TypeDefinitions-NRP_Types:NRP_EndPointRole
+   |  +--rw nrp_ivcEndPointMap*            -> /NRP_EndPointMap/id
+   |  +--rw nrp_subscriberMegMipEbabled?   boolean
+   +--rw NRP_ConnAdaptSpec* [id]
+   |  +--rw _connectionSpec?             -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/id
+   |  +--rw id                           string
+   |  +--rw nrp_sourceMacAddressLimit
+   |  |  +--rw enabled?        boolean
+   |  |  +--rw limit?          NRP_NaturalNumber
+   |  |  +--rw timeInterval?   NRP_NaturalNumber
+   |  +--rw nrp_CeExternalInterface?     -> /NRP_TerminationSpec/id
+   |  +--rw nrp_egressMap
+   |  |  +--rw nrp_deiforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_deiValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_DeiOrDiscard
+   |  |  +--rw nrp_pcpforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_pcpValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PcpOrDiscard
+   |  |  +--rw id?                         string
+   |  +--rw nrp_eecIdentifier
+   |  |  +--rw nrp_pcpeecid
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?    string
+   |  |  +--rw nrp_dscpeecid
+   |  |  |  +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |  +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?     string
+   |  |  +--rw nrp_serviceaccesspointeecid
+   |  |  |  +--rw nrp_eecName?   string
+   |  |  +--rw id?                            string
+   |  +--rw nrp_coloridentifier
+   |  |  +--rw nrp_endPointColorId
+   |  |  |  +--rw nrp_color?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_pcpColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_deiColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_deiValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_despColorId
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_color?       NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  +--rw nrp_ingressBwpFlow?          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_egressBwpFlow?           -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_cosidentifier
+   |  |  +--rw nrp_endPointCosId
+   |  |  |  +--rw nrp_cosName?                  string
+   |  |  |  +--rw nrp_l2cpprotocolidentifier* [id]
+   |  |  |     +--rw nrp_llcAddressL2cpId
+   |  |  |     |  +--rw nrp_llcAddress?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_etherTypeL2cpId
+   |  |  |     |  +--rw nrp_etherTypeValue?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     |  +--rw nrp_subType*          NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw id                      string
+   |  |  +--rw nrp_pcpCosId* [nrp_cosName]
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_cosName     string
+   |  |  +--rw nrp_dscpCosId* [nrp_cosName]
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cosName      string
+   |  +--rw nrp_ingressbwppercosname
+   |  |  +--rw nrp_cosName?   string
+   |  |  +--rw nrp_bwpflow
+   |  |     +--rw nrp_bwpFlowIndex?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_cir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cbs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_ebs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_couplingFlag?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_colorMode?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_ColorMode
+   |  |     +--rw nrp_rank?                 NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_tokenRequestOffset?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_bwpflowrank*          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/id
+   |  |     +--rw id?                       string
+   |  +--rw nrp_egressbwppereecname
+   |  |  +--rw nrp_eecName?   string
+   |  +--rw nrp_l2cpAddressSet?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_L2cpAddressSet
+   |  +--rw nrp_l2cpPeering* [protocolId]
+   |     +--rw destinationMacAddress?   string
+   |     +--rw protocolType?            NRP_ProtocolFrameType
+   |     +--rw linkId?                  string
+   |     +--rw protocolId               string
+   +--rw NRP_EdgeCeFcSpec* [uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?             OperationalState
+   |  +--rw administrativeControl?        AdministrativeControl
+   |  +--ro adminsatratveState?           AdministrativeState
+   |  +--rw lifecycleState?               LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                          UniversalId
+   |  +--rw multiSwitchedUniFlow* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw _ingressFcPort* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw id                       string
+   |  |  +--rw _egressFcPort* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw id                       string
+   |  |  +--rw switchControl
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw uuid?                    UniversalId
+   |  |  |  +--rw switchControlRule* [id]
+   |  |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--ro operationalState?         OperationalState
+   |  |  |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  |  |  +--rw lifecycleState?           LifecycleState
+   |  |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw switchControl_switch_1?   string
+   |  |  |  |  +--rw id                        string
+   |  |  |  +--rw switch*                  string
+   |  |  |  +--rw egressSelection*         string
+   |  |  |  +--rw id?                      string
+   |  |  +--rw ingressFcPortSet?        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  |  +--rw egressFcPortSet?         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  |  +--rw id                       string
+   |  +--rw switchControl* [id uuid]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw uuid                     UniversalId
+   |  |  +--rw switchControlRule* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?         OperationalState
+   |  |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  |  +--rw lifecycleState?           LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw switchControl_switch_1?   string
+   |  |  |  +--rw id                        string
+   |  |  +--rw switch*                  string
+   |  |  +--rw egressSelection*         string
+   |  |  +--rw id                       string
+   |  +--rw fcPortSpec* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw ingressFcPortSet*        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  |  +--rw egressFcPortSet*         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  |  +--rw ltpAssociationRule?      -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/id
+   |  |  +--rw role?                    string
+   |  |  +--rw id                       string
+   |  +--rw fcSwitchGroupSpec?            -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConfigurationGroupSpec/uuid
+   |  +--rw ltpAssociationRule
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw id?                      string
+   |  +--rw nrp_connectionType?           NRP_Interface-TypeDefinitions-NRP_Types:NRP_ConnectionType
+   |  +--rw nrp_unicastFrameDelivery?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_multicastFrameDelivery?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_broadcastFrameDelivery?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_vcMaxServiceFrame?        NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  +--rw nrp_vcId?                     NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  +--rw nrp_evcEndpoint* [id]
+   |  |  +--rw _connectionSpec?                       -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/id
+   |  |  +--rw id                                     string
+   |  |  +--rw nrp_sourceMacAddressLimit
+   |  |  |  +--rw enabled?        boolean
+   |  |  |  +--rw limit?          NRP_NaturalNumber
+   |  |  |  +--rw timeInterval?   NRP_NaturalNumber
+   |  |  +--rw nrp_CeExternalInterface?               -> /NRP_TerminationSpec/id
+   |  |  +--rw nrp_egressMap
+   |  |  |  +--rw nrp_deiforcoloregressmap
+   |  |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  |  +--rw nrp_deiValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_DeiOrDiscard
+   |  |  |  +--rw nrp_pcpforcoloregressmap
+   |  |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  |  +--rw nrp_pcpValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PcpOrDiscard
+   |  |  |  +--rw id?                         string
+   |  |  +--rw nrp_eecIdentifier
+   |  |  |  +--rw nrp_pcpeecid
+   |  |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |  +--rw nrp_eecName?    string
+   |  |  |  +--rw nrp_dscpeecid
+   |  |  |  |  +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |  |  +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |  +--rw nrp_eecName?     string
+   |  |  |  +--rw nrp_serviceaccesspointeecid
+   |  |  |  |  +--rw nrp_eecName?   string
+   |  |  |  +--rw id?                            string
+   |  |  +--rw nrp_coloridentifier
+   |  |  |  +--rw nrp_endPointColorId
+   |  |  |  |  +--rw nrp_color?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_pcpColorId
+   |  |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_deiColorId
+   |  |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  |  +--rw nrp_deiValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_despColorId
+   |  |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_color?       NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_ingressBwpFlow?                    -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  |  +--rw nrp_egressBwpFlow?                     -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  |  +--rw nrp_cosidentifier
+   |  |  |  +--rw nrp_endPointCosId
+   |  |  |  |  +--rw nrp_cosName?                  string
+   |  |  |  |  +--rw nrp_l2cpprotocolidentifier* [id]
+   |  |  |  |     +--rw nrp_llcAddressL2cpId
+   |  |  |  |     |  +--rw nrp_llcAddress?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |     +--rw nrp_etherTypeL2cpId
+   |  |  |  |     |  +--rw nrp_etherTypeValue?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |     |  +--rw nrp_subType*          NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |     +--rw id                      string
+   |  |  |  +--rw nrp_pcpCosId* [nrp_cosName]
+   |  |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  |  +--rw nrp_cosName     string
+   |  |  |  +--rw nrp_dscpCosId* [nrp_cosName]
+   |  |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_cosName      string
+   |  |  +--rw nrp_ingressbwppercosname
+   |  |  |  +--rw nrp_cosName?   string
+   |  |  |  +--rw nrp_bwpflow
+   |  |  |     +--rw nrp_bwpFlowIndex?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |  |     +--rw nrp_cir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_cirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_cbs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_eir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_eirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_ebs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_couplingFlag?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_colorMode?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_ColorMode
+   |  |  |     +--rw nrp_rank?                 NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |  |     +--rw nrp_tokenRequestOffset?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_bwpflowrank*          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/id
+   |  |  |     +--rw id?                       string
+   |  |  +--rw nrp_egressbwppereecname
+   |  |  |  +--rw nrp_eecName?   string
+   |  |  +--rw nrp_l2cpAddressSet?                    NRP_Interface-TypeDefinitions-NRP_Types:NRP_L2cpAddressSet
+   |  |  +--rw nrp_l2cpPeering* [protocolId]
+   |  |  |  +--rw destinationMacAddress?   string
+   |  |  |  +--rw protocolType?            NRP_ProtocolFrameType
+   |  |  |  +--rw linkId?                  string
+   |  |  |  +--rw protocolId               string
+   |  |  +--rw nrp_evcEndPointId?                     NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  |  +--rw nrp_testMegEnabled?                    boolean
+   |  |  +--rw nrp_evcEndPointRole?                   NRP_Interface-TypeDefinitions-NRP_Types:NRP_EvcEndPointRole
+   |  |  +--rw nrp_evcEndPointMap* [vid]
+   |  |  |  +--rw vid    NRP_PositiveInteger
+   |  |  +--rw nrp_subscriberMegMipEbabled?           boolean
+   |  |  +--rw nrp_elasticserviceconstraintprofile
+   |  |  |  +--rw nrp_cirUpperBound?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_cirEirLowerBound?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_cirEirUpperBound?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_modReqLimit?           NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_modIntervalLimit?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_currentCir?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_currentCbs?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_currentEir?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_currentEbs?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_currentCeVlanIdList* [vid]
+   |  |  |  |  +--rw vid    NRP_PositiveInteger
+   |  |  |  +--rw nrp_currentUniACeVlanId
+   |  |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  |  +--rw nrp_currentUniZCeVlanId
+   |  |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  |  +--rw id?                        string
+   |  |  +--rw nrp_evc?                               -> /NRP_EdgeCeFcSpec/uuid
+   |  +--rw nrp_ovcEndpoint*              -> /NRP_OvcEndpoint_ConnAdaptSpec/id
+   |  +--rw nrp_ivcEndpoint*              -> /NRP_IvcEndpoint_ConnAdaptSpec/id
+   |  +--rw nrp_ceVlanIdPreservation?     boolean
+   |  +--rw nrp_ceVlanCosPreservation?    boolean
+   |  +--rw nrp_CeEvcFcPortSetSpec?       -> /NRP_CeEvcFcPortSetSpec/id
+   +--rw NRP_ElasticServiceConstraintProfile* [id]
+   |  +--rw nrp_cirUpperBound?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_cirEirLowerBound?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_cirEirUpperBound?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_modReqLimit?           NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_modIntervalLimit?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_currentCir?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_currentCbs?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_currentEir?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_currentEbs?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_currentCeVlanIdList* [vid]
+   |  |  +--rw vid    NRP_PositiveInteger
+   |  +--rw nrp_currentUniACeVlanId
+   |  |  +--rw vid?   NRP_PositiveInteger
+   |  +--rw nrp_currentUniZCeVlanId
+   |  |  +--rw vid?   NRP_PositiveInteger
+   |  +--rw id                         string
+   +--rw NRP_TransitCeFcSpec* [uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?             OperationalState
+   |  +--rw administrativeControl?        AdministrativeControl
+   |  +--ro adminsatratveState?           AdministrativeState
+   |  +--rw lifecycleState?               LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                          UniversalId
+   |  +--rw multiSwitchedUniFlow* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw _ingressFcPort* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw id                       string
+   |  |  +--rw _egressFcPort* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw id                       string
+   |  |  +--rw switchControl
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw uuid?                    UniversalId
+   |  |  |  +--rw switchControlRule* [id]
+   |  |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--ro operationalState?         OperationalState
+   |  |  |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  |  |  +--rw lifecycleState?           LifecycleState
+   |  |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw switchControl_switch_1?   string
+   |  |  |  |  +--rw id                        string
+   |  |  |  +--rw switch*                  string
+   |  |  |  +--rw egressSelection*         string
+   |  |  |  +--rw id?                      string
+   |  |  +--rw ingressFcPortSet?        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  |  +--rw egressFcPortSet?         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  |  +--rw id                       string
+   |  +--rw switchControl* [id uuid]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw uuid                     UniversalId
+   |  |  +--rw switchControlRule* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?         OperationalState
+   |  |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  |  +--rw lifecycleState?           LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw switchControl_switch_1?   string
+   |  |  |  +--rw id                        string
+   |  |  +--rw switch*                  string
+   |  |  +--rw egressSelection*         string
+   |  |  +--rw id                       string
+   |  +--rw fcPortSpec* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw ingressFcPortSet*        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  |  +--rw egressFcPortSet*         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  |  +--rw ltpAssociationRule?      -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/id
+   |  |  +--rw role?                    string
+   |  |  +--rw id                       string
+   |  +--rw fcSwitchGroupSpec?            -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConfigurationGroupSpec/uuid
+   |  +--rw ltpAssociationRule
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw id?                      string
+   |  +--rw nrp_connectionType?           NRP_Interface-TypeDefinitions-NRP_Types:NRP_ConnectionType
+   |  +--rw nrp_unicastFrameDelivery?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_multicastFrameDelivery?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_broadcastFrameDelivery?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_vcMaxServiceFrame?        NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  +--rw nrp_vcId?                     NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  +--rw nrp_sVlanIdPreservation?      boolean
+   |  +--rw nrp_sVlanPcpPreservation?     boolean
+   |  +--rw nrp_ListOfCosNames*           string
+   |  +--rw nrp_ovcEndpoint*              -> /NRP_OvcEndpoint_ConnAdaptSpec/id
+   |  +--rw nrp_ivcEndpoint*              -> /NRP_IvcEndpoint_ConnAdaptSpec/id
+   |  +--rw nrp_CeEthFcPortSetSpec?       -> /NRP_CeEthFcPortSetSpec/id
+   +--rw NRP_CeFcSpec* [uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?             OperationalState
+   |  +--rw administrativeControl?        AdministrativeControl
+   |  +--ro adminsatratveState?           AdministrativeState
+   |  +--rw lifecycleState?               LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                          UniversalId
+   |  +--rw multiSwitchedUniFlow* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw _ingressFcPort* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw id                       string
+   |  |  +--rw _egressFcPort* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw id                       string
+   |  |  +--rw switchControl
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw uuid?                    UniversalId
+   |  |  |  +--rw switchControlRule* [id]
+   |  |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--ro operationalState?         OperationalState
+   |  |  |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  |  |  +--rw lifecycleState?           LifecycleState
+   |  |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw switchControl_switch_1?   string
+   |  |  |  |  +--rw id                        string
+   |  |  |  +--rw switch*                  string
+   |  |  |  +--rw egressSelection*         string
+   |  |  |  +--rw id?                      string
+   |  |  +--rw ingressFcPortSet?        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  |  +--rw egressFcPortSet?         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  |  +--rw id                       string
+   |  +--rw switchControl* [id uuid]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw uuid                     UniversalId
+   |  |  +--rw switchControlRule* [id]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?         OperationalState
+   |  |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  |  +--rw lifecycleState?           LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw switchControl_switch_1?   string
+   |  |  |  +--rw id                        string
+   |  |  +--rw switch*                  string
+   |  |  +--rw egressSelection*         string
+   |  |  +--rw id                       string
+   |  +--rw fcPortSpec* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw ingressFcPortSet*        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  |  +--rw egressFcPortSet*         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  |  +--rw ltpAssociationRule?      -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/id
+   |  |  +--rw role?                    string
+   |  |  +--rw id                       string
+   |  +--rw fcSwitchGroupSpec?            -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConfigurationGroupSpec/uuid
+   |  +--rw ltpAssociationRule
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw id?                      string
+   |  +--rw nrp_connectionType?           NRP_Interface-TypeDefinitions-NRP_Types:NRP_ConnectionType
+   |  +--rw nrp_unicastFrameDelivery?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_multicastFrameDelivery?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_broadcastFrameDelivery?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_ServiceFrameDelivery
+   |  +--rw nrp_vcMaxServiceFrame?        NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  +--rw nrp_vcId?                     NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   +--rw NRP_EndPointMap* [id]
+   |  +--rw nrp_endPointMapFormE
+   |  |  +--rw nrp_sVid* [vid]
+   |  |     +--rw vid    NRP_PositiveInteger
+   |  +--rw nrp_endPointMapFormT
+   |  |  +--rw nrp_rootSVid
+   |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  +--rw nrp_leafSVid
+   |  |     +--rw vid?   NRP_PositiveInteger
+   |  +--rw nrp_endPointMapFormV
+   |  |  +--rw nrp_sVid
+   |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  +--rw nrp_enniCeVid* [vid]
+   |  |     +--rw vid    NRP_PositiveInteger
+   |  +--rw nrp_endPointMapFormU
+   |  |  +--rw nrp_cVid* [vid]
+   |  |     +--rw vid    NRP_PositiveInteger
+   |  +--rw id                      string
+   +--rw NRP_OvcEndpoint_ConnAdaptSpec* [id]
+   |  +--rw _connectionSpec?                     -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/id
+   |  +--rw id                                   string
+   |  +--rw nrp_sourceMacAddressLimit
+   |  |  +--rw enabled?        boolean
+   |  |  +--rw limit?          NRP_NaturalNumber
+   |  |  +--rw timeInterval?   NRP_NaturalNumber
+   |  +--rw nrp_CeExternalInterface?             -> /NRP_TerminationSpec/id
+   |  +--rw nrp_egressMap
+   |  |  +--rw nrp_deiforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_deiValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_DeiOrDiscard
+   |  |  +--rw nrp_pcpforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_pcpValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PcpOrDiscard
+   |  |  +--rw id?                         string
+   |  +--rw nrp_eecIdentifier
+   |  |  +--rw nrp_pcpeecid
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?    string
+   |  |  +--rw nrp_dscpeecid
+   |  |  |  +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |  +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?     string
+   |  |  +--rw nrp_serviceaccesspointeecid
+   |  |  |  +--rw nrp_eecName?   string
+   |  |  +--rw id?                            string
+   |  +--rw nrp_coloridentifier
+   |  |  +--rw nrp_endPointColorId
+   |  |  |  +--rw nrp_color?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_pcpColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_deiColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_deiValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_despColorId
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_color?       NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  +--rw nrp_ingressBwpFlow?                  -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_egressBwpFlow?                   -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_cosidentifier
+   |  |  +--rw nrp_endPointCosId
+   |  |  |  +--rw nrp_cosName?                  string
+   |  |  |  +--rw nrp_l2cpprotocolidentifier* [id]
+   |  |  |     +--rw nrp_llcAddressL2cpId
+   |  |  |     |  +--rw nrp_llcAddress?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_etherTypeL2cpId
+   |  |  |     |  +--rw nrp_etherTypeValue?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     |  +--rw nrp_subType*          NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw id                      string
+   |  |  +--rw nrp_pcpCosId* [nrp_cosName]
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_cosName     string
+   |  |  +--rw nrp_dscpCosId* [nrp_cosName]
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cosName      string
+   |  +--rw nrp_ingressbwppercosname
+   |  |  +--rw nrp_cosName?   string
+   |  |  +--rw nrp_bwpflow
+   |  |     +--rw nrp_bwpFlowIndex?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_cir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cbs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_ebs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_couplingFlag?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_colorMode?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_ColorMode
+   |  |     +--rw nrp_rank?                 NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_tokenRequestOffset?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_bwpflowrank*          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/id
+   |  |     +--rw id?                       string
+   |  +--rw nrp_egressbwppereecname
+   |  |  +--rw nrp_eecName?   string
+   |  +--rw nrp_l2cpAddressSet?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_L2cpAddressSet
+   |  +--rw nrp_l2cpPeering* [protocolId]
+   |  |  +--rw destinationMacAddress?   string
+   |  |  +--rw protocolType?            NRP_ProtocolFrameType
+   |  |  +--rw linkId?                  string
+   |  |  +--rw protocolId               string
+   |  +--rw nrp_ovcEndPointId?                   NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  +--rw nrp_ovcEndPointRole?                 NRP_Interface-TypeDefinitions-NRP_Types:NRP_EndPointRole
+   |  +--rw nrp_mipEnabled?                      boolean
+   |  +--rw nrp_enniMepList* [nrp_megId]
+   |  |  +--rw nrp_level?       NRP_NaturalNumber
+   |  |  +--rw nrp_direction?   NRP_MepDirection
+   |  |  +--rw nrp_megId        string
+   |  +--rw nrp_enniTaggedL2cp801dotCompliant?   boolean
+   |  +--rw nrp_endPointMap
+   |  |  +--rw nrp_endPointMapFormE
+   |  |  |  +--rw nrp_sVid* [vid]
+   |  |  |     +--rw vid    NRP_PositiveInteger
+   |  |  +--rw nrp_endPointMapFormT
+   |  |  |  +--rw nrp_rootSVid
+   |  |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  |  +--rw nrp_leafSVid
+   |  |  |     +--rw vid?   NRP_PositiveInteger
+   |  |  +--rw nrp_endPointMapFormV
+   |  |  |  +--rw nrp_sVid
+   |  |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  |  +--rw nrp_enniCeVid* [vid]
+   |  |  |     +--rw vid    NRP_PositiveInteger
+   |  |  +--rw nrp_endPointMapFormU
+   |  |  |  +--rw nrp_cVid* [vid]
+   |  |  |     +--rw vid    NRP_PositiveInteger
+   |  |  +--rw id?                     string
+   |  +--rw nrp_aggregationLinkDepth* [nrp_linkNumber]
+   |     +--rw nrp_vlanId
+   |     |  +--rw vid?   NRP_PositiveInteger
+   |     +--rw nrp_linkNumber    NRP_NaturalNumber
+   +--rw NRP_VUNI* [id]
+   |  +--rw _connectionSpec?                        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/id
+   |  +--rw id                                      string
+   |  +--rw nrp_sourceMacAddressLimit
+   |  |  +--rw enabled?        boolean
+   |  |  +--rw limit?          NRP_NaturalNumber
+   |  |  +--rw timeInterval?   NRP_NaturalNumber
+   |  +--rw nrp_CeExternalInterface?                -> /NRP_TerminationSpec/id
+   |  +--rw nrp_egressMap
+   |  |  +--rw nrp_deiforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_deiValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_DeiOrDiscard
+   |  |  +--rw nrp_pcpforcoloregressmap
+   |  |  |  +--rw nrp_vlanTag?          NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_ingressCosName?   string
+   |  |  |  +--rw nrp_ingressColor?     NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  |  +--rw nrp_pcpValue?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PcpOrDiscard
+   |  |  +--rw id?                         string
+   |  +--rw nrp_eecIdentifier
+   |  |  +--rw nrp_pcpeecid
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?    string
+   |  |  +--rw nrp_dscpeecid
+   |  |  |  +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |  |  +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_eecName?     string
+   |  |  +--rw nrp_serviceaccesspointeecid
+   |  |  |  +--rw nrp_eecName?   string
+   |  |  +--rw id?                            string
+   |  +--rw nrp_coloridentifier
+   |  |  +--rw nrp_endPointColorId
+   |  |  |  +--rw nrp_color?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_pcpColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_deiColorId
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_deiValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_color?      NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  |  +--rw nrp_despColorId
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_color?       NRP_Interface-TypeDefinitions-NRP_Types:NRP_FrameColor
+   |  +--rw nrp_ingressBwpFlow?                     -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_egressBwpFlow?                      -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_cosidentifier
+   |  |  +--rw nrp_endPointCosId
+   |  |  |  +--rw nrp_cosName?                  string
+   |  |  |  +--rw nrp_l2cpprotocolidentifier* [id]
+   |  |  |     +--rw nrp_llcAddressL2cpId
+   |  |  |     |  +--rw nrp_llcAddress?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw nrp_etherTypeL2cpId
+   |  |  |     |  +--rw nrp_etherTypeValue?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     |  +--rw nrp_subType*          NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |     +--rw id                      string
+   |  |  +--rw nrp_pcpCosId* [nrp_cosName]
+   |  |  |  +--rw nrp_vlanTag?    NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag
+   |  |  |  +--rw nrp_pcpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |  |  +--rw nrp_cosName     string
+   |  |  +--rw nrp_dscpCosId* [nrp_cosName]
+   |  |     +--rw nrp_ipVersion?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_IpVersion
+   |  |     +--rw nrp_dscpValue*   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cosName      string
+   |  +--rw nrp_ingressbwppercosname
+   |  |  +--rw nrp_cosName?   string
+   |  |  +--rw nrp_bwpflow
+   |  |     +--rw nrp_bwpFlowIndex?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_cir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_cbs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eir?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_eirMax?               NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_ebs?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_couplingFlag?         NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_colorMode?            NRP_Interface-TypeDefinitions-NRP_Types:NRP_ColorMode
+   |  |     +--rw nrp_rank?                 NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger
+   |  |     +--rw nrp_tokenRequestOffset?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  |     +--rw nrp_bwpflowrank*          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/id
+   |  |     +--rw id?                       string
+   |  +--rw nrp_egressbwppereecname
+   |  |  +--rw nrp_eecName?   string
+   |  +--rw nrp_l2cpAddressSet?                     NRP_Interface-TypeDefinitions-NRP_Types:NRP_L2cpAddressSet
+   |  +--rw nrp_l2cpPeering* [protocolId]
+   |  |  +--rw destinationMacAddress?   string
+   |  |  +--rw protocolType?            NRP_ProtocolFrameType
+   |  |  +--rw linkId?                  string
+   |  |  +--rw protocolId               string
+   |  +--rw nrp_ovcEndPointId?                      NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  +--rw nrp_ovcEndPointRole?                    NRP_Interface-TypeDefinitions-NRP_Types:NRP_EndPointRole
+   |  +--rw nrp_mipEnabled?                         boolean
+   |  +--rw nrp_enniMepList* [nrp_megId]
+   |  |  +--rw nrp_level?       NRP_NaturalNumber
+   |  |  +--rw nrp_direction?   NRP_MepDirection
+   |  |  +--rw nrp_megId        string
+   |  +--rw nrp_enniTaggedL2cp801dotCompliant?      boolean
+   |  +--rw nrp_endPointMap
+   |  |  +--rw nrp_endPointMapFormE
+   |  |  |  +--rw nrp_sVid* [vid]
+   |  |  |     +--rw vid    NRP_PositiveInteger
+   |  |  +--rw nrp_endPointMapFormT
+   |  |  |  +--rw nrp_rootSVid
+   |  |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  |  +--rw nrp_leafSVid
+   |  |  |     +--rw vid?   NRP_PositiveInteger
+   |  |  +--rw nrp_endPointMapFormV
+   |  |  |  +--rw nrp_sVid
+   |  |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  |  +--rw nrp_enniCeVid* [vid]
+   |  |  |     +--rw vid    NRP_PositiveInteger
+   |  |  +--rw nrp_endPointMapFormU
+   |  |  |  +--rw nrp_cVid* [vid]
+   |  |  |     +--rw vid    NRP_PositiveInteger
+   |  |  +--rw id?                     string
+   |  +--rw nrp_aggregationLinkDepth* [nrp_linkNumber]
+   |  |  +--rw nrp_vlanId
+   |  |  |  +--rw vid?   NRP_PositiveInteger
+   |  |  +--rw nrp_linkNumber    NRP_NaturalNumber
+   |  +--rw nrp_vuniIdentifier?                     NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45
+   |  +--rw nrp_sVid
+   |  |  +--rw vid?   NRP_PositiveInteger
+   |  +--rw nrp_defaultCeVid
+   |  |  +--rw vid?   NRP_PositiveInteger
+   |  +--rw nrp_maxNumOvcEndpoint?                  NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_maxNumEnniCeVlanIdPerOvcEndPoint?   NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber
+   |  +--rw nrp_vuniEndPointMepList* [nrp_megId]
+   |  |  +--rw nrp_level?       NRP_NaturalNumber
+   |  |  +--rw nrp_direction?   NRP_MepDirection
+   |  |  +--rw nrp_megId        string
+   |  +--rw nrp_ingressbwp?                         -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_egressbwp?                          -> /NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/id
+   |  +--rw nrp_ovcendpoint*                        -> /NRP_OvcEndpoint_ConnAdaptSpec/id
+   +--rw NRP_CeEvcFcPortSetSpec* [id]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?        OperationalState
+   |  +--rw administrativeControl?   AdministrativeControl
+   |  +--ro adminsatratveState?      AdministrativeState
+   |  +--rw lifecycleState?          LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw ingressFcPortSet*        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  +--rw egressFcPortSet*         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  +--rw ltpAssociationRule?      -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/id
+   |  +--rw role?                    string
+   |  +--rw id                       string
+   +--rw NRP_CeEthFcPortSetSpec* [id]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?        OperationalState
+   |  +--rw administrativeControl?   AdministrativeControl
+   |  +--ro adminsatratveState?      AdministrativeState
+   |  +--rw lifecycleState?          LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw ingressFcPortSet*        -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/id
+   |  +--rw egressFcPortSet*         -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/id
+   |  +--rw ltpAssociationRule?      -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/id
+   |  +--rw role?                    string
+   |  +--rw id                       string
+   +--rw NRP_CeLtpSpec* [id]
+      +--rw _lpSpecList*   -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/id
+      +--rw id             string

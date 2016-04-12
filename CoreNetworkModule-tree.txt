@@ -1,0 +1,949 @@
+module: CoreModel-CoreNetworkModule-ObjectClasses
+   +--rw ForwardingDomain* [uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?         OperationalState
+   |  +--rw administrativeControl?    AdministrativeControl
+   |  +--ro adminsatratveState?       AdministrativeState
+   |  +--rw lifecycleState?           LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                      UniversalId
+   |  +--rw _riskParameter_Pac
+   |  |  +--rw riskCharacteristicList* [riskCharacteristicName]
+   |  |     +--rw riskCharacteristicName    string
+   |  |     +--rw riskIdentifierList*       string
+   |  +--rw _transferCost_Pac
+   |  |  +--rw costCharacteristicList* [costName]
+   |  |     +--rw costName         string
+   |  |     +--rw costValue?       string
+   |  |     +--rw costAlgorithm?   string
+   |  +--rw _transferTiming_Pac
+   |  |  +--rw fixedLatencyCharacteristic?   string
+   |  |  +--rw jitterCharacteristic?         string {feature1}?
+   |  |  +--rw wanderCharacteristic?         string {feature2}?
+   |  |  +--rw queuingLatencyList* [id] {feature3}?
+   |  |     +--rw trafficProperty?                 string
+   |  |     +--rw latencyForTrafficWithProperty?   string
+   |  |     +--rw id                               string
+   |  +--rw _transferCapacity_Pac
+   |  |  +--rw totalPotentialCapacity
+   |  |  |  +--rw totalSize?                 string
+   |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  +--rw maximumClientSize?         string
+   |  |  |  +--rw numberingRange?            string
+   |  |  |  +--rw id?                        string
+   |  |  +--rw availableCapacity
+   |  |  |  +--rw totalSize?                 string
+   |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  +--rw maximumClientSize?         string
+   |  |  |  +--rw numberingRange?            string
+   |  |  |  +--rw id?                        string
+   |  |  +--rw capacityAssignedToUserView* [id]
+   |  |  |  +--rw totalSize?                 string
+   |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  +--rw maximumClientSize?         string
+   |  |  |  +--rw numberingRange?            string
+   |  |  |  +--rw id                         string
+   |  |  +--rw capacityInteractionAlgorithm?   string
+   |  +--rw _transferIntegrity_Pac
+   |  |  +--rw errorCharacteristic?                    string {feature4}?
+   |  |  +--rw lossCharacteristic?                     string {feature5}?
+   |  |  +--rw repeatDeliveryCharacteristic?           string {feature6}?
+   |  |  +--rw deliveryOrderCharacteristic?            string {feature7}?
+   |  |  +--rw unavailableTimeCharacteristic?          string
+   |  |  +--rw serverIntegrityProcessCharacteristic?   string {feature8}?
+   |  +--rw _validation_Pac
+   |  |  +--rw validationMechanismList* [id]
+   |  |     +--rw validationMechanism?               string
+   |  |     +--rw layerProtocolAdjacencyValidated?   string
+   |  |     +--rw validationRobustness?              string
+   |  |     +--rw id                                 string
+   |  +--rw _layerTransition_Pac* [id] {feature15}?
+   |  |  +--rw transitionedLayerProtocolList*   string
+   |  |  +--rw _ltpRefList*                     -> /LogicalTerminationPoint/uuid
+   |  |  +--rw id                               string
+   |  +--rw layerProtocolNameList*    CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  +--rw _lowerLevelFdRefList*     -> /ForwardingDomain/uuid
+   |  +--rw _fcRefList*               -> /ForwardingConstruct/uuid
+   |  +--rw _ltpRefList*              -> /LogicalTerminationPoint/uuid
+   |  +--rw _linkRefList*             -> /Link/uuid
+   +--rw ForwardingConstruct* [uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?                     OperationalState
+   |  +--rw administrativeControl?                AdministrativeControl
+   |  +--ro adminsatratveState?                   AdministrativeState
+   |  +--rw lifecycleState?                       LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                                  UniversalId
+   |  +--rw layerProtocolName?                    CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  +--rw _lowerLevelFcRefList*                 -> /ForwardingConstruct/uuid
+   |  +--rw _fcRouteRefList*                      -> /FcRoute/id
+   |  +--rw _fcPortList* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw _ltpRefList*             -> /LogicalTerminationPoint/uuid
+   |  |  +--rw role?                    CoreModel-CoreNetworkModule-TypeDefinitions:PortRole
+   |  |  +--rw fcPortDirection?         CoreModel-CoreNetworkModule-TypeDefinitions:PortDirection
+   |  |  +--rw id                       string
+   |  +--rw _fcSwitchList* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?                    OperationalState
+   |  |  +--rw administrativeControl?               AdministrativeControl
+   |  |  +--ro adminsatratveState?                  AdministrativeState
+   |  |  +--rw lifecycleState?                      LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw holdOffTime?                         uint64
+   |  |  +--rw waitToRestoreTime?                   uint64
+   |  |  +--rw protType?                            CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType
+   |  |  +--rw operType?                            CoreModel-CoreNetworkModule-TypeDefinitions:OperType
+   |  |  +--rw _selectedFcPortRefList*              -> /FcPort/id
+   |  |  +--rw _profileProxyRefList*                -> /CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/id
+   |  |  +--rw _configurationAndSwitchControlRef?   -> /ConfigurationAndSwitchController/id
+   |  |  +--rw _configurationAndSwitchControl
+   |  |  |  +--rw SwichRule?            string
+   |  |  |  +--rw _fcSwitchRefList*     -> /FcSwitch/id
+   |  |  |  +--rw _controlParameters
+   |  |  |  |  +--rw operType?            CoreModel-CoreNetworkModule-TypeDefinitions:OperType
+   |  |  |  |  +--rw waitToRestoreTime?   uint64
+   |  |  |  |  +--rw protType?            CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType
+   |  |  |  |  +--rw holdOffTime?         uint64
+   |  |  |  |  +--rw id?                  string
+   |  |  |  +--rw _profileProxyRef*     -> /CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/id
+   |  |  |  +--rw id?                   string
+   |  |  +--rw id                                   string
+   |  +--rw _configurationAndSwitchControlList* [id]
+   |  |  +--rw SwichRule?            string
+   |  |  +--rw _fcSwitchRefList*     -> /FcSwitch/id
+   |  |  +--rw _controlParameters
+   |  |  |  +--rw operType?            CoreModel-CoreNetworkModule-TypeDefinitions:OperType
+   |  |  |  +--rw waitToRestoreTime?   uint64
+   |  |  |  +--rw protType?            CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType
+   |  |  |  +--rw holdOffTime?         uint64
+   |  |  |  +--rw id?                  string
+   |  |  +--rw _profileProxyRef*     -> /CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/id
+   |  |  +--rw id                    string
+   |  +--rw _fcSpecRef?                           -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:FcSpec/uuid
+   |  +--rw forwardingDirection?                  CoreModel-CoreNetworkModule-TypeDefinitions:ForwardingDirection
+   +--rw NetworkControlDomain* [id uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?           OperationalState
+   |  +--rw administrativeControl?      AdministrativeControl
+   |  +--ro adminsatratveState?         AdministrativeState
+   |  +--rw lifecycleState?             LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                        UniversalId
+   |  +--rw _forwardingDomainRefList*   -> /ForwardingDomain/uuid
+   |  +--rw _linkRefList*               -> /Link/uuid
+   |  +--rw _networkElementRefList* [id uuid]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw uuid                     UniversalId
+   |  |  +--rw _fdRefList* [uuid]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?         OperationalState
+   |  |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  |  +--rw lifecycleState?           LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw uuid                      UniversalId
+   |  |  |  +--rw _riskParameter_Pac
+   |  |  |  |  +--rw riskCharacteristicList* [riskCharacteristicName]
+   |  |  |  |     +--rw riskCharacteristicName    string
+   |  |  |  |     +--rw riskIdentifierList*       string
+   |  |  |  +--rw _transferCost_Pac
+   |  |  |  |  +--rw costCharacteristicList* [costName]
+   |  |  |  |     +--rw costName         string
+   |  |  |  |     +--rw costValue?       string
+   |  |  |  |     +--rw costAlgorithm?   string
+   |  |  |  +--rw _transferTiming_Pac
+   |  |  |  |  +--rw fixedLatencyCharacteristic?   string
+   |  |  |  |  +--rw jitterCharacteristic?         string {feature1}?
+   |  |  |  |  +--rw wanderCharacteristic?         string {feature2}?
+   |  |  |  |  +--rw queuingLatencyList* [id] {feature3}?
+   |  |  |  |     +--rw trafficProperty?                 string
+   |  |  |  |     +--rw latencyForTrafficWithProperty?   string
+   |  |  |  |     +--rw id                               string
+   |  |  |  +--rw _transferCapacity_Pac
+   |  |  |  |  +--rw totalPotentialCapacity
+   |  |  |  |  |  +--rw totalSize?                 string
+   |  |  |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  |  |  +--rw maximumClientSize?         string
+   |  |  |  |  |  +--rw numberingRange?            string
+   |  |  |  |  |  +--rw id?                        string
+   |  |  |  |  +--rw availableCapacity
+   |  |  |  |  |  +--rw totalSize?                 string
+   |  |  |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  |  |  +--rw maximumClientSize?         string
+   |  |  |  |  |  +--rw numberingRange?            string
+   |  |  |  |  |  +--rw id?                        string
+   |  |  |  |  +--rw capacityAssignedToUserView* [id]
+   |  |  |  |  |  +--rw totalSize?                 string
+   |  |  |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  |  |  +--rw maximumClientSize?         string
+   |  |  |  |  |  +--rw numberingRange?            string
+   |  |  |  |  |  +--rw id                         string
+   |  |  |  |  +--rw capacityInteractionAlgorithm?   string
+   |  |  |  +--rw _transferIntegrity_Pac
+   |  |  |  |  +--rw errorCharacteristic?                    string {feature4}?
+   |  |  |  |  +--rw lossCharacteristic?                     string {feature5}?
+   |  |  |  |  +--rw repeatDeliveryCharacteristic?           string {feature6}?
+   |  |  |  |  +--rw deliveryOrderCharacteristic?            string {feature7}?
+   |  |  |  |  +--rw unavailableTimeCharacteristic?          string
+   |  |  |  |  +--rw serverIntegrityProcessCharacteristic?   string {feature8}?
+   |  |  |  +--rw _validation_Pac
+   |  |  |  |  +--rw validationMechanismList* [id]
+   |  |  |  |     +--rw validationMechanism?               string
+   |  |  |  |     +--rw layerProtocolAdjacencyValidated?   string
+   |  |  |  |     +--rw validationRobustness?              string
+   |  |  |  |     +--rw id                                 string
+   |  |  |  +--rw _layerTransition_Pac* [id] {feature15}?
+   |  |  |  |  +--rw transitionedLayerProtocolList*   string
+   |  |  |  |  +--rw _ltpRefList*                     -> /LogicalTerminationPoint/uuid
+   |  |  |  |  +--rw id                               string
+   |  |  |  +--rw layerProtocolNameList*    CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  |  |  +--rw _lowerLevelFdRefList*     -> /ForwardingDomain/uuid
+   |  |  |  +--rw _fcRefList*               -> /ForwardingConstruct/uuid
+   |  |  |  +--rw _ltpRefList*              -> /LogicalTerminationPoint/uuid
+   |  |  |  +--rw _linkRefList*             -> /Link/uuid
+   |  |  +--rw _ltppList*               string
+   |  |  +--rw _ltpRefList* [uuid]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?        OperationalState
+   |  |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  |  +--rw lifecycleState?          LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw uuid                     UniversalId
+   |  |  |  +--rw _serverLtpRefList*       -> /LogicalTerminationPoint/uuid
+   |  |  |  +--rw _clientLtpRefList*       -> /LogicalTerminationPoint/uuid
+   |  |  |  +--rw _lpList* [layerProtocolName]
+   |  |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--ro operationalState?           OperationalState
+   |  |  |  |  +--rw administrativeControl?      AdministrativeControl
+   |  |  |  |  +--ro adminsatratveState?         AdministrativeState
+   |  |  |  |  +--rw lifecycleState?             LifecycleState
+   |  |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  |  +--rw theValue                     string
+   |  |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  |  +--rw layerProtocolName           CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  |  |  |  +--rw _lpSpec?                    -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/id
+   |  |  |  |  +--rw configuredClientCapacity?   string
+   |  |  |  |  +--rw lpDirection?                CoreModel-CoreNetworkModule-TypeDefinitions:TerminationDirection
+   |  |  |  |  +--rw terminationState?           string
+   |  |  |  +--rw _connectedLtpRef?        -> /LogicalTerminationPoint/uuid
+   |  |  |  +--rw _peerLtpRef?             -> /LogicalTerminationPoint/uuid
+   |  |  |  +--rw _ltpSpec?                -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpSpec/id
+   |  |  |  +--rw physicalPortReference*   string
+   |  |  |  +--rw _ltpRefList*             -> /LogicalTerminationPoint/uuid
+   |  |  |  +--rw ltpDirection?            CoreModel-CoreNetworkModule-TypeDefinitions:TerminationDirection
+   |  |  +--rw id                       string
+   |  +--rw id                          string
+   +--rw Link* [uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?         OperationalState
+   |  +--rw administrativeControl?    AdministrativeControl
+   |  +--ro adminsatratveState?       AdministrativeState
+   |  +--rw lifecycleState?           LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                      UniversalId
+   |  +--rw _riskParameter_Pac
+   |  |  +--rw riskCharacteristicList* [riskCharacteristicName]
+   |  |     +--rw riskCharacteristicName    string
+   |  |     +--rw riskIdentifierList*       string
+   |  +--rw _transferCost_Pac
+   |  |  +--rw costCharacteristicList* [costName]
+   |  |     +--rw costName         string
+   |  |     +--rw costValue?       string
+   |  |     +--rw costAlgorithm?   string
+   |  +--rw _transferTiming_Pac
+   |  |  +--rw fixedLatencyCharacteristic?   string
+   |  |  +--rw jitterCharacteristic?         string {feature1}?
+   |  |  +--rw wanderCharacteristic?         string {feature2}?
+   |  |  +--rw queuingLatencyList* [id] {feature3}?
+   |  |     +--rw trafficProperty?                 string
+   |  |     +--rw latencyForTrafficWithProperty?   string
+   |  |     +--rw id                               string
+   |  +--rw _transferCapacity_Pac
+   |  |  +--rw totalPotentialCapacity
+   |  |  |  +--rw totalSize?                 string
+   |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  +--rw maximumClientSize?         string
+   |  |  |  +--rw numberingRange?            string
+   |  |  |  +--rw id?                        string
+   |  |  +--rw availableCapacity
+   |  |  |  +--rw totalSize?                 string
+   |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  +--rw maximumClientSize?         string
+   |  |  |  +--rw numberingRange?            string
+   |  |  |  +--rw id?                        string
+   |  |  +--rw capacityAssignedToUserView* [id]
+   |  |  |  +--rw totalSize?                 string
+   |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  +--rw maximumClientSize?         string
+   |  |  |  +--rw numberingRange?            string
+   |  |  |  +--rw id                         string
+   |  |  +--rw capacityInteractionAlgorithm?   string
+   |  +--rw _transferIntegrity_Pac
+   |  |  +--rw errorCharacteristic?                    string {feature4}?
+   |  |  +--rw lossCharacteristic?                     string {feature5}?
+   |  |  +--rw repeatDeliveryCharacteristic?           string {feature6}?
+   |  |  +--rw deliveryOrderCharacteristic?            string {feature7}?
+   |  |  +--rw unavailableTimeCharacteristic?          string
+   |  |  +--rw serverIntegrityProcessCharacteristic?   string {feature8}?
+   |  +--rw _validation_Pac
+   |  |  +--rw validationMechanismList* [id]
+   |  |     +--rw validationMechanism?               string
+   |  |     +--rw layerProtocolAdjacencyValidated?   string
+   |  |     +--rw validationRobustness?              string
+   |  |     +--rw id                                 string
+   |  +--rw _layerTransition_Pac* [id] {feature15}?
+   |  |  +--rw transitionedLayerProtocolList*   string
+   |  |  +--rw _ltpRefList*                     -> /LogicalTerminationPoint/uuid
+   |  |  +--rw id                               string
+   |  +--rw layerProtocolNameList*    CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  +--rw _fdRefList*               -> /ForwardingDomain/uuid
+   |  +--rw _linkPortList* [id]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw _ltpp?                   string
+   |  |  +--rw _ltpRefList*             -> /LogicalTerminationPoint/uuid
+   |  |  +--rw role?                    CoreModel-CoreNetworkModule-TypeDefinitions:PortRole
+   |  |  +--rw offNetworkAddress?       string
+   |  |  +--rw linkPortDirection?       CoreModel-CoreNetworkModule-TypeDefinitions:PortDirection
+   |  |  +--rw id                       string
+   |  +--rw _linkSpecRef?             -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LinkSpec/id
+   |  +--rw _aggregatedLink*          -> /Link/uuid
+   |  +--rw linkDirection?            CoreModel-CoreNetworkModule-TypeDefinitions:ForwardingDirection
+   +--rw NetworkElement* [id uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?        OperationalState
+   |  +--rw administrativeControl?   AdministrativeControl
+   |  +--ro adminsatratveState?      AdministrativeState
+   |  +--rw lifecycleState?          LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                     UniversalId
+   |  +--rw _fdRefList* [uuid]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?         OperationalState
+   |  |  +--rw administrativeControl?    AdministrativeControl
+   |  |  +--ro adminsatratveState?       AdministrativeState
+   |  |  +--rw lifecycleState?           LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw uuid                      UniversalId
+   |  |  +--rw _riskParameter_Pac
+   |  |  |  +--rw riskCharacteristicList* [riskCharacteristicName]
+   |  |  |     +--rw riskCharacteristicName    string
+   |  |  |     +--rw riskIdentifierList*       string
+   |  |  +--rw _transferCost_Pac
+   |  |  |  +--rw costCharacteristicList* [costName]
+   |  |  |     +--rw costName         string
+   |  |  |     +--rw costValue?       string
+   |  |  |     +--rw costAlgorithm?   string
+   |  |  +--rw _transferTiming_Pac
+   |  |  |  +--rw fixedLatencyCharacteristic?   string
+   |  |  |  +--rw jitterCharacteristic?         string {feature1}?
+   |  |  |  +--rw wanderCharacteristic?         string {feature2}?
+   |  |  |  +--rw queuingLatencyList* [id] {feature3}?
+   |  |  |     +--rw trafficProperty?                 string
+   |  |  |     +--rw latencyForTrafficWithProperty?   string
+   |  |  |     +--rw id                               string
+   |  |  +--rw _transferCapacity_Pac
+   |  |  |  +--rw totalPotentialCapacity
+   |  |  |  |  +--rw totalSize?                 string
+   |  |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  |  +--rw maximumClientSize?         string
+   |  |  |  |  +--rw numberingRange?            string
+   |  |  |  |  +--rw id?                        string
+   |  |  |  +--rw availableCapacity
+   |  |  |  |  +--rw totalSize?                 string
+   |  |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  |  +--rw maximumClientSize?         string
+   |  |  |  |  +--rw numberingRange?            string
+   |  |  |  |  +--rw id?                        string
+   |  |  |  +--rw capacityAssignedToUserView* [id]
+   |  |  |  |  +--rw totalSize?                 string
+   |  |  |  |  +--rw numberOfClientInstances?   string
+   |  |  |  |  +--rw maximumClientSize?         string
+   |  |  |  |  +--rw numberingRange?            string
+   |  |  |  |  +--rw id                         string
+   |  |  |  +--rw capacityInteractionAlgorithm?   string
+   |  |  +--rw _transferIntegrity_Pac
+   |  |  |  +--rw errorCharacteristic?                    string {feature4}?
+   |  |  |  +--rw lossCharacteristic?                     string {feature5}?
+   |  |  |  +--rw repeatDeliveryCharacteristic?           string {feature6}?
+   |  |  |  +--rw deliveryOrderCharacteristic?            string {feature7}?
+   |  |  |  +--rw unavailableTimeCharacteristic?          string
+   |  |  |  +--rw serverIntegrityProcessCharacteristic?   string {feature8}?
+   |  |  +--rw _validation_Pac
+   |  |  |  +--rw validationMechanismList* [id]
+   |  |  |     +--rw validationMechanism?               string
+   |  |  |     +--rw layerProtocolAdjacencyValidated?   string
+   |  |  |     +--rw validationRobustness?              string
+   |  |  |     +--rw id                                 string
+   |  |  +--rw _layerTransition_Pac* [id] {feature15}?
+   |  |  |  +--rw transitionedLayerProtocolList*   string
+   |  |  |  +--rw _ltpRefList*                     -> /LogicalTerminationPoint/uuid
+   |  |  |  +--rw id                               string
+   |  |  +--rw layerProtocolNameList*    CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  |  +--rw _lowerLevelFdRefList*     -> /ForwardingDomain/uuid
+   |  |  +--rw _fcRefList*               -> /ForwardingConstruct/uuid
+   |  |  +--rw _ltpRefList*              -> /LogicalTerminationPoint/uuid
+   |  |  +--rw _linkRefList*             -> /Link/uuid
+   |  +--rw _ltppList*               string
+   |  +--rw _ltpRefList* [uuid]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?        OperationalState
+   |  |  +--rw administrativeControl?   AdministrativeControl
+   |  |  +--ro adminsatratveState?      AdministrativeState
+   |  |  +--rw lifecycleState?          LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw uuid                     UniversalId
+   |  |  +--rw _serverLtpRefList*       -> /LogicalTerminationPoint/uuid
+   |  |  +--rw _clientLtpRefList*       -> /LogicalTerminationPoint/uuid
+   |  |  +--rw _lpList* [layerProtocolName]
+   |  |  |  +--rw nameList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw labelList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw extensionList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--ro operationalState?           OperationalState
+   |  |  |  +--rw administrativeControl?      AdministrativeControl
+   |  |  |  +--ro adminsatratveState?         AdministrativeState
+   |  |  |  +--rw lifecycleState?             LifecycleState
+   |  |  |  +--rw localIdList* [theValue]
+   |  |  |  |  +--rw valueName?                   string
+   |  |  |  |  +--rw theValue                     string
+   |  |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  |  +--rw layerProtocolName           CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  |  |  +--rw _lpSpec?                    -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/id
+   |  |  |  +--rw configuredClientCapacity?   string
+   |  |  |  +--rw lpDirection?                CoreModel-CoreNetworkModule-TypeDefinitions:TerminationDirection
+   |  |  |  +--rw terminationState?           string
+   |  |  +--rw _connectedLtpRef?        -> /LogicalTerminationPoint/uuid
+   |  |  +--rw _peerLtpRef?             -> /LogicalTerminationPoint/uuid
+   |  |  +--rw _ltpSpec?                -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpSpec/id
+   |  |  +--rw physicalPortReference*   string
+   |  |  +--rw _ltpRefList*             -> /LogicalTerminationPoint/uuid
+   |  |  +--rw ltpDirection?            CoreModel-CoreNetworkModule-TypeDefinitions:TerminationDirection
+   |  +--rw id                       string
+   +--rw LayerProtocol* [layerProtocolName]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?           OperationalState
+   |  +--rw administrativeControl?      AdministrativeControl
+   |  +--ro adminsatratveState?         AdministrativeState
+   |  +--rw lifecycleState?             LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw layerProtocolName           CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  +--rw _lpSpec?                    -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/id
+   |  +--rw configuredClientCapacity?   string
+   |  +--rw lpDirection?                CoreModel-CoreNetworkModule-TypeDefinitions:TerminationDirection
+   |  +--rw terminationState?           string
+   +--rw LogicalTerminationPoint* [uuid]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?        OperationalState
+   |  +--rw administrativeControl?   AdministrativeControl
+   |  +--ro adminsatratveState?      AdministrativeState
+   |  +--rw lifecycleState?          LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw uuid                     UniversalId
+   |  +--rw _serverLtpRefList*       -> /LogicalTerminationPoint/uuid
+   |  +--rw _clientLtpRefList*       -> /LogicalTerminationPoint/uuid
+   |  +--rw _lpList* [layerProtocolName]
+   |  |  +--rw nameList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw labelList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw extensionList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--ro operationalState?           OperationalState
+   |  |  +--rw administrativeControl?      AdministrativeControl
+   |  |  +--ro adminsatratveState?         AdministrativeState
+   |  |  +--rw lifecycleState?             LifecycleState
+   |  |  +--rw localIdList* [theValue]
+   |  |  |  +--rw valueName?                   string
+   |  |  |  +--rw theValue                     string
+   |  |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  |  +--rw layerProtocolName           CoreModel-CoreNetworkModule-TypeDefinitions:LayerProtocolName
+   |  |  +--rw _lpSpec?                    -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/id
+   |  |  +--rw configuredClientCapacity?   string
+   |  |  +--rw lpDirection?                CoreModel-CoreNetworkModule-TypeDefinitions:TerminationDirection
+   |  |  +--rw terminationState?           string
+   |  +--rw _connectedLtpRef?        -> /LogicalTerminationPoint/uuid
+   |  +--rw _peerLtpRef?             -> /LogicalTerminationPoint/uuid
+   |  +--rw _ltpSpec?                -> /CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpSpec/id
+   |  +--rw physicalPortReference*   string
+   |  +--rw _ltpRefList*             -> /LogicalTerminationPoint/uuid
+   |  +--rw ltpDirection?            CoreModel-CoreNetworkModule-TypeDefinitions:TerminationDirection
+   +--rw FcRoute* [id]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?        OperationalState
+   |  +--rw administrativeControl?   AdministrativeControl
+   |  +--ro adminsatratveState?      AdministrativeState
+   |  +--rw lifecycleState?          LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw _fcList*                 -> /ForwardingConstruct/uuid
+   |  +--rw id                       string
+   +--rw LinkPort* [id]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?        OperationalState
+   |  +--rw administrativeControl?   AdministrativeControl
+   |  +--ro adminsatratveState?      AdministrativeState
+   |  +--rw lifecycleState?          LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw _ltpp?                   string
+   |  +--rw _ltpRefList*             -> /LogicalTerminationPoint/uuid
+   |  +--rw role?                    CoreModel-CoreNetworkModule-TypeDefinitions:PortRole
+   |  +--rw offNetworkAddress?       string
+   |  +--rw linkPortDirection?       CoreModel-CoreNetworkModule-TypeDefinitions:PortDirection
+   |  +--rw id                       string
+   +--rw FcPort* [id]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?        OperationalState
+   |  +--rw administrativeControl?   AdministrativeControl
+   |  +--ro adminsatratveState?      AdministrativeState
+   |  +--rw lifecycleState?          LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw _ltpRefList*             -> /LogicalTerminationPoint/uuid
+   |  +--rw role?                    CoreModel-CoreNetworkModule-TypeDefinitions:PortRole
+   |  +--rw fcPortDirection?         CoreModel-CoreNetworkModule-TypeDefinitions:PortDirection
+   |  +--rw id                       string
+   +--rw FcSwitch* [id]
+   |  +--rw nameList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw labelList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw extensionList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--ro operationalState?                    OperationalState
+   |  +--rw administrativeControl?               AdministrativeControl
+   |  +--ro adminsatratveState?                  AdministrativeState
+   |  +--rw lifecycleState?                      LifecycleState
+   |  +--rw localIdList* [theValue]
+   |  |  +--rw valueName?                   string
+   |  |  +--rw theValue                     string
+   |  |  +--rw _nameAndValueAuthorityRef?   -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/uuid
+   |  |  +--rw _globalClassRef?             -> /CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/uuid
+   |  +--rw holdOffTime?                         uint64
+   |  +--rw waitToRestoreTime?                   uint64
+   |  +--rw protType?                            CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType
+   |  +--rw operType?                            CoreModel-CoreNetworkModule-TypeDefinitions:OperType
+   |  +--rw _selectedFcPortRefList*              -> /FcPort/id
+   |  +--rw _profileProxyRefList*                -> /CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/id
+   |  +--rw _configurationAndSwitchControlRef?   -> /ConfigurationAndSwitchController/id
+   |  +--rw _configurationAndSwitchControl
+   |  |  +--rw SwichRule?            string
+   |  |  +--rw _fcSwitchRefList*     -> /FcSwitch/id
+   |  |  +--rw _controlParameters
+   |  |  |  +--rw operType?            CoreModel-CoreNetworkModule-TypeDefinitions:OperType
+   |  |  |  +--rw waitToRestoreTime?   uint64
+   |  |  |  +--rw protType?            CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType
+   |  |  |  +--rw holdOffTime?         uint64
+   |  |  |  +--rw id?                  string
+   |  |  +--rw _profileProxyRef*     -> /CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/id
+   |  |  +--rw id?                   string
+   |  +--rw id                                   string
+   +--rw ConfigurationAndSwitchController* [id]
+   |  +--rw SwichRule?            string
+   |  +--rw _fcSwitchRefList*     -> /FcSwitch/id
+   |  +--rw _controlParameters
+   |  |  +--rw operType?            CoreModel-CoreNetworkModule-TypeDefinitions:OperType
+   |  |  +--rw waitToRestoreTime?   uint64
+   |  |  +--rw protType?            CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType
+   |  |  +--rw holdOffTime?         uint64
+   |  |  +--rw id?                  string
+   |  +--rw _profileProxyRef*     -> /CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/id
+   |  +--rw id                    string
+   x--rw ConfigurationGroup* [id]
+      +--rw _configurationAndSwitchControlRefList* [id]
+      |  +--rw SwichRule?            string
+      |  +--rw _fcSwitchRefList*     -> /FcSwitch/id
+      |  +--rw _controlParameters
+      |  |  +--rw operType?            CoreModel-CoreNetworkModule-TypeDefinitions:OperType
+      |  |  +--rw waitToRestoreTime?   uint64
+      |  |  +--rw protType?            CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType
+      |  |  +--rw holdOffTime?         uint64
+      |  |  +--rw id?                  string
+      |  +--rw _profileProxyRef*     -> /CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/id
+      |  +--rw id                    string
+      +--rw id                                       string
