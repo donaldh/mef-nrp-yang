@@ -1,8 +1,9 @@
 module CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns {
     namespace "uri:onf:CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns";
     prefix CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns;
-    revision 2016-04-01{}
+    revision 2016-04-12{}
     list Component {
+        key 'id';
         config true;
         ordered-by system;
         uses G_Component;
@@ -10,26 +11,37 @@ module CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns {
     grouping G_Component {
         status deprecated;
         list _port {
+            key 'id';
             config true;
             ordered-by system;
             uses G_Port;
             min-elements 1;
         }
         list _attributePackageList {
+            key 'id';
             config true;
             ordered-by system;
             uses G_AttributePackage;
         }
         leaf _boundComponent {
             type leafref {
-                path '/Component/';
+                path '/Component/id';
             }
         }
         leaf _encapsulatedSystem {
             type leafref {
-                path '/System/';
+                path '/CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns:System/CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns:id';
             }
         }
+        leaf id {
+            type string;
+        }
+    }
+    list Port {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_Port;
     }
     grouping G_Port {
         status deprecated;
@@ -39,19 +51,35 @@ module CoreModel-CoreModelEnhancements-InformationArchitectureAndPatterns {
         }
         leaf _boundPort {
             type leafref {
-                path '/Component/_port/';
+                path '/Port/id';
             }
+        }
+        leaf id {
+            type string;
         }
     }
     list System {
+        key 'id';
         config true;
         ordered-by system;
         uses G_System;
     }
     grouping G_System {
         status deprecated;
+        leaf id {
+            type string;
+        }
+    }
+    list AttributePackage {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_AttributePackage;
     }
     grouping G_AttributePackage {
         status deprecated;
+        leaf id {
+            type string;
+        }
     }
 }

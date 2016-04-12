@@ -1,7 +1,7 @@
 module CoreModel-CoreFoundationModule-StateModel {
     namespace "uri:onf:CoreModel-CoreFoundationModule-StateModel";
     prefix CoreModel-CoreFoundationModule-StateModel;
-    revision 2016-04-01{}
+    revision 2016-04-12{}
     grouping G_State_Pac {
         status current;
         leaf operationalState {

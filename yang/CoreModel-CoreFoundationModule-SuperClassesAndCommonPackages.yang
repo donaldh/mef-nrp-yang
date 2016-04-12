@@ -4,16 +4,22 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
     import CoreModel-CoreFoundationModule-StateModel {
         prefix CoreModel-CoreFoundationModule-StateModel;
     }
-    revision 2016-04-01{}
+    revision 2016-04-12{}
     grouping G_Name {
         list nameList {
             description "List of names.";
-            key 'value';
+            key 'theValue';
             config true;
             ordered-by system;
             uses G_NameAndValue;
             min-elements 1;
         }
+    }
+    list GlobalClass {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_GlobalClass;
     }
     grouping G_GlobalClass {
         uses G_Name;
@@ -24,7 +30,7 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
             description "An identifier that is unique in the context of some scope that is less than the global scope.
 
 (consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself unique, and immutable. The identifier therefore represents the identity of the entity/role. An identifier carries no semantics with respect to the purpose of the entity.)";
-            key 'value';
+            key 'theValue';
             config true;
             ordered-by system;
             uses G_NameAndValue;
@@ -45,7 +51,7 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
             description "An identifier that is unique in the context of some scope that is less than the global scope.
 
 (consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself unique, and immutable. The identifier therefore represents the identity of the entity/role. An identifier carries no semantics with respect to the purpose of the entity.)";
-            key 'value';
+            key 'theValue';
             config true;
             ordered-by system;
             uses G_NameAndValue;
@@ -55,7 +61,7 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
     grouping G_Label {
         list labelList {
             description "List of labels.";
-            key 'value';
+            key 'theValue';
             config true;
             ordered-by system;
             uses G_NameAndValue;
@@ -64,7 +70,7 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
     grouping G_Extension {
         list extensionList {
             description "List of simple name-value extentions";
-            key 'value';
+            key 'theValue';
             config true;
             ordered-by system;
             uses G_NameAndValue;
@@ -76,6 +82,12 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
             type UniversalId;
             description "The UUID for the UUID authority.";
         }
+    }
+    list NameAndValueAuthority {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_NameAndValueAuthority;
     }
     grouping G_NameAndValueAuthority {
         status current;
@@ -94,25 +106,19 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
             type string;
             description "The name of the value. The value need not have a name.";
         }
-        leaf value {
+        leaf theValue {
             type string;
             description "The value";
         }
         leaf _nameAndValueAuthorityRef {
             type leafref {
-                path '/NameAndValueAuthority/';
+                path '/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:NameAndValueAuthority/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:uuid';
             }
             description "The authority that defines the named value.";
         }
         leaf _globalClassRef {
             type leafref {
-                path '/GlobalClass/';
-            }
-            description "The scope of the name uniqueness";
-        }
-        leaf _localClassRef {
-            type leafref {
-                path '/LocalClass/';
+                path '/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:uuid';
             }
             description "The scope of the name uniqueness";
         }

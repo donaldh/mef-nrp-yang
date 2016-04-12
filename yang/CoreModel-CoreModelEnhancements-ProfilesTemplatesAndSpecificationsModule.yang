@@ -4,7 +4,13 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
     import CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
         prefix CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages;
     }
-    revision 2016-04-01{}
+    revision 2016-04-12{}
+    list MultiSwitchedUniFlow {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_MultiSwitchedUniFlow;
+    }
     grouping G_MultiSwitchedUniFlow {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
@@ -28,17 +34,23 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         }
         leaf ingressFcPortSet {
             type leafref {
-                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_ingressFcPort/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf egressFcPortSet {
             type leafref {
-                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_egressFcPort/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf id {
             type string;
         }
+    }
+    list IngressFcPortSet {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_IngressFcPortSet;
     }
     grouping G_IngressFcPortSet {
         status current;
@@ -47,12 +59,24 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             type string;
         }
     }
+    list EgressFcPortSet {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_EgressFcPortSet;
+    }
     grouping G_EgressFcPortSet {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
         leaf id {
             type string;
         }
+    }
+    list ConfigurationAndSwitchControl {
+        key 'id uuid';
+        config true;
+        ordered-by system;
+        uses G_ConfigurationAndSwitchControl;
     }
     grouping G_ConfigurationAndSwitchControl {
         status deprecated;
@@ -78,6 +102,12 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             type string;
         }
     }
+    list FcSpec {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_FcSpec;
+    }
     grouping G_FcSpec {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_GlobalClass;
@@ -89,7 +119,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             min-elements 1;
         }
         list switchControl {
-            key 'id';
+            key 'id uuid';
             config true;
             ordered-by system;
             uses G_ConfigurationAndSwitchControl;
@@ -103,18 +133,16 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         }
         leaf fcSwitchGroupSpec {
             type leafref {
-                path '/ConfigurationGroupSpec/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConfigurationGroupSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         container ltpAssociationRule {
             config true;
             uses G_LtpAssociationRule;
         }
-        leaf id {
-            type string;
-        }
     }
     list ConfigurationGroupSpec {
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ConfigurationGroupSpec;
@@ -134,6 +162,15 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             config true;
             uses G_LtpAssociationRule;
         }
+        leaf id {
+            type string;
+        }
+    }
+    list ControlRule {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_ControlRule;
     }
     grouping G_ControlRule {
         status deprecated;
@@ -145,24 +182,30 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             type string;
         }
     }
+    list FcPortSetSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_FcPortSetSpec;
+    }
     grouping G_FcPortSetSpec {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
         leaf-list ingressFcPortSet {
             ordered-by system;
             type leafref {
-                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_ingressFcPort/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf-list egressFcPortSet {
             ordered-by system;
             type leafref {
-                path '/ConfigurationGroupSpec/fcSpec/multiSwitchedUniFlow/_egressFcPort/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf ltpAssociationRule {
             type leafref {
-                path '/ConfigurationGroupSpec/fcSpec/ltpAssociationRule/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf role {
@@ -173,17 +216,34 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             type string;
         }
     }
+    list LtpAssociationRule {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_LtpAssociationRule;
+    }
     grouping G_LtpAssociationRule {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        leaf id {
+            type string;
+        }
     }
     list SwitchPropertySpec_Pac {
+        key 'id';
         status deprecated;
         config true;
+        leaf id {
+            type string;
+        }
     }
     list IngressFcPortSetSpec_Pac {
+        key 'id';
         status deprecated;
         config true;
+        leaf id {
+            type string;
+        }
     }
     list LpSpec {
         key 'id';
@@ -221,20 +281,41 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             type string;
         }
     }
+    list ClientSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_ClientSpec;
+    }
     grouping G_ClientSpec {
         status deprecated;
         leaf-list _mappingInteractionRuleRefList {
             ordered-by system;
             type leafref {
-                path '/LpSpec/_adapterPropertySpecList/_mappingInteractionRuleList/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:MappingInteractionRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
+        leaf id {
+            type string;
+        }
+    }
+    list MappingInteractionRule {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_MappingInteractionRule;
     }
     grouping G_MappingInteractionRule {
         status deprecated;
         leaf id {
             type string;
         }
+    }
+    list TerminationSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_TerminationSpec;
     }
     grouping G_TerminationSpec {
         status deprecated;
@@ -245,6 +326,12 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf id {
             type string;
         }
+    }
+    list AdapterPropertySpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_AdapterPropertySpec;
     }
     grouping G_AdapterPropertySpec {
         status deprecated;
@@ -257,7 +344,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _mappingInteractionRuleRefList {
             ordered-by system;
             type leafref {
-                path '/LpSpec/_adapterPropertySpecList/_mappingInteractionRuleList/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:MappingInteractionRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         list _mappingInteractionRuleList {
@@ -269,6 +356,12 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf id {
             type string;
         }
+    }
+    list PoolPropertySpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_PoolPropertySpec;
     }
     grouping G_PoolPropertySpec {
         status deprecated;
@@ -283,35 +376,65 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _adapterPropertySpecRefList {
             ordered-by system;
             type leafref {
-                path '/LpSpec/_adapterPropertySpecList/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AdapterPropertySpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf id {
             type string;
         }
     }
+    list ConnectionSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_ConnectionSpec;
+    }
     grouping G_ConnectionSpec {
         status deprecated;
+        leaf id {
+            type string;
+        }
+    }
+    list ConnectionPointAndAdapterSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_ConnectionPointAndAdapterSpec;
     }
     grouping G_ConnectionPointAndAdapterSpec {
         status deprecated;
         leaf _connectionSpec {
             type leafref {
-                path '/LpSpec/_terminationSpec/_connectionSpec/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf id {
             type string;
         }
+    }
+    list ProviderViewSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_ProviderViewSpec;
     }
     grouping G_ProviderViewSpec {
         status deprecated;
         leaf-list _poolPropertySpecList {
             ordered-by system;
             type leafref {
-                path '/LpSpec/_adapterPropertySpecList/_poolPropertySpecList/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:PoolPropertySpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
+        leaf id {
+            type string;
+        }
+    }
+    list ServerSpec {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_ServerSpec;
     }
     grouping G_ServerSpec {
         status deprecated;
@@ -330,7 +453,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _lpSpecList {
             ordered-by system;
             type leafref {
-                path '/LpSpec/id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
             min-elements 1;
         }
@@ -339,35 +462,44 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         }
     }
     list LinkSpec {
+        key 'id';
         config true;
         ordered-by system;
         uses G_LinkSpec;
     }
     grouping G_LinkSpec {
         status deprecated;
+        leaf id {
+            type string;
+        }
     }
     list AnyEntityInstance {
+        key 'id';
         status deprecated;
         config true;
         ordered-by system;
         leaf-list _profileRefList {
             ordered-by system;
             type leafref {
-                path '/ProfileInstance/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ProfileInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf _specRef {
             type leafref {
-                path '/SpecInstance/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf _class {
             type leafref {
-                path '/AnyEntityClass/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
+        }
+        leaf id {
+            type string;
         }
     }
     list ProfileInstance {
+        key 'id';
         config true;
         ordered-by system;
         uses G_ProfileInstance;
@@ -376,21 +508,25 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status deprecated;
         leaf _specInstanceRef {
             type leafref {
-                path '/SpecInstance/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf _profileClass {
             type leafref {
-                path '/ProfileClass/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ProfileClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf _class {
             type leafref {
-                path '/AnyEntityClass/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
+        }
+        leaf id {
+            type string;
         }
     }
     list SpecInstance {
+        key 'id';
         config true;
         ordered-by system;
         uses G_SpecInstance;
@@ -399,24 +535,32 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status deprecated;
         leaf specClass {
             type leafref {
-                path '/SpecClass/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
         }
         leaf _classRef {
             type leafref {
-                path '/AnyEntityClass/';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
             }
+        }
+        leaf id {
+            type string;
         }
     }
     list AnyEntityClass {
+        key 'id';
         config true;
         ordered-by system;
         uses G_AnyEntityClass;
     }
     grouping G_AnyEntityClass {
         status deprecated;
+        leaf id {
+            type string;
+        }
     }
     list SpecClass {
+        key 'id';
         config true;
         ordered-by system;
         uses G_SpecClass;
@@ -426,6 +570,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         uses G_AnyEntityClass;
     }
     list ProfileClass {
+        key 'id';
         config true;
         ordered-by system;
         uses G_ProfileClass;

@@ -1,7 +1,7 @@
 module CoreModel-CoreNetworkModule-TypeDefinitions {
     namespace "uri:onf:CoreModel-CoreNetworkModule-TypeDefinitions";
     prefix CoreModel-CoreNetworkModule-TypeDefinitions;
-    revision 2016-04-01{}
+    revision 2016-04-12{}
     typedef OperationalState {
         status obsolete;
         type enumeration {

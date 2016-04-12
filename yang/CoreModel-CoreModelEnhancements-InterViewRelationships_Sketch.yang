@@ -1,8 +1,9 @@
 module CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch {
     namespace "uri:onf:CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch";
     prefix CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch;
-    revision 2016-04-01{}
+    revision 2016-04-12{}
     list Sketch_FC {
+        key 'id';
         config true;
         ordered-by system;
         uses G_Sketch_FC;
@@ -11,17 +12,21 @@ module CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch {
         status deprecated;
         leaf _supportingFcInOtherViewRef {
             type leafref {
-                path '/Sketch_FC/';
+                path '/Sketch_FC/id';
             }
         }
         leaf-list _suportedFcInOtherView {
             ordered-by system;
             type leafref {
-                path '/Sketch_FC/';
+                path '/Sketch_FC/id';
             }
+        }
+        leaf id {
+            type string;
         }
     }
     list Sketch_LTP {
+        key 'id';
         config true;
         ordered-by system;
         uses G_Sketch_LTP;
@@ -30,14 +35,17 @@ module CoreModel-CoreModelEnhancements-InterViewRelationships_Sketch {
         status deprecated;
         leaf _supportingLtpInOtherViewRef {
             type leafref {
-                path '/Sketch_LTP/';
+                path '/Sketch_LTP/id';
             }
         }
         leaf-list _supportedLtpInOtherViewRef {
             ordered-by system;
             type leafref {
-                path '/Sketch_LTP/';
+                path '/Sketch_LTP/id';
             }
+        }
+        leaf id {
+            type string;
         }
     }
 }

@@ -1,14 +1,12 @@
 module CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed {
     namespace "uri:onf:CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed";
     prefix CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed;
-    import CoreModel-CoreNetworkModule-ObjectClasses {
-        prefix CoreModel-CoreNetworkModule-ObjectClasses;
-    }
     import CoreModel-CoreNetworkModule-TypeDefinitions {
         prefix CoreModel-CoreNetworkModule-TypeDefinitions;
     }
-    revision 2016-04-01{}
+    revision 2016-04-12{}
     list ProfileProxy {
+        key 'id';
         config true;
         ordered-by system;
         uses G_ProfileProxy;
@@ -29,32 +27,15 @@ Not all parameters need be selected and applied.";
             config true;
             uses G_ControlParameters;
         }
-    }
-    grouping G_ConfigurationAndSwitchController {
-        status deprecated;
-        leaf SwichRule {
+        leaf id {
             type string;
-            description "A sketch of the presence of complex rules governing the switch behavior.";
         }
-        leaf-list _fcSwitchRefList {
-            description "The switch being controlled.";
-            ordered-by system;
-            type leafref {
-                path '/CoreModel-CoreNetworkModule-ObjectClasses:FcRoute/_fcList/_fcSwitchList/';
-            }
-        }
-        container _controlParameters {
-            description "The control parameters to be aplied if local parameters are used rather than profiles";
-            config true;
-            uses G_ControlParameters;
-        }
-        leaf-list _profileProxyRef {
-            description "Applied profiles.";
-            ordered-by system;
-            type leafref {
-                path '/ProfileProxy/';
-            }
-        }
+    }
+    list ControlParameters {
+        key 'id';
+        config true;
+        ordered-by system;
+        uses G_ControlParameters;
     }
     grouping G_ControlParameters {
         status deprecated;
@@ -74,15 +55,8 @@ Not all parameters need be selected and applied.";
             type uint64;
             description "This attribute indicates the time, in seconds, between declaration of signal degrade or signal fail, and the initialization of the protection switching algorithm. Valid values are integers in units of seconds.";
         }
-    }
-    list ConfigurationGroup {
-        status deprecated;
-        config true;
-        list _configurationAndSwitchControlRefList {
-            description "A controller operating in the scope defined.";
-            config true;
-            ordered-by system;
-            uses G_ConfigurationAndSwitchController;
+        leaf id {
+            type string;
         }
     }
 }
