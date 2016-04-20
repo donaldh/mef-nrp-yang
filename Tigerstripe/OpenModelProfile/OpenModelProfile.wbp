@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<profile compatibilityLevel="1.2" name="Open Model Profile" version="1.0">
+  <description>NO_DESCRIPTION</description>
+  <defaultPrimitiveType/>
+  <stereotypes>
+    <stereotype name="OpenModelAttribute" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="true" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+      </scope>
+      <attributes>
+        <attribute name="attributeValueChangeNotification" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="NA"/>
+            <value label="NO"/>
+            <value label="YES"/>
+          </values>
+        </attribute>
+        <attribute name="isInvariant" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile
+This should be of type Boolean</description>
+        </attribute>
+        <attribute name="valueRange" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+        <attribute name="partOfObjectKey" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile
+This should be of type Integer</description>
+        </attribute>
+        <attribute name="unit" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+        <attribute name="support" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="CONDITIONAL"/>
+            <value label="CONDITIONAL_MANDATORY"/>
+            <value label="CONDITIONAL_OPTIONAL"/>
+            <value label="MANDATORY"/>
+            <value label="OPTIONAL"/>
+          </values>
+        </attribute>
+        <attribute name="condition" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+      </attributes>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="OpenModelClass" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+      </scope>
+      <attributes>
+        <attribute name="objectCreationNotification" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="NA"/>
+            <value label="NO"/>
+            <value label="YES"/>
+          </values>
+        </attribute>
+        <attribute name="objectDeletionNotification" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="NA"/>
+            <value label="NO"/>
+            <value label="YES"/>
+          </values>
+        </attribute>
+        <attribute name="support" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="CONDITIONAL"/>
+            <value label="CONDITIONAL_MANDATORY"/>
+            <value label="CONDITIONAL_OPTIONAL"/>
+            <value label="MANDATORY"/>
+            <value label="OPTIONAL"/>
+          </values>
+        </attribute>
+        <attribute name="condition" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+      </attributes>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="OpenModelOperation" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="true" label="false" associationEnd="false" return="false"/>
+      <attributes>
+        <attribute name="isOperationIdempotent" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile
+This should be of type Boolean</description>
+        </attribute>
+        <attribute name="isAtomic" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile
+This should be of type Boolean</description>
+        </attribute>
+        <attribute name="support" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="CONDITIONAL"/>
+            <value label="CONDITIONAL_MANDATORY"/>
+            <value label="CONDITIONAL_OPTIONAL"/>
+            <value label="MANDATORY"/>
+            <value label="OPTIONAL"/>
+          </values>
+        </attribute>
+        <attribute name="condition" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+      </attributes>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="OpenModelParameter" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="false" label="false" associationEnd="false" return="false"/>
+      <attributes>
+        <attribute name="valueRange" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+        <attribute name="support" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="CONDITIONAL"/>
+            <value label="CONDITIONAL_MANDATORY"/>
+            <value label="CONDITIONAL_OPTIONAL"/>
+            <value label="MANDATORY"/>
+            <value label="OPTIONAL"/>
+          </values>
+        </attribute>
+        <attribute name="condition" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+      </attributes>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Names" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Choice" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="PassedByReference" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="false" label="false" associationEnd="false" return="false"/>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="NamedBy" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.metamodel.IDependencyArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="StrictComposite" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Cond" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+      </scope>
+      <attributes>
+        <attribute name="condition" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+      </attributes>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Experimental" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="true" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IPackageArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="LikelyToChange" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="true" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IPackageArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Preliminary" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="true" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IPackageArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Obsolete" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="true" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IPackageArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Example" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="true" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IPackageArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Faulty" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="true" attribute="false" method="true" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IPackageArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact</artifactLevelType>
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="OpenModelInterface" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.ISessionArtifact</artifactLevelType>
+      </scope>
+      <attributes>
+        <attribute name="support" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="CONDITIONAL"/>
+            <value label="CONDITIONAL_MANDATORY"/>
+            <value label="CONDITIONAL_OPTIONAL"/>
+            <value label="MANDATORY"/>
+            <value label="OPTIONAL"/>
+          </values>
+        </attribute>
+        <attribute name="condition" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+      </attributes>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="OpenModelNotification" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false"/>
+      <attributes>
+        <attribute name="triggerConditionList" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+        <attribute name="support" kind="2" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+          <values>
+            <value label="CONDITIONAL"/>
+            <value label="CONDITIONAL_MANDATORY"/>
+            <value label="CONDITIONAL_OPTIONAL"/>
+            <value label="MANDATORY"/>
+            <value label="OPTIONAL"/>
+          </values>
+        </attribute>
+        <attribute name="condition" kind="0" defaultValue="" isArray="false">
+          <description>Imported from OpenModel_Profile</description>
+        </attribute>
+      </attributes>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="PruneAndRefactor" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false"/>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Deprecated" version="" isVisible="true">
+      <description>Imported from OpenModel_Profile</description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false"/>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Yang_Root" version="" isVisible="true">
+      <description></description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+    <stereotype name="Yang_Containment" version="" isVisible="true">
+      <description></description>
+      <scope argument="false" attribute="false" method="false" label="false" associationEnd="false" return="false">
+        <artifactLevelType>org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact</artifactLevelType>
+      </scope>
+      <attributes/>
+      <requires/>
+      <excludes/>
+    </stereotype>
+  </stereotypes>
+  <primitiveTypes>
+    <primitiveType name="string">
+      <description>Autocreated by UML profile import</description>
+    </primitiveType>
+    <primitiveType name="unknown">
+      <description>Autocreated by UML profile import</description>
+    </primitiveType>
+  </primitiveTypes>
+  <properties>
+    <property type="org.eclipse.tigerstripe.workbench.internal.core.profile.properties.GlobalSettingsProperty" name="global.settings"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<globalSettings><property key="implementsRelationship" value="true"/><property key="argumentDirection" value="false"/><property key="osgiVersioning" value="false"/><property key="enableSessionFacadeOnInstDiag" value="true"/></globalSettings>]]></property>
+    <property type="org.eclipse.tigerstripe.workbench.internal.core.profile.properties.OssjLegacySettingsProperty" name="ossj.legacy.settings"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ossjLegacySettings><property key="useAttributesAsReference" value="false"/><property key="displayOssjSpecifics" value="false"/><property key="useRefbyModifiers" value="false"/><property key="enableInstanceMethods" value="false"/><property key="enableIsOptional" value="false"/><property key="useManagedEntitiesOnSession" value="false"/><property key="useEmittedNotificationsOnSession" value="false"/><property key="useExposedUpdateProceduresOnSession" value="false"/><property key="useNamedQueriesOnSession" value="false"/></ossjLegacySettings>]]></property>
+    <property type="org.eclipse.tigerstripe.workbench.internal.core.profile.properties.CoreArtifactSettingsProperty" name="artifacts.core.settings"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<coreArtifactsSettings><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IAssociationClassArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IDatatypeArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IDependencyArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IEnumArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IEventArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IExceptionArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IManagedEntityArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IPackageArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IPrimitiveTypeArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IQueryArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.ISessionArtifact">true</details><details artifactType="org.eclipse.tigerstripe.workbench.model.deprecated_.IUpdateProcedureArtifact">true</details></coreArtifactsSettings>]]></property>
+  </properties>
+</profile>
