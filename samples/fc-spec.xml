@@ -1,0 +1,6 @@
+<FcSpec xmlns="uri:onf:CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule" xmlns:nrp="uri:onf:NRP_Interface-ObjectClasses-NRP_SpecPackage">
+  <uuid>sample-spec</uuid>
+  <nrp:NRP_EdgeCeFcSpec>
+    <nrp:nrp_ceVlanIdPreservation>true</nrp:nrp_ceVlanIdPreservation>
+  </nrp:NRP_EdgeCeFcSpec>
+</FcSpec>
