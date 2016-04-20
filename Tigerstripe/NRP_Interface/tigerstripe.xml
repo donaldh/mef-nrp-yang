@@ -16,10 +16,10 @@
 <plugin disableLogging="false" enabled="true" groupId="Cisco Systems" logLevel="3" pluginId="xmp-yang-generator(1.2.95.qualifier)" version="1.2.95.qualifier">
 <property name="contact">Ken Chambers kchamber@cisco.com\nChris Hartley chrhartl@cisco.com</property>
 <property name="implementation">src/main/resources</property>
+<property name="yangPrefix">mef-nrp</property>
 <property name="organization">Cisco Systems\n170 West Tasman Drive\nSan Jose, CA 95134-1706\nUSA</property>
-<property name="yangPrefix">Please_Set_The_Prefix_Property_On_The_Generator_Plugin</property>
-<property name="isXmpModel">false</property>
 <property name="namespace">urn:cisco:params:xml:ns:yang:xmpim</property>
+<property name="isXmpModel">false</property>
 <property name="revisionDate">2014-01-01</property>
 <property name="defaultStringLength">0</property>
 </plugin>
