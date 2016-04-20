@@ -10,6 +10,9 @@ module NRP_Interface-ObjectClasses-NRP_SpecPackage {
     import NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
         prefix NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage;
     }
+    import CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule {
+        prefix CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule;
+    }
     revision 2016-04-12{}
     list NRP_TerminationSpec {
         key 'id';
@@ -292,15 +295,21 @@ MEF 45, Section 8.2";
         config true;
         ordered-by system;
         uses G_NRP_EdgeCeFcSpec;
+        leaf uuid {
+            type string;
+        }
+    }
+    augment "/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:FcSpec" {
+      container NRP_EdgeCeFcSpec {
+        uses G_NRP_EdgeCeFcSpec;
+      }
     }
     grouping G_NRP_EdgeCeFcSpec {
-        uses G_NRP_CeFcSpec;
         list nrp_evcEndpoint {
             key 'id';
             config true;
             ordered-by system;
             uses G_NRP_EvcEndpoint_ConnAdaptSpec;
-            min-elements 1;
         }
         leaf-list nrp_ovcEndpoint {
             ordered-by system;
