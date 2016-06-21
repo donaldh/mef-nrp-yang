@@ -1,7 +1,9 @@
 mef-nrp-yang
 ============
 
-The yang directory contains all the YANG models that have been generated from the MEF NRP_Interface model using the xmi2yang tool.
+The yang directory contains hand-written YANG modules.
+
+The yang-gen directory contains all the YANG modules that have been generated from the MEF NRP_Interface model using the xmi2yang tool.
 
 ## xmi2yang
 
