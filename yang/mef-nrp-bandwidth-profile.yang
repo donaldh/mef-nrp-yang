@@ -1,0 +1,102 @@
+module mef-nrp-bandwidth-profile {
+  namespace "urn:mef:nrp-bandwidth-profile";
+  prefix nrp-bwp;
+
+  import mef-nrp-types {
+    prefix nrp-types;
+  }
+
+  revision 2016-06-21 {
+  }
+
+  grouping G_NRP_BwpFlowRank {
+    leaf nrp_bwpFlowRankInEnvelope {
+      type nrp-types:NRP_NaturalNumber;
+    }
+    container nrp_bwpflow {
+      config true;
+      uses G_NRP_BwpFlow;
+    }
+  }
+
+  container nrp-envelopes {
+    list nrp-envelope {
+      key 'nrp_envelopeId';
+      config true;
+      ordered-by system;
+      uses G_NRP_Envelope;
+    }
+  }
+
+  grouping G_NRP_Envelope {
+    leaf nrp_envelopeId {
+      type string;
+    }
+    leaf nrp_couplingFlagForIndexZero {
+      type nrp-types:NRP_NaturalNumber;
+      description "Coupling flag for index zero. 0 for NO and 1 for YES (overflow Green tokens can be used as
+Yellow tokens)";
+    }
+    container nrp_bwpflowrank {
+      config true;
+      uses G_NRP_BwpFlowRank;
+    }
+  }
+
+  grouping G_NRP_BwpFlow {
+    leaf nrp_bwpFlowIndex {
+      type nrp-types:NRP_PositiveInteger;
+      description "The index i=1,2,…,n is used to index the Bandwidth Profile Flow among all Bandwidth Profile
+Flows that are mapped to a given Envelope";
+    }
+    leaf nrp_cir {
+      type nrp-types:NRP_NaturalNumber;
+      description "Committed Information Rate that limits the average rate of frames that will be declared
+Green. In bits per second.";
+    }
+    leaf nrp_cirMax {
+      type nrp-types:NRP_NaturalNumber;
+      description "Maximum Committed Information Rate that limits the rate of tokens added to the committed token
+bucket. In bits per second.";
+    }
+    leaf nrp_cbs {
+      type nrp-types:NRP_NaturalNumber;
+      description "Committed Burst Size that limits the maximum number of bytes available for a burst of frames
+that will be declared Green, in bytes,";
+    }
+    leaf nrp_eir {
+      type nrp-types:NRP_NaturalNumber;
+      description "Excess Information Rate that limits the average rate of frames that will be declared Yellow, in
+bits per second.";
+    }
+    leaf nrp_eirMax {
+      type nrp-types:NRP_NaturalNumber;
+      description "Maximum Excess Infor-mation Rate that Limits the rate of tokens added to the excess token
+bucket, in bits per second.";
+    }
+    leaf nrp_ebs {
+      type nrp-types:NRP_NaturalNumber;
+      description "Excessive Burst Size that limits the maximum number of bytes available for a burst of frames
+that will be declared Yellow, in bytes.";
+    }
+    leaf nrp_couplingFlag {
+      type nrp-types:NRP_NaturalNumber;
+      description "Coupling Flag that Determines if overflow Green tokens can be used as Yellow tokens. Value 0 for
+NO and value 1 for YES.";
+    }
+    leaf nrp_colorMode {
+      type nrp-types:NRP_ColorMode;
+      description "Color Mode that Indicates whether the Color Identifier of the frame is considered by the
+Bandwidth Profile Algorithm.";
+    }
+    leaf nrp_rank {
+      type nrp-types:NRP_PositiveInteger;
+      description "Bandwidth prorile flow rank in an associated Envelope.";
+    }
+    leaf nrp_tokenRequestOffset {
+      type nrp-types:NRP_NaturalNumber;
+      description "Adjusts the number of tokens requested for each external interface frame.";
+    }
+  }
+
+}
