@@ -1,0 +1,69 @@
+module onf-core-specs {
+  namespace "urn:onf:core-specs";
+  prefix onf-cs;
+
+  import network-topology {
+    prefix nt;
+  }
+
+  revision 2016-06-21 {
+  }
+
+  grouping ltp-ref {
+    leaf topology {
+      type nt:topology-ref;
+    }
+    leaf node {
+      type nt:node-ref;
+    }
+    leaf tp {
+      type nt:tp-ref;
+    }
+  }
+
+  container fc-specs {
+    list fc-spec {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_FcSpec;
+    }
+  }
+
+  grouping G_FcSpec {
+    status current;
+    leaf uuid {
+      type string;
+    }
+    list fcPortSpec {
+      key 'uuid';
+      config true;
+      ordered-by system;
+      uses G_FcPortSetSpec;
+    }
+  }
+
+  grouping G_FcPortSetSpec {
+    status current;
+    leaf uuid {
+      type string;
+    }
+    list ingressFcPortSet {
+      ordered-by system;
+      key 'topology node tp';
+      config true;
+      uses ltp-ref;
+    }
+    list egressFcPortSet {
+      ordered-by system;
+      key 'topology node tp';
+      config true;
+      uses ltp-ref;
+    }
+    leaf role {
+      type string;
+      default true;
+    }
+  }
+
+}
