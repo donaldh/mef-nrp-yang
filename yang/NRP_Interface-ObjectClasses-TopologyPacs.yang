@@ -4,10 +4,7 @@ module NRP_Interface-ObjectClasses-TopologyPacs {
     import CoreModel-CoreNetworkModule-TypeDefinitions {
         prefix CoreModel-CoreNetworkModule-TypeDefinitions;
     }
-    import CoreModel-CoreNetworkModule-ObjectClasses {
-        prefix CoreModel-CoreNetworkModule-ObjectClasses;
-    }
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     grouping G_TransferCost_Pac {
         list costCharacteristicList {
             description "The list of costs where each cost relates to some aspect of the TopologicalEntity.";
@@ -38,9 +35,7 @@ module NRP_Interface-ObjectClasses-TopologyPacs {
         leaf-list _ltpRefList {
             description "Lists the LTPs that define the layer protocol transition of the transitional link.";
             ordered-by system;
-            type leafref {
-                path '/CoreModel-CoreNetworkModule-ObjectClasses:LogicalTerminationPoint/CoreModel-CoreNetworkModule-ObjectClasses:uuid';
-            }
+            type string;
             min-elements 1;
         }
     }
@@ -61,7 +56,7 @@ Applies to TDM systems (and not packet).";
         }
         list queuingLatencyList {
             description "The effect on the latency of a queuing process. This only has significant effect for packet based systems and has a complex characteristic.";
-            key 'id';
+            key 'trafficProperty';
             config true;
             ordered-by system;
             uses CoreModel-CoreNetworkModule-TypeDefinitions:G_QueuingLatency;
@@ -110,7 +105,7 @@ Does not apply to TDM as the TDM protocols maintain strict order.";
         }
         list capacityAssignedToUserView {
             description "Capacity already assigned";
-            key 'id';
+            key 'totalSize';
             config true;
             ordered-by system;
             uses CoreModel-CoreNetworkModule-TypeDefinitions:G_Capacity;
@@ -154,7 +149,7 @@ Does not apply to TDM as the TDM protocols maintain strict order.";
     grouping G_Validation_Pac {
         list validationMechanismList {
             description "Provides details of the specific validation mechanism(s) used to confirm the presence of an intended topologicalEntity.";
-            key 'id';
+            key 'validationMechanism';
             config true;
             ordered-by system;
             uses CoreModel-CoreNetworkModule-TypeDefinitions:G_ValidationMechanism;

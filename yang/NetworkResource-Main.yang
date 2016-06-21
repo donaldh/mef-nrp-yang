@@ -1,0 +1,28 @@
+module NetworkResource-Main {
+    namespace "uri:onf:NetworkResource-Main";
+    prefix NetworkResource-Main;
+    revision 2016-06-21{}
+    list CeOvc_Pac {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_CeOvc_Pac;
+    }
+    grouping G_CeOvc_Pac {
+        leaf maxNumOfEnniEndPoint {
+            type string;
+        }
+        leaf sVlanPcpPreservation {
+            type boolean;
+        }
+        leaf sVlanDeiPreservation {
+            type boolean;
+        }
+        leaf availableMegLevel {
+            type string;
+        }
+        leaf uuid {
+            type string;
+        }
+    }
+}

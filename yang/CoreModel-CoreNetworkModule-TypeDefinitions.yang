@@ -1,7 +1,7 @@
 module CoreModel-CoreNetworkModule-TypeDefinitions {
     namespace "uri:onf:CoreModel-CoreNetworkModule-TypeDefinitions";
     prefix CoreModel-CoreNetworkModule-TypeDefinitions;
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     typedef OperationalState {
         status obsolete;
         type enumeration {
@@ -68,9 +68,6 @@ Depending upon the importance of the traffic being routed different risk charact
             type string;
             description "Method for identifying units of capacity via some numbering scheme.";
         }
-        leaf id {
-            type string;
-        }
     }
     grouping G_ValidationMechanism {
         leaf validationMechanism {
@@ -85,9 +82,6 @@ Depending upon the importance of the traffic being routed different risk charact
             type string;
             description "Quality of validation (i.e. how likely is the stated validation to be invalid)";
         }
-        leaf id {
-            type string;
-        }
     }
     grouping G_QueuingLatency {
         leaf trafficProperty {
@@ -97,9 +91,6 @@ Depending upon the importance of the traffic being routed different risk charact
         leaf latencyForTrafficWithProperty {
             type string;
             description "The specific queuing latency for the traffic property.";
-        }
-        leaf id {
-            type string;
         }
     }
     typedef LayerProtocolName {

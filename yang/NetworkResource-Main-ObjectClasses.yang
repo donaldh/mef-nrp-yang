@@ -4,7 +4,10 @@ module NetworkResource-Main-ObjectClasses {
     import CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule {
         prefix CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule;
     }
-    revision 2016-04-12{}
+    import NetworkResource-Main {
+        prefix NetworkResource-Main;
+    }
+    revision 2016-06-21{}
     grouping G_CeLPSpec {
         uses CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:G_LpSpec;
     }
@@ -14,10 +17,7 @@ module NetworkResource-Main-ObjectClasses {
     grouping G_CeConnPtAndAdaptSpec {
         uses CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:G_ConnectionPointAndAdapterSpec;
     }
-    list CeLtpSpec {
-        key 'id';
-        config true;
-        ordered-by system;
+    augment "/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpSpec" {
         uses G_CeLtpSpec;
     }
     grouping G_CeLtpSpec {
@@ -26,54 +26,155 @@ module NetworkResource-Main-ObjectClasses {
     grouping G_CeEndPointLpSpec {
         uses G_CeLPSpec;
     }
-    list CeSpUniLpSpec {
-        key 'id';
+    list CeSpUniLpPac {
+        key 'uuid';
         config true;
-        uses G_CeUniLpSpec;
+        ordered-by system;
+        uses G_CeSpUniLpPac;
+    }
+    grouping G_CeSpUniLpPac {
+        leaf serviceProviderUniId {
+            type string;
+        }
+        leaf maxFrameSize {
+            type string;
+        }
+        leaf maxNumOfEvcs {
+            type string;
+        }
+        leaf serviceMultiplexingEnabled {
+            type boolean;
+        }
+        leaf bundlingEnabled {
+            type boolean;
+        }
+        leaf allToOneBundlingEnabled {
+            type boolean;
+        }
+        leaf untaggedAndPriorityTaggedCeVlanId {
+            type string;
+        }
+        leaf l2cpAddressSet {
+            type string;
+        }
+        leaf l2cpPeering {
+            type string;
+        }
+        leaf tokenShareEnabled {
+            type boolean;
+        }
+        leaf uuid {
+            type string;
+        }
     }
     list CeEvcEndPointLpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeEndPointLpSpec;
+        leaf cosMappingType {
+            type string;
+        }
+        leaf sourceMacAddressLimit {
+            type string;
+        }
+        leaf eecMappingType {
+            type string;
+        }
+        leaf aggLinkDepth {
+            type string;
+        }
+        leaf evcEndPointMap {
+            type string;
+        }
+        leaf subscriberMegMipEnabled {
+            type boolean;
+        }
+        leaf testMegEnabled {
+            type boolean;
+        }
     }
     list CeEnniOvcEndPointLpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeEndPointLpSpec;
     }
     list CeUniOvcEndPoint {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeEndPointLpSpec;
     }
-    grouping G_CeUniTerminSpec {
+    list CeUniTerminSpec {
+        key 'uuid';
+        config true;
         uses G_CeTerminSpec;
+        container _cespuniterminpac {
+            config true;
+            uses G_CeSpUniTerminPac;
+        }
+        container _ceopuniterminpac {
+            config true;
+            uses G_CeOpUniTerminPac;
+        }
     }
-    list CeSpUniTerminSpec {
-        key 'id';
+    list CeSpUniTerminPac {
+        key 'uuid';
         config true;
-        uses G_CeUniTerminSpec;
+        ordered-by system;
+        uses G_CeSpUniTerminPac;
     }
-    list CeOpUniTerminSpec {
-        key 'id';
+    grouping G_CeSpUniTerminPac {
+        leaf uuid {
+            type string;
+        }
+    }
+    list CeOpUniTerminPac {
+        key 'uuid';
         config true;
-        uses G_CeUniTerminSpec;
+        ordered-by system;
+        uses G_CeOpUniTerminPac;
     }
-    grouping G_CeUniConnPtAndAdaptSpec {
+    grouping G_CeOpUniTerminPac {
+        leaf uuid {
+            type string;
+        }
+    }
+    list CeUniConnPtAndAdaptSpec {
+        key 'uuid';
+        config true;
         uses G_CeConnPtAndAdaptSpec;
+        container _cespuniconnptandadaptpac {
+            config true;
+            uses G_CeSpUniConnPtAndAdaptPac;
+        }
+        container _ceopuniconnptandadaptpac {
+            config true;
+            uses G_CeOpUniConnPtAndAdaptPac;
+        }
     }
-    list CeSpUniConnPtAndAdaptSpec {
-        key 'id';
+    list CeSpUniConnPtAndAdaptPac {
+        key 'uuid';
         config true;
-        uses G_CeUniConnPtAndAdaptSpec;
+        ordered-by system;
+        uses G_CeSpUniConnPtAndAdaptPac;
     }
-    list CeOpUniConnPtAndAdaptSpec {
-        key 'id';
+    grouping G_CeSpUniConnPtAndAdaptPac {
+        leaf uuid {
+            type string;
+        }
+    }
+    list CeOpUniConnPtAndAdaptPac {
+        key 'uuid';
         config true;
-        uses G_CeUniConnPtAndAdaptSpec;
+        ordered-by system;
+        uses G_CeOpUniConnPtAndAdaptPac;
+    }
+    grouping G_CeOpUniConnPtAndAdaptPac {
+        leaf uuid {
+            type string;
+        }
     }
     list CeEvcEndPointConnPtAndAdaptSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeEndPointConnPtAndAdaptSpec;
     }
@@ -81,60 +182,91 @@ module NetworkResource-Main-ObjectClasses {
         uses G_CeConnPtAndAdaptSpec;
     }
     list CeEnniLpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeLPSpec;
     }
     list CeInniLpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeLPSpec;
     }
     list CeUniOvcEndPointConnPtAndAdaptSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeEndPointConnPtAndAdaptSpec;
     }
     list CeEnniOvcEndPointConnPtAndAdaptSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeEndPointConnPtAndAdaptSpec;
     }
-    grouping G_CeUniLpSpec {
-        uses G_CeLPSpec;
-    }
-    list CeOpUniLpSpec {
-        key 'id';
-        config true;
-        uses G_CeUniLpSpec;
-    }
-    list CeEtyLpSpec {
-        key 'id';
+    list CeUniLpSpec {
+        key 'uuid';
         config true;
         uses G_CeLPSpec;
+        container _cespunilppac {
+            config true;
+            uses G_CeSpUniLpPac;
+        }
+        container _ceopunilppac {
+            config true;
+            uses G_CeOpUniLpPac;
+        }
+        leaf elmiEnabled {
+            type boolean;
+        }
     }
-    list CeEvcFcPortSetSpec {
-        key 'id';
+    list CeOpUniLpPac {
+        key 'uuid';
         config true;
         ordered-by system;
-        uses G_CeEvcFcPortSetSpec;
+        uses G_CeOpUniLpPac;
+    }
+    grouping G_CeOpUniLpPac {
+        leaf uuid {
+            type string;
+        }
+    }
+    list CeEtyAggrLpSpec {
+        key 'uuid';
+        config true;
+        uses G_CeLPSpec;
+        leaf-list phyTypePerLink {
+            ordered-by system;
+            type string;
+        }
+        leaf-list syncModePerLink {
+            ordered-by system;
+            type string;
+            min-elements 1;
+        }
+        leaf numberOfLinks {
+            type string;
+        }
+        leaf resiliencyOfLinks {
+            type string;
+        }
+        leaf portConvsIdToAggLinkMap {
+            type string;
+        }
+        leaf oamEnabledOnAllLinks {
+            type boolean;
+        }
+        leaf megEnabledOnAllLinks {
+            type boolean;
+        }
     }
     grouping G_CeEvcFcPortSetSpec {
         uses G_CeFcPortSetSpec;
     }
-    list CeFcSpec {
-        key 'uuid';
-        config true;
-        ordered-by system;
+    augment "/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:FcSpec" {
         uses G_CeFcSpec;
     }
     grouping G_CeFcSpec {
         uses CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:G_FcSpec;
     }
-    list CeFcPortSetSpec {
-        key 'id';
-        config true;
-        ordered-by system;
+    augment "/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:FcPortSetSpec" {
         uses G_CeFcPortSetSpec;
     }
     grouping G_CeFcPortSetSpec {
@@ -151,32 +283,35 @@ module NetworkResource-Main-ObjectClasses {
         uses G_CeFcSpec;
     }
     list CeOvcFcPortSetSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeFcPortSetSpec;
     }
     list CeEthFrameAggregateLpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeLPSpec;
+        leaf oamEnabled {
+            type boolean;
+        }
     }
     list CeEthFrameFlowLpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeLPSpec;
     }
     list CeEthFrameAggregateTerminSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeTerminSpec;
     }
     list CeEthFrameAggregateConnPtAndAdaptSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeConnPtAndAdaptSpec;
     }
     list CeEthFrameFlowConnPtAndAdaptLpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_CeConnPtAndAdaptSpec;
     }
@@ -184,12 +319,34 @@ module NetworkResource-Main-ObjectClasses {
         key 'uuid';
         config true;
         uses G_CeFcSpec;
-    }
-    list CeEthFcPortSetSpec {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_CeEthFcPortSetSpec;
+        leaf connectionType {
+            type string;
+        }
+        leaf unicastFrameDelivery {
+            type string;
+        }
+        leaf multicastFrameDelivery {
+            type string;
+        }
+        leaf broadcastFrameDelivery {
+            type string;
+        }
+        leaf ceVlanIdPreservation {
+            type string;
+        }
+        leaf ceVlanPcpPreservation {
+            type boolean;
+        }
+        leaf ceVlanDeiPreservation {
+            type boolean;
+        }
+        leaf maxNumOfEndPoint {
+            type string;
+        }
+        container ceovc_pac {
+            config true;
+            uses NetworkResource-Main:G_CeOvc_Pac;
+        }
     }
     grouping G_CeEthFcPortSetSpec {
         uses G_CeFcPortSetSpec;

@@ -4,15 +4,14 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
     import CoreModel-CoreFoundationModule-StateModel {
         prefix CoreModel-CoreFoundationModule-StateModel;
     }
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     grouping G_Name {
         list nameList {
             description "List of names.";
-            key 'theValue';
+            key 'valueName';
             config true;
             ordered-by system;
             uses G_NameAndValue;
-            min-elements 1;
         }
     }
     list GlobalClass {
@@ -30,7 +29,7 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
             description "An identifier that is unique in the context of some scope that is less than the global scope.
 
 (consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself unique, and immutable. The identifier therefore represents the identity of the entity/role. An identifier carries no semantics with respect to the purpose of the entity.)";
-            key 'theValue';
+            key 'valueName';
             config true;
             ordered-by system;
             uses G_NameAndValue;
@@ -42,6 +41,12 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
 (consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself globally unique, and immutable. An identifier carries no semantics with respect to the purpose or state of the entity)";
         }
     }
+    list LocalClass {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_LocalClass;
+    }
     grouping G_LocalClass {
         uses G_Name;
         uses G_Label;
@@ -51,17 +56,19 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
             description "An identifier that is unique in the context of some scope that is less than the global scope.
 
 (consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself unique, and immutable. The identifier therefore represents the identity of the entity/role. An identifier carries no semantics with respect to the purpose of the entity.)";
-            key 'theValue';
+            key 'valueName';
             config true;
             ordered-by system;
             uses G_NameAndValue;
-            min-elements 1;
+        }
+        leaf uuid {
+            type string;
         }
     }
     grouping G_Label {
         list labelList {
             description "List of labels.";
-            key 'theValue';
+            key 'valueName';
             config true;
             ordered-by system;
             uses G_NameAndValue;
@@ -70,7 +77,7 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
     grouping G_Extension {
         list extensionList {
             description "List of simple name-value extentions";
-            key 'theValue';
+            key 'valueName';
             config true;
             ordered-by system;
             uses G_NameAndValue;
@@ -106,7 +113,7 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
             type string;
             description "The name of the value. The value need not have a name.";
         }
-        leaf theValue {
+        leaf value {
             type string;
             description "The value";
         }
@@ -119,6 +126,12 @@ module CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
         leaf _globalClassRef {
             type leafref {
                 path '/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:GlobalClass/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:uuid';
+            }
+            description "The scope of the name uniqueness";
+        }
+        leaf _localClassRef {
+            type leafref {
+                path '/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:LocalClass/CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:uuid';
             }
             description "The scope of the name uniqueness";
         }

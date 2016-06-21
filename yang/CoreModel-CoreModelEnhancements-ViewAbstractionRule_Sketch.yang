@@ -1,17 +1,13 @@
 module CoreModel-CoreModelEnhancements-ViewAbstractionRule_Sketch {
     namespace "uri:onf:CoreModel-CoreModelEnhancements-ViewAbstractionRule_Sketch";
     prefix CoreModel-CoreModelEnhancements-ViewAbstractionRule_Sketch;
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     list ViewAbstractionRules {
-        key 'id';
         status deprecated;
         config true;
         ordered-by system;
         leaf-list __ltpRelatestToLtpInOtherView {
             ordered-by system;
-            type string;
-        }
-        leaf id {
             type string;
         }
     }

@@ -90,7 +90,8 @@ Depending upon the importance of the traffic being routed different risk charact
           </packagedElement>
           <packagedElement xmi:type="uml:DataType" xmi:id="_CxSZ0K4AEeSXJ6XI-2nsRw" name="Capacity">
             <ownedComment xmi:type="uml:Comment" xmi:id="_wXPmoGaqEeWrX_JIGzXlSg" annotatedElement="_CxSZ0K4AEeSXJ6XI-2nsRw">
-              <body>Informtion on capacity of a particular TopologicalEntity.</body>
+              <body>&lt;p>Informtion on capacity of a particular TopologicalEntity.&lt;/p>
+</body>
             </ownedComment>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_Jsq3kK4AEeSXJ6XI-2nsRw" name="totalSize" visibility="public">
               <ownedComment xmi:type="uml:Comment" xmi:id="_5lnasGaqEeWrX_JIGzXlSg" annotatedElement="_Jsq3kK4AEeSXJ6XI-2nsRw">
@@ -124,9 +125,6 @@ Depending upon the importance of the traffic being routed different risk charact
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0WGoEMDWEeSoNOrYOfaryg"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0WmXUMDWEeSoNOrYOfaryg" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_1hr-0PgAEeWZLpttORC7Bw" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:DataType" xmi:id="_HSrdMK4HEeSXJ6XI-2nsRw" name="ValidationMechanism">
             <ownedComment xmi:type="uml:Comment" xmi:id="_QhT6YGarEeWrX_JIGzXlSg" annotatedElement="_HSrdMK4HEeSXJ6XI-2nsRw">
@@ -156,9 +154,6 @@ Depending upon the importance of the traffic being routed different risk charact
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cz-bcK4HEeSXJ6XI-2nsRw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c0SkgK4HEeSXJ6XI-2nsRw" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="__JGlAPgAEeWZLpttORC7Bw" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:DataType" xmi:id="_OK-YkLFmEeSZUdYfPSdgew" name="QueuingLatency">
             <ownedComment xmi:type="uml:Comment" xmi:id="_pfX6cGarEeWrX_JIGzXlSg" annotatedElement="_OK-YkLFmEeSZUdYfPSdgew">
@@ -179,9 +174,6 @@ Depending upon the importance of the traffic being routed different risk charact
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u6ossLFmEeSZUdYfPSdgew" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u7m9ELFmEeSZUdYfPSdgew" value="1"/>
-            </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_ukBCEPgAEeWZLpttORC7Bw" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedAttribute>
           </packagedElement>
         </packagedElement>
@@ -427,7 +419,7 @@ Aggregation is used as for the FD to allow changes in hierarchy.&#xD;
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i7UzkVYfEeOVGaP4lO41SQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i7UzklYfEeOVGaP4lO41SQ" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_A8SFwFYgEeOVGaP4lO41SQ" name="_fcRouteRefList" type="_9UVusFYfEeOVGaP4lO41SQ" association="_A8YzcFYgEeOVGaP4lO41SQ">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_A8SFwFYgEeOVGaP4lO41SQ" name="_fcRouteRefList" type="_9UVusFYfEeOVGaP4lO41SQ" aggregation="composite" association="_A8YzcFYgEeOVGaP4lO41SQ">
             <ownedComment xmi:type="uml:Comment" xmi:id="_uRMkYGXfEeWrX_JIGzXlSg" annotatedElement="_A8SFwFYgEeOVGaP4lO41SQ">
               <body>An FC object can have zero or more routes, each of which is defined as a list of lower level FC objects describing the flow across the network.</body>
             </ownedComment>
@@ -504,9 +496,6 @@ The domain is bounded by off-network links.</body>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oGqnflLNEeO75dO39GbF8Q"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oGqnfVLNEeO75dO39GbF8Q" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_PQVJQPfrEeWZLpttORC7Bw" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_oGqnjVLNEeO75dO39GbF8Q" name="Link">
           <ownedComment xmi:type="uml:Comment" xmi:id="_qWxW8GZzEeWrX_JIGzXlSg" annotatedElement="_oGqnjVLNEeO75dO39GbF8Q">
@@ -541,15 +530,6 @@ This association provides a direct summarization of the association via LinkPort
             </ownedComment>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oGqnmFLNEeO75dO39GbF8Q" value="2"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oGqnl1LNEeO75dO39GbF8Q" value="*"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_DjfvMKNSEeS9Obpdy8FCjA" name="_linkSpecRef" type="_-Npr4KNREeS9Obpdy8FCjA" association="_DjpgMKNSEeS9Obpdy8FCjA">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_fVjIYGZ3EeWrX_JIGzXlSg" annotatedElement="_DjfvMKNSEeS9Obpdy8FCjA">
-              <body>References the specification that describes the capability and internal structure of of the Link (e.g. asymmetric flows between points).&#xD;
-The specification allows interpretation of LinkPort role and switch configurations etc.&#xD;
-See also ForwardingConstruct.</body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DjfvMaNSEeS9Obpdy8FCjA" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DjfvMqNSEeS9Obpdy8FCjA" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_RtwvMKT3EeS9Obpdy8FCjA" name="_aggregatedLink" type="_oGqnjVLNEeO75dO39GbF8Q" aggregation="shared" association="_Rt55IKT3EeS9Obpdy8FCjA">
             <ownedComment xmi:type="uml:Comment" xmi:id="_RTIEkGZ5EeWrX_JIGzXlSg" annotatedElement="_RtwvMKT3EeS9Obpdy8FCjA">
@@ -608,15 +588,51 @@ An LTP can be independent of an NE.</body>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DyAG8VYmEeOVGaP4lO41SQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DyAG8lYmEeOVGaP4lO41SQ" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_K9TN0PfrEeWZLpttORC7Bw" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_oGqoB1LNEeO75dO39GbF8Q" name="SdnController" isAbstract="true">
           <ownedComment xmi:type="uml:Comment" xmi:id="_Zm4WkGaREeWrX_JIGzXlSg" annotatedElement="_oGqoB1LNEeO75dO39GbF8Q">
             <body>Represents the SDN controller.</body>
           </ownedComment>
           <generalization xmi:type="uml:Generalization" xmi:id="_KLgm8I2uEeO38ZmbECnvbg" general="_iVJ1kI2wEeO38ZmbECnvbg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_b_lUAFYgEeOVGaP4lO41SQ" name="FcPort">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1C1FsGXeEeWrX_JIGzXlSg" annotatedElement="_b_lUAFYgEeOVGaP4lO41SQ">
+            <body>The association of the FC to LTPs is made via FcPorts.&#xD;
+The FcPort object class models the access to the FC function. &#xD;
+The traffic forwarding between the associated FcPorts of the FC depends upon the type of FC and may be associated with FcSwitch object instances.  &#xD;
+In cases where there is resilience the FcPort may convey the resilience role of the access to the FC. &#xD;
+It can represent a protected (resilient/reliable) point or a protecting (unreliable working or protection) point.&#xD;
+The FcPort replaces the Protection Unit of a traditional protection model. &#xD;
+The ForwadingConstruct can be considered as a component and the FcPort as a Port on that component</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_YKPO0I2yEeO38ZmbECnvbg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxS2AFYnEeOVGaP4lO41SQ" name="_ltpRefList" type="_eEpDMFX4EeOVGaP4lO41SQ" association="_Ixb_8FYnEeOVGaP4lO41SQ">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_bMP-cGZ8EeWrX_JIGzXlSg" annotatedElement="_IxS2AFYnEeOVGaP4lO41SQ">
+              <body>The FcPort may be associated with more than one LTP when the FcPort is bidirectional and the LTPs are unidirectional.&#xD;
+Multiple Ltp&#xD;
+- Bidirectional FcPort to two Uni Ltps&#xD;
+Zero Ltp&#xD;
+- BreakBeforeMake transition&#xD;
+- Planned Ltp not yet in place&#xD;
+- Off-network LTP referenced through other mechanism</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IxS2AVYnEeOVGaP4lO41SQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IxS2AlYnEeOVGaP4lO41SQ" value="2"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ykm6QFeGEeOVGaP4lO41SQ" name="role" visibility="public" type="_DUU_sGZ_EeWrX_JIGzXlSg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_y3OwkGZ9EeWrX_JIGzXlSg" annotatedElement="_Ykm6QFeGEeOVGaP4lO41SQ">
+              <body>Each FcPort of the FC has a role (e.g., working, protection, protected, symmetric, hub, spoke, leaf, root)  in the context of the FC with respect to the FC function. </body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y9kz4FeGEeOVGaP4lO41SQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y915oFeGEeOVGaP4lO41SQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_1HbEgEDAEeWQeOKbNUpP9A" name="fcPortDirection" visibility="public" type="_2WpC8EC7EeWxhL2B6Peg6A">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_diIzMGY5EeWrX_JIGzXlSg" annotatedElement="_1HbEgEDAEeWQeOKbNUpP9A">
+              <body>The orientation of defined flow at the FcPort.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dd7akEDCEeWQeOKbNUpP9A" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DeNHYEDCEeWQeOKbNUpP9A" value="1"/>
+          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_gROecFYXEeOVGaP4lO41SQ" name="LayerProtocol">
           <ownedComment xmi:type="uml:Comment" xmi:id="_IX_aMFlqEeSUSuWjwt7kSQ" annotatedElement="_gROecFYXEeOVGaP4lO41SQ">
@@ -669,14 +685,14 @@ Note the cleint LTP association should provide all necessary detail hence this a
 The structure of LTP supports all transport protocols including circuit and packet forms.</body>
           </ownedComment>
           <generalization xmi:type="uml:Generalization" xmi:id="_4XUzoI2tEeO38ZmbECnvbg" general="_iVJ1kI2wEeO38ZmbECnvbg"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_D4N9IFX5EeOVGaP4lO41SQ" name="_serverLtpRefList" type="_eEpDMFX4EeOVGaP4lO41SQ" association="_D4V48FX5EeOVGaP4lO41SQ">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_D4N9IFX5EeOVGaP4lO41SQ" name="_serverLtpRefList" type="_eEpDMFX4EeOVGaP4lO41SQ" aggregation="composite" association="_D4V48FX5EeOVGaP4lO41SQ">
             <ownedComment xmi:type="uml:Comment" xmi:id="_otFNMGYvEeWrX_JIGzXlSg" annotatedElement="_D4N9IFX5EeOVGaP4lO41SQ">
               <body>References contained LTPs representing servers of this LTP in an inverse multiplexing configuration (e.g. VCAT).</body>
             </ownedComment>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_D4OkMFX5EeOVGaP4lO41SQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_D4OkMVX5EeOVGaP4lO41SQ" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_3Y4zAFYWEeOVGaP4lO41SQ" name="_clientLtpRefList" type="_eEpDMFX4EeOVGaP4lO41SQ" association="_3ZB88FYWEeOVGaP4lO41SQ">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_3Y4zAFYWEeOVGaP4lO41SQ" name="_clientLtpRefList" type="_eEpDMFX4EeOVGaP4lO41SQ" aggregation="shared" association="_3ZB88FYWEeOVGaP4lO41SQ">
             <ownedComment xmi:type="uml:Comment" xmi:id="_9A4dkGYvEeWrX_JIGzXlSg" annotatedElement="_3Y4zAFYWEeOVGaP4lO41SQ">
               <body>References contained LTPs representing client traffic of this LTP for normal cases of multiplexing.</body>
             </ownedComment>
@@ -698,7 +714,7 @@ Reduces clutter removing the need for two additional LTPs and an FC with a pair 
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CHM6YVYYEeOVGaP4lO41SQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CHM6YlYYEeOVGaP4lO41SQ" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_TkuhMFYYEeOVGaP4lO41SQ" name="_peerLtpRef" type="_eEpDMFX4EeOVGaP4lO41SQ" association="_Tk5gUFYYEeOVGaP4lO41SQ">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TkuhMFYYEeOVGaP4lO41SQ" name="_peerLtpRef" type="_eEpDMFX4EeOVGaP4lO41SQ" aggregation="composite" association="_Tk5gUFYYEeOVGaP4lO41SQ">
             <ownedComment xmi:type="uml:Comment" xmi:id="_-sn7wGYxEeWrX_JIGzXlSg" annotatedElement="_TkuhMFYYEeOVGaP4lO41SQ">
               <body>References contained LTPs representing the reversal of orientation of flow where two LTPs are associated via a non-adjustable enabled forwarding and where the referenced LTP is fully dependent on the this LTP.</body>
             </ownedComment>
@@ -749,14 +765,82 @@ Note that depending on the service supported by an FC, an the FC can have multip
 Also applicable where NE level ForwardingDomain may be decomposed into subordinate ForwardingDomains. Applies to both virtual and real NE cases.</body>
           </ownedComment>
           <generalization xmi:type="uml:Generalization" xmi:id="_Y17QII2yEeO38ZmbECnvbg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_CadNIFaSEeOVGaP4lO41SQ" name="_fcList" type="_oGqmC1LNEeO75dO39GbF8Q" association="_Cakh4FaSEeOVGaP4lO41SQ">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CadNIFaSEeOVGaP4lO41SQ" name="_fcList" type="_oGqmC1LNEeO75dO39GbF8Q" aggregation="shared" association="_Cakh4FaSEeOVGaP4lO41SQ">
             <ownedComment xmi:type="uml:Comment" xmi:id="_chP0AGXjEeWrX_JIGzXlSg" annotatedElement="_CadNIFaSEeOVGaP4lO41SQ">
               <body>The list of FCs describing the route of an FC.</body>
             </ownedComment>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CadNIVaSEeOVGaP4lO41SQ" value="2"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CadNIlaSEeOVGaP4lO41SQ" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_3dGaEPfpEeWZLpttORC7Bw" name="id"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_a97NQFYhEeOVGaP4lO41SQ" name="FcSwitch">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TOCGsHcNEeO5z_IJj67BhQ" annotatedElement="_a97NQFYhEeOVGaP4lO41SQ">
+            <body>The FcSwitch object class models the switched forwarding of traffic (traffic flow) between FcPorts and is present where there is protection functionality in the FC. &#xD;
+If an FC exposes protection (having two FcPorts that provide alternative identical inputs/outputs), the FC will have one or more associated FcSwitch objects to represent the alternative flow choices visible at the edge of the FC.&#xD;
+The FC switch represents and defines a protection switch structure encapsulated in the FC. &#xD;
+Essentially performs the functoion of the Protection Group in a traditional model. &#xD;
+Associates to 2 or more FcPorts each playing the role of a Protection Unit. &#xD;
+One or more protection FcPorts (standby/backup) provide protection for one or more working (i.e. regular/main/preferred) FcPorts where eith protection or working can feed one or more protected FcPort.&#xD;
+May be used in revertive or non-revertive (symmetric) mode. &#xD;
+When in revertive mode may define waitToRestore time.&#xD;
+May be used in one of several modes including source switch, destination switched, source and destination switched etc (covering cases such as  1+1 ane 1:1).. &#xD;
+May be lockout (prevented from switching), force switched or manual switched.&#xD;
+Will indicate switch state and change of state.</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_ZiVDII2yEeO38ZmbECnvbg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn6FLNEeO75dO39GbF8Q" name="holdOffTime" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn6VLNEeO75dO39GbF8Q" annotatedElement="_oGqn6FLNEeO75dO39GbF8Q">
+              <body>This attribute indicates the time, in seconds, between declaration of unacceptable quality of signal on the currently selected FcPort, and the initialization of the protection switching algorithm. </body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn5lLNEeO75dO39GbF8Q" name="waitToRestoreTime" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn51LNEeO75dO39GbF8Q" annotatedElement="_oGqn5lLNEeO75dO39GbF8Q">
+              <body>If the protection system is revertive, this attribute specifies the amount of time, in seconds, to wait after the preferred FcPort returns to an acceptable state of operaion (e.g a fault has cleared) before restoring traffic to that preferred FcPort. </body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn6lLNEeO75dO39GbF8Q" name="protType" visibility="public" type="_c3Hu8Gb3EeWrX_JIGzXlSg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn61LNEeO75dO39GbF8Q" annotatedElement="_oGqn6lLNEeO75dO39GbF8Q">
+              <body>Indicates the protection scheme that is used for the ProtectionGroup.</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn41LNEeO75dO39GbF8Q" name="operType" visibility="public" type="_oGqjf1LNEeO75dO39GbF8Q">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn5FLNEeO75dO39GbF8Q" annotatedElement="_oGqn41LNEeO75dO39GbF8Q">
+              <body>This attribute whether or not the protection scheme is revertive or non-revertive. </body>
+            </ownedComment>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_oGqn5VLNEeO75dO39GbF8Q" name="REVERTIVE" type="_oGqjf1LNEeO75dO39GbF8Q" instance="_oGqjgVLNEeO75dO39GbF8Q"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_2PdiYI8lEeOw_ste-s6RrA" name="_selectedFcPortRefList" type="_b_lUAFYgEeOVGaP4lO41SQ" association="_2QhSUI8lEeOw_ste-s6RrA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_nSVYYGYtEeWrX_JIGzXlSg" annotatedElement="_2PdiYI8lEeOw_ste-s6RrA">
+              <body>Indicates which points are selected by the switch.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2PdiYY8lEeOw_ste-s6RrA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2PdiYo8lEeOw_ste-s6RrA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DEWvsJozEeOyHKqw-cQ_eg" name="_profileProxyRefList" type="_rgdnkJoyEeOyHKqw-cQ_eg" association="_DEn1cJozEeOyHKqw-cQ_eg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_lR8-8GaDEeWrX_JIGzXlSg" annotatedElement="_DEWvsJozEeOyHKqw-cQ_eg">
+              <body>Provides a set of predefined values for switch control in place of the direct values avaiable via the FcSwitch or via _configurationAndSwitchControl </body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DEWvsZozEeOyHKqw-cQ_eg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DEWvspozEeOyHKqw-cQ_eg" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_1EKuQJo5EeOyHKqw-cQ_eg" name="_configurationAndSwitchControlRef" type="_k1gHQJo5EeOyHKqw-cQ_eg" association="_1EVGUJo5EeOyHKqw-cQ_eg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_FA9ZQGaCEeWrX_JIGzXlSg" annotatedElement="_1EKuQJo5EeOyHKqw-cQ_eg">
+              <body>A multi-switch controller external to the FcSwitch.&#xD;
+The multi-switch controller coordinates multiple switches in the same FC or across multple FCs</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1EKuQZo5EeOyHKqw-cQ_eg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1EKuQpo5EeOyHKqw-cQ_eg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_tbetAJ4HEeOO3om500DFKg" name="_configurationAndSwitchControl" type="_k1gHQJo5EeOyHKqw-cQ_eg" aggregation="composite" association="_tboeAJ4HEeOO3om500DFKg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_LAwYgGaCEeWrX_JIGzXlSg" annotatedElement="_tbetAJ4HEeOO3om500DFKg">
+              <body>A switch controller encapsulated in the FcSwitch.&#xD;
+</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tbetAZ4HEeOO3om500DFKg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tbetAp4HEeOO3om500DFKg" value="1"/>
+          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_H7c0oIgjEeOIkJV2fkx5ZA" name="LinkPort">
           <ownedComment xmi:type="uml:Comment" xmi:id="_g5HvwGZ-EeWrX_JIGzXlSg" annotatedElement="_H7c0oIgjEeOIkJV2fkx5ZA">
@@ -811,9 +895,6 @@ This attribute is used when an LTP cannot be referenced.</body>
             </ownedComment>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SQrE4EC8EeWxhL2B6Peg6A" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SQ8xsEC8EeWxhL2B6Peg6A" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_tq7BcPgBEeWZLpttORC7Bw" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_KsslQL7XEeSdssyZX-p90g" name="TopologyPacs">
@@ -878,8 +959,8 @@ Links that included details in this Pac are often referred to as Transitional Li
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yN3iEbA0EeSXJ6XI-2nsRw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yN3iErA0EeSXJ6XI-2nsRw" value="*"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_nursgPgBEeWZLpttORC7Bw" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_rJzKwCM-EeaXHrqB2x3c_w" name="uuid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_sVcR8JyzEeSaHrTY93cYuA" name="TransferTiming_Pac" isAbstract="true">
@@ -1069,118 +1150,60 @@ This abstract class is used as a modeling approach to apply packages of attribut
             </ownedAttribute>
           </packagedElement>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_b_lUAFYgEeOVGaP4lO41SQ" name="FcPort">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_1C1FsGXeEeWrX_JIGzXlSg" annotatedElement="_b_lUAFYgEeOVGaP4lO41SQ">
-            <body>The association of the FC to LTPs is made via FcPorts.&#xD;
-The FcPort object class models the access to the FC function. &#xD;
-The traffic forwarding between the associated FcPorts of the FC depends upon the type of FC and may be associated with FcSwitch object instances.  &#xD;
-In cases where there is resilience the FcPort may convey the resilience role of the access to the FC. &#xD;
-It can represent a protected (resilient/reliable) point or a protecting (unreliable working or protection) point.&#xD;
-The FcPort replaces the Protection Unit of a traditional protection model. &#xD;
-The ForwadingConstruct can be considered as a component and the FcPort as a Port on that component</body>
+        <packagedElement xmi:type="uml:Class" xmi:id="_T5-osJ4HEeOO3om500DFKg" name="ControlParameters">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g578MGj8EeWI2vxwuJqrJA" annotatedElement="_T5-osJ4HEeOO3om500DFKg">
+            <body>A list of control parameters to apply to a switch</body>
           </ownedComment>
-          <generalization xmi:type="uml:Generalization" xmi:id="_YKPO0I2yEeO38ZmbECnvbg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxS2AFYnEeOVGaP4lO41SQ" name="_ltpRefList" type="_eEpDMFX4EeOVGaP4lO41SQ" association="_Ixb_8FYnEeOVGaP4lO41SQ">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_bMP-cGZ8EeWrX_JIGzXlSg" annotatedElement="_IxS2AFYnEeOVGaP4lO41SQ">
-              <body>The FcPort may be associated with more than one LTP when the FcPort is bidirectional and the LTPs are unidirectional.&#xD;
-Multiple Ltp&#xD;
-- Bidirectional FcPort to two Uni Ltps&#xD;
-Zero Ltp&#xD;
-- BreakBeforeMake transition&#xD;
-- Planned Ltp not yet in place&#xD;
-- Off-network LTP referenced through other mechanism</body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IxS2AVYnEeOVGaP4lO41SQ"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IxS2AlYnEeOVGaP4lO41SQ" value="2"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ykm6QFeGEeOVGaP4lO41SQ" name="role" visibility="public" type="_DUU_sGZ_EeWrX_JIGzXlSg">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_y3OwkGZ9EeWrX_JIGzXlSg" annotatedElement="_Ykm6QFeGEeOVGaP4lO41SQ">
-              <body>Each FcPort of the FC has a role (e.g., working, protection, protected, symmetric, hub, spoke, leaf, root)  in the context of the FC with respect to the FC function. </body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y9kz4FeGEeOVGaP4lO41SQ" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y915oFeGEeOVGaP4lO41SQ" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_1HbEgEDAEeWQeOKbNUpP9A" name="fcPortDirection" visibility="public" type="_2WpC8EC7EeWxhL2B6Peg6A">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_diIzMGY5EeWrX_JIGzXlSg" annotatedElement="_1HbEgEDAEeWQeOKbNUpP9A">
-              <body>The orientation of defined flow at the FcPort.</body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dd7akEDCEeWQeOKbNUpP9A" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DeNHYEDCEeWQeOKbNUpP9A" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_Kx7WMPfpEeWZLpttORC7Bw" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_a97NQFYhEeOVGaP4lO41SQ" name="FcSwitch">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_TOCGsHcNEeO5z_IJj67BhQ" annotatedElement="_a97NQFYhEeOVGaP4lO41SQ">
-            <body>The FcSwitch object class models the switched forwarding of traffic (traffic flow) between FcPorts and is present where there is protection functionality in the FC. &#xD;
-If an FC exposes protection (having two FcPorts that provide alternative identical inputs/outputs), the FC will have one or more associated FcSwitch objects to represent the alternative flow choices visible at the edge of the FC.&#xD;
-The FC switch represents and defines a protection switch structure encapsulated in the FC. &#xD;
-Essentially performs the functoion of the Protection Group in a traditional model. &#xD;
-Associates to 2 or more FcPorts each playing the role of a Protection Unit. &#xD;
-One or more protection FcPorts (standby/backup) provide protection for one or more working (i.e. regular/main/preferred) FcPorts where eith protection or working can feed one or more protected FcPort.&#xD;
-May be used in revertive or non-revertive (symmetric) mode. &#xD;
-When in revertive mode may define waitToRestore time.&#xD;
-May be used in one of several modes including source switch, destination switched, source and destination switched etc (covering cases such as  1+1 ane 1:1).. &#xD;
-May be lockout (prevented from switching), force switched or manual switched.&#xD;
-Will indicate switch state and change of state.</body>
-          </ownedComment>
-          <generalization xmi:type="uml:Generalization" xmi:id="_ZiVDII2yEeO38ZmbECnvbg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn6FLNEeO75dO39GbF8Q" name="holdOffTime" visibility="public">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn6VLNEeO75dO39GbF8Q" annotatedElement="_oGqn6FLNEeO75dO39GbF8Q">
-              <body>This attribute indicates the time, in seconds, between declaration of unacceptable quality of signal on the currently selected FcPort, and the initialization of the protection switching algorithm. </body>
-            </ownedComment>
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn5lLNEeO75dO39GbF8Q" name="waitToRestoreTime" visibility="public">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn51LNEeO75dO39GbF8Q" annotatedElement="_oGqn5lLNEeO75dO39GbF8Q">
-              <body>If the protection system is revertive, this attribute specifies the amount of time, in seconds, to wait after the preferred FcPort returns to an acceptable state of operaion (e.g a fault has cleared) before restoring traffic to that preferred FcPort. </body>
-            </ownedComment>
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn6lLNEeO75dO39GbF8Q" name="protType" visibility="public" type="_c3Hu8Gb3EeWrX_JIGzXlSg">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn61LNEeO75dO39GbF8Q" annotatedElement="_oGqn6lLNEeO75dO39GbF8Q">
-              <body>Indicates the protection scheme that is used for the ProtectionGroup.</body>
-            </ownedComment>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_oGqn41LNEeO75dO39GbF8Q" name="operType" visibility="public" type="_oGqjf1LNEeO75dO39GbF8Q">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_oGqn5FLNEeO75dO39GbF8Q" annotatedElement="_oGqn41LNEeO75dO39GbF8Q">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eSmM4J4IEeOO3om500DFKg" name="operType" visibility="public" type="_oGqjf1LNEeO75dO39GbF8Q">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_eSmM4Z4IEeOO3om500DFKg" annotatedElement="_eSmM4J4IEeOO3om500DFKg">
               <body>This attribute whether or not the protection scheme is revertive or non-revertive. </body>
             </ownedComment>
-            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_oGqn5VLNEeO75dO39GbF8Q" name="REVERTIVE" type="_oGqjf1LNEeO75dO39GbF8Q" instance="_oGqjgVLNEeO75dO39GbF8Q"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ty_wkGj7EeWI2vxwuJqrJA"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_eSmM4p4IEeOO3om500DFKg" name="REVERTIVE" type="_oGqjf1LNEeO75dO39GbF8Q" instance="_oGqjgVLNEeO75dO39GbF8Q"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_2PdiYI8lEeOw_ste-s6RrA" name="_selectedFcPortRefList" type="_b_lUAFYgEeOVGaP4lO41SQ" association="_2QhSUI8lEeOw_ste-s6RrA">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_nSVYYGYtEeWrX_JIGzXlSg" annotatedElement="_2PdiYI8lEeOw_ste-s6RrA">
-              <body>Indicates which points are selected by the switch.</body>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eSxzEJ4IEeOO3om500DFKg" name="waitToRestoreTime" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_eSxzEZ4IEeOO3om500DFKg" annotatedElement="_eSxzEJ4IEeOO3om500DFKg">
+              <body>If the protection system is revertive, this attribute specifies the amount of time, in seconds, to wait after a fault clears before restoring traffic to the protected protectionUnit that initiated the switching. Valid values for this attribute are integers.</body>
             </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2PdiYY8lEeOw_ste-s6RrA" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2PdiYo8lEeOw_ste-s6RrA" value="*"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U9BTsGj7EeWI2vxwuJqrJA"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_DEWvsJozEeOyHKqw-cQ_eg" name="_profileProxyRefList" type="_rgdnkJoyEeOyHKqw-cQ_eg" association="_DEn1cJozEeOyHKqw-cQ_eg">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_lR8-8GaDEeWrX_JIGzXlSg" annotatedElement="_DEWvsJozEeOyHKqw-cQ_eg">
-              <body>Provides a set of predefined values for switch control in place of the direct values avaiable via the FcSwitch or via _configurationAndSwitchControl </body>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eS7kEJ4IEeOO3om500DFKg" name="protType" visibility="public" type="_c3Hu8Gb3EeWrX_JIGzXlSg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_eS7kEZ4IEeOO3om500DFKg" annotatedElement="_eS7kEJ4IEeOO3om500DFKg">
+              <body>Indicates the protection scheme that is used for the ProtectionGroup.</body>
             </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DEWvsZozEeOyHKqw-cQ_eg"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DEWvspozEeOyHKqw-cQ_eg" value="*"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VyLaEGj7EeWI2vxwuJqrJA"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_1EKuQJo5EeOyHKqw-cQ_eg" name="_configurationAndSwitchControlRef" type="_k1gHQJo5EeOyHKqw-cQ_eg" association="_1EVGUJo5EeOyHKqw-cQ_eg">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_FA9ZQGaCEeWrX_JIGzXlSg" annotatedElement="_1EKuQJo5EeOyHKqw-cQ_eg">
-              <body>A multi-switch controller external to the FcSwitch.&#xD;
-The multi-switch controller coordinates multiple switches in the same FC or across multple FCs</body>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eTFVEJ4IEeOO3om500DFKg" name="holdOffTime" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_eTFVEZ4IEeOO3om500DFKg" annotatedElement="_eTFVEJ4IEeOO3om500DFKg">
+              <body>This attribute indicates the time, in seconds, between declaration of signal degrade or signal fail, and the initialization of the protection switching algorithm. Valid values are integers in units of seconds.</body>
             </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1EKuQZo5EeOyHKqw-cQ_eg"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1EKuQpo5EeOyHKqw-cQ_eg" value="1"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WaWNUGj7EeWI2vxwuJqrJA"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_tbetAJ4HEeOO3om500DFKg" name="_configurationAndSwitchControl" type="_k1gHQJo5EeOyHKqw-cQ_eg" aggregation="composite" association="_tboeAJ4HEeOO3om500DFKg">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_LAwYgGaCEeWrX_JIGzXlSg" annotatedElement="_tbetAJ4HEeOO3om500DFKg">
-              <body>A switch controller encapsulated in the FcSwitch.&#xD;
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_fPOmcCNPEeaXHrqB2x3c_w" name="uuid">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_rgdnkJoyEeOyHKqw-cQ_eg" name="ProfileProxy">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_tgFPQGj6EeWI2vxwuJqrJA" annotatedElement="_rgdnkJoyEeOyHKqw-cQ_eg">
+            <body>A lightweight sketch placeholder for the profile model.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_v77tUJoyEeOyHKqw-cQ_eg" name="profileProxyMode" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="__8CNMGj6EeWI2vxwuJqrJA" annotatedElement="_v77tUJoyEeOyHKqw-cQ_eg">
+              <body>&lt;p>A parameter profile may be used in a number of different ways: - Forces the values on the target with no opportunity to see or override the values in the target - Sets the values on the target that can be seen on the target - Sets the values on the target and supports override on the target so the target can be set away from the value in the profile - etc&lt;/p>
 </body>
             </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tbetAZ4HEeOO3om500DFKg"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tbetAp4HEeOO3om500DFKg" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xR2XYJoyEeOyHKqw-cQ_eg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xSOx4JoyEeOyHKqw-cQ_eg" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_i9mV4ACCEeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_xZiBgJ4IEeOO3om500DFKg" name="_controlParameters" type="_T5-osJ4HEeOO3om500DFKg" aggregation="composite" association="_xZrLcJ4IEeOO3om500DFKg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_M1JNoGj7EeWI2vxwuJqrJA" annotatedElement="_xZiBgJ4IEeOO3om500DFKg">
+              <body>The control parameters that can be set int the profile and applied to the target.&#xD;
+Not all parameters need be selected and applied.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xZiBgZ4IEeOO3om500DFKg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZiBgp4IEeOO3om500DFKg" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_k1gHQJo5EeOyHKqw-cQ_eg" name="ConfigurationAndSwitchController">
@@ -1215,23 +1238,8 @@ The multi-switch controller coordinates multiple switches in the same FC or acro
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ec0FMZ4JEeOO3om500DFKg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ec0FMp4JEeOO3om500DFKg" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_zlvz4ACCEeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_Tvr28BBHEeS-tqfHkf_O5w" name="ConfigurationGroup">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_pCLOoGj8EeWI2vxwuJqrJA" annotatedElement="_Tvr28BBHEeS-tqfHkf_O5w">
-            <body>Represents a scope of control for one or more Controllers</body>
-          </ownedComment>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_sseEoBBHEeS-tqfHkf_O5w" name="_configurationAndSwitchControlRefList" type="_k1gHQJo5EeOyHKqw-cQ_eg" aggregation="composite" association="_ss6wkBBHEeS-tqfHkf_O5w">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_sgyDgGj8EeWI2vxwuJqrJA" annotatedElement="_sseEoBBHEeS-tqfHkf_O5w">
-              <body>A controller operating in the scope defined.</body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sseEoRBHEeS-tqfHkf_O5w"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sseEohBHEeS-tqfHkf_O5w" value="*"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_XBglQACsEeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mKwBYCM_EeaXHrqB2x3c_w" name="uuid">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedAttribute>
         </packagedElement>
       </packagedElement>
@@ -1600,7 +1608,7 @@ The semantic of each bit position will be defined in the Documentation field of 
               <ownedComment xmi:type="uml:Comment" xmi:id="_jHCa4GgVEeWmgIwAIZlYKQ" annotatedElement="_ajjMYI2uEeO38ZmbECnvbg">
                 <body>List of names.</body>
               </ownedComment>
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_csyJwI2uEeO38ZmbECnvbg" value="1"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_csyJwI2uEeO38ZmbECnvbg"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ctHg8I2uEeO38ZmbECnvbg" value="*"/>
             </ownedAttribute>
           </packagedElement>
@@ -1635,7 +1643,7 @@ Entity: Has identity, defined boundary, properties, functionality and lifecycle 
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IqKPUI22EeO38ZmbECnvbg" value="1"/>
             </ownedAttribute>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_k5nWYI2wEeO38ZmbECnvbg" name="LocalClass" isAbstract="true">
+          <packagedElement xmi:type="uml:Class" xmi:id="_k5nWYI2wEeO38ZmbECnvbg" name="LocalClass">
             <ownedComment xmi:type="uml:Comment" xmi:id="_fGPCcGgWEeWmgIwAIZlYKQ" annotatedElement="_k5nWYI2wEeO38ZmbECnvbg">
               <body>A LocalClass represents a Feature of an Entity. It is inseparable from a GlobalClass but is a distinct feature of that GlobalClass such that the instances of LocalClass are able to have associations to other instances..&#xD;
 Feature of an Entity: An inseparable, externally distinguishable part of an entity.&#xD;
@@ -1653,8 +1661,11 @@ The mandatory LocalId of the LocalClass instance is unique in the context of the
 &#xD;
 (consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself unique, and immutable. The identifier therefore represents the identity of the entity/role. An identifier carries no semantics with respect to the purpose of the entity.)</body>
               </ownedComment>
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GzHo0I3wEeO38ZmbECnvbg" value="1"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GzHo0I3wEeO38ZmbECnvbg"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GzfcQI3wEeO38ZmbECnvbg" value="*"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_W5Cx4CM_EeaXHrqB2x3c_w" name="uuid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_u0HQoI2wEeO38ZmbECnvbg" name="Label" isAbstract="true">
@@ -1726,7 +1737,7 @@ The mandatory LocalId of the LocalClass instance is unique in the context of the
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8XjTwI3tEeO38ZmbECnvbg"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8X2OsI3tEeO38ZmbECnvbg" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_ZUyfII3uEeO38ZmbECnvbg" name="theValue" visibility="public">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_ZUyfII3uEeO38ZmbECnvbg" name="value" visibility="public">
               <ownedComment xmi:type="uml:Comment" xmi:id="_oJBcIGgXEeWmgIwAIZlYKQ" annotatedElement="_ZUyfII3uEeO38ZmbECnvbg">
                 <body>The value</body>
               </ownedComment>
@@ -1747,6 +1758,13 @@ The mandatory LocalId of the LocalClass instance is unique in the context of the
               </ownedComment>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bhg_8o3vEeO38ZmbECnvbg"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bhg_843vEeO38ZmbECnvbg" value="1"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_NIlTsI28EeO38ZmbECnvbg" name="_localClassRef" type="_k5nWYI2wEeO38ZmbECnvbg" association="_NIvrwI28EeO38ZmbECnvbg">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_xxGJoGgXEeWmgIwAIZlYKQ" annotatedElement="_NIlTsI28EeO38ZmbECnvbg">
+                <body>The scope of the name uniqueness</body>
+              </ownedComment>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NIlTsY28EeO38ZmbECnvbg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NIlTso28EeO38ZmbECnvbg" value="1"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:DataType" xmi:id="_SU3Q4I30EeO38ZmbECnvbg" name="UniversalId">
@@ -1772,6 +1790,12 @@ The mandatory LocalId of the LocalClass instance is unique in the context of the
             <ownedEnd xmi:type="uml:Property" xmi:id="_mZnXQI21EeO38ZmbECnvbg" name="_localClass" type="_k5nWYI2wEeO38ZmbECnvbg" association="_mZyWYI21EeO38ZmbECnvbg">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mZnXQY21EeO38ZmbECnvbg"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mZnXQo21EeO38ZmbECnvbg" value="*"/>
+            </ownedEnd>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_NIvrwI28EeO38ZmbECnvbg" name="NameAndValueIsUniqueInScopeOfLocalClassInstance" memberEnd="_NIvrwY28EeO38ZmbECnvbg _NIlTsI28EeO38ZmbECnvbg">
+            <ownedEnd xmi:type="uml:Property" xmi:id="_NIvrwY28EeO38ZmbECnvbg" name="nameElement" type="_y7oy8I3tEeO38ZmbECnvbg" association="_NIvrwI28EeO38ZmbECnvbg">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NIvrwo28EeO38ZmbECnvbg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NIvrw428EeO38ZmbECnvbg" value="*"/>
             </ownedEnd>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_pXXx8I3uEeO38ZmbECnvbg" name="NameAndValueHasNameAndValueAuthority" memberEnd="_pXXx9I3uEeO38ZmbECnvbg _pXXx8Y3uEeO38ZmbECnvbg">
@@ -1972,73 +1996,11 @@ http://www.itu.int/rec/T-REC-X.731/en&#xD;
         <ownedComment xmi:type="uml:Comment" xmi:id="_r9ZDABBFEeS-tqfHkf_O5w">
           <body>Accounts for both ingress (=1) and egress (= 1..*)</body>
         </ownedComment>
-        <packagedElement xmi:type="uml:Class" xmi:id="_rgdnkJoyEeOyHKqw-cQ_eg" name="ProfileProxy">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_tgFPQGj6EeWI2vxwuJqrJA" annotatedElement="_rgdnkJoyEeOyHKqw-cQ_eg">
-            <body>A lightweight sketch placeholder for the profile model.</body>
-          </ownedComment>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_v77tUJoyEeOyHKqw-cQ_eg" name="profileProxyMode" visibility="public">
-            <ownedComment xmi:type="uml:Comment" xmi:id="__8CNMGj6EeWI2vxwuJqrJA" annotatedElement="_v77tUJoyEeOyHKqw-cQ_eg">
-              <body>A parameter profile may be used in a number of different ways:&#xD;
-- Forces the values on the target with no opportunity to see or override the values in the target&#xD;
-- Sets the values on the target that can be seen on the target&#xD;
-- Sets the values on the target and supports override on the target so the target can be set away from the value in the profile&#xD;
-- etc</body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xR2XYJoyEeOyHKqw-cQ_eg" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xSOx4JoyEeOyHKqw-cQ_eg" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_xZiBgJ4IEeOO3om500DFKg" name="_controlParameters" type="_T5-osJ4HEeOO3om500DFKg" aggregation="composite" association="_xZrLcJ4IEeOO3om500DFKg">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_M1JNoGj7EeWI2vxwuJqrJA" annotatedElement="_xZiBgJ4IEeOO3om500DFKg">
-              <body>The control parameters that can be set int the profile and applied to the target.&#xD;
-Not all parameters need be selected and applied.</body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xZiBgZ4IEeOO3om500DFKg"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZiBgp4IEeOO3om500DFKg" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_OzPDcACEEeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-        </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_8_BgcJpDEeOyHKqw-cQ_eg" name="controlChoosesSwitchPosition" memberEnd="_8_BgcZpDEeOyHKqw-cQ_eg _8-3vcJpDEeOyHKqw-cQ_eg">
           <ownedEnd xmi:type="uml:Property" xmi:id="_8_BgcZpDEeOyHKqw-cQ_eg" name="switchCoordinator" type="_k1gHQJo5EeOyHKqw-cQ_eg" association="_8_BgcJpDEeOyHKqw-cQ_eg">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8_BgcppDEeOyHKqw-cQ_eg" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8_Bgc5pDEeOyHKqw-cQ_eg" value="1"/>
           </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_T5-osJ4HEeOO3om500DFKg" name="ControlParameters">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_g578MGj8EeWI2vxwuJqrJA" annotatedElement="_T5-osJ4HEeOO3om500DFKg">
-            <body>A list of control parameters to apply to a switch</body>
-          </ownedComment>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_eSmM4J4IEeOO3om500DFKg" name="operType" visibility="public" type="_oGqjf1LNEeO75dO39GbF8Q">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_eSmM4Z4IEeOO3om500DFKg" annotatedElement="_eSmM4J4IEeOO3om500DFKg">
-              <body>This attribute whether or not the protection scheme is revertive or non-revertive. </body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ty_wkGj7EeWI2vxwuJqrJA"/>
-            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_eSmM4p4IEeOO3om500DFKg" name="REVERTIVE" type="_oGqjf1LNEeO75dO39GbF8Q" instance="_oGqjgVLNEeO75dO39GbF8Q"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_eSxzEJ4IEeOO3om500DFKg" name="waitToRestoreTime" visibility="public">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_eSxzEZ4IEeOO3om500DFKg" annotatedElement="_eSxzEJ4IEeOO3om500DFKg">
-              <body>If the protection system is revertive, this attribute specifies the amount of time, in seconds, to wait after a fault clears before restoring traffic to the protected protectionUnit that initiated the switching. Valid values for this attribute are integers.</body>
-            </ownedComment>
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U9BTsGj7EeWI2vxwuJqrJA"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_eS7kEJ4IEeOO3om500DFKg" name="protType" visibility="public" type="_c3Hu8Gb3EeWrX_JIGzXlSg">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_eS7kEZ4IEeOO3om500DFKg" annotatedElement="_eS7kEJ4IEeOO3om500DFKg">
-              <body>Indicates the protection scheme that is used for the ProtectionGroup.</body>
-            </ownedComment>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VyLaEGj7EeWI2vxwuJqrJA"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_eTFVEJ4IEeOO3om500DFKg" name="holdOffTime" visibility="public">
-            <ownedComment xmi:type="uml:Comment" xmi:id="_eTFVEZ4IEeOO3om500DFKg" annotatedElement="_eTFVEJ4IEeOO3om500DFKg">
-              <body>This attribute indicates the time, in seconds, between declaration of signal degrade or signal fail, and the initialization of the protection switching algorithm. Valid values are integers in units of seconds.</body>
-            </ownedComment>
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WaWNUGj7EeWI2vxwuJqrJA"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_oQ6vAACVEeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_Y0HAYJ4HEeOO3om500DFKg" name="SwitchCoordinatorOwnsControlParameters" memberEnd="_Y0HAYZ4HEeOO3om500DFKg _YzzeYJ4HEeOO3om500DFKg">
           <ownedEnd xmi:type="uml:Property" xmi:id="_Y0HAYZ4HEeOO3om500DFKg" name="switchCoordinator" type="_k1gHQJo5EeOyHKqw-cQ_eg" association="_Y0HAYJ4HEeOO3om500DFKg">
@@ -2057,6 +2019,18 @@ Not all parameters need be selected and applied.</body>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ec9PIp4JEeOO3om500DFKg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ec9PI54JEeOO3om500DFKg" value="*"/>
           </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Tvr28BBHEeS-tqfHkf_O5w" name="ConfigurationGroup">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pCLOoGj8EeWI2vxwuJqrJA" annotatedElement="_Tvr28BBHEeS-tqfHkf_O5w">
+            <body>Represents a scope of control for one or more Controllers</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_sseEoBBHEeS-tqfHkf_O5w" name="_configurationAndSwitchControlRefList" type="_k1gHQJo5EeOyHKqw-cQ_eg" aggregation="composite" association="_ss6wkBBHEeS-tqfHkf_O5w">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sgyDgGj8EeWI2vxwuJqrJA" annotatedElement="_sseEoBBHEeS-tqfHkf_O5w">
+              <body>A controller operating in the scope defined.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sseEoRBHEeS-tqfHkf_O5w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sseEohBHEeS-tqfHkf_O5w" value="*"/>
+          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_ss6wkBBHEeS-tqfHkf_O5w" name="configurationGroup_configurationAndSwitchControl_1" memberEnd="_ss6wkRBHEeS-tqfHkf_O5w _sseEoBBHEeS-tqfHkf_O5w">
           <ownedEnd xmi:type="uml:Property" xmi:id="_ss6wkRBHEeS-tqfHkf_O5w" name="configurationGroup" type="_Tvr28BBHEeS-tqfHkf_O5w" association="_ss6wkBBHEeS-tqfHkf_O5w">
@@ -2090,21 +2064,12 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q5MSUBBEEeS-tqfHkf_O5w" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q5fNQBBEEeS-tqfHkf_O5w" value="1"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_S0jkUPfzEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_vk9qgMrUEeOt57ZaJqAnzg" name="IngressFcPortSet">
               <generalization xmi:type="uml:Generalization" xmi:id="_0Cdv0Ev-EeWXgvUwfkuadg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_bTWVkPfzEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_x2_-kMrUEeOt57ZaJqAnzg" name="EgressFcPortSet">
               <generalization xmi:type="uml:Generalization" xmi:id="_0jGXsEv-EeWXgvUwfkuadg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_hTi9cPfzEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_4MF4YMrUEeOt57ZaJqAnzg" name="ConfigurationAndSwitchControl">
               <generalization xmi:type="uml:Generalization" xmi:id="_8FsmcEv-EeWXgvUwfkuadg" general="_iVJ1kI2wEeO38ZmbECnvbg"/>
@@ -2120,14 +2085,11 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q_7KoRBEEeS-tqfHkf_O5w" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q_7KohBEEeS-tqfHkf_O5w" value="*"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_wfYOcPfzEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_huOHsMrVEeOt57ZaJqAnzg" name="FcSpec">
               <generalization xmi:type="uml:Generalization" xmi:id="_62-wkEv-EeWXgvUwfkuadg" general="_iVJ1kI2wEeO38ZmbECnvbg"/>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_lyVdYMrVEeOt57ZaJqAnzg" name="multiSwitchedUniFlow" type="_nzCmUMrUEeOt57ZaJqAnzg" aggregation="composite" association="_lygcgMrVEeOt57ZaJqAnzg">
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lyVdYcrVEeOt57ZaJqAnzg" value="1"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lyVdYcrVEeOt57ZaJqAnzg"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lyVdYsrVEeOt57ZaJqAnzg" value="*"/>
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_tRU-gMrVEeOt57ZaJqAnzg" name="switchControl" type="_4MF4YMrUEeOt57ZaJqAnzg" aggregation="composite" association="_tRgksMrVEeOt57ZaJqAnzg">
@@ -2135,7 +2097,7 @@ Not all parameters need be selected and applied.</body>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tRU-gsrVEeOt57ZaJqAnzg" value="*"/>
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_F4DcoMrWEeOt57ZaJqAnzg" name="fcPortSpec" type="_EL4OsMrWEeOt57ZaJqAnzg" aggregation="composite" association="_F4ObwMrWEeOt57ZaJqAnzg">
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F4DcocrWEeOt57ZaJqAnzg" value="1"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F4DcocrWEeOt57ZaJqAnzg"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F4DcosrWEeOt57ZaJqAnzg" value="*"/>
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_o5PVMMrbEeOt57ZaJqAnzg" name="fcSwitchGroupSpec" type="_vxoYEMrVEeOt57ZaJqAnzg" association="_o5aUUMrbEeOt57ZaJqAnzg">
@@ -2161,18 +2123,12 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6ZBl0crbEeOt57ZaJqAnzg" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6ZBl0srbEeOt57ZaJqAnzg" value="1"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_HthIgACFEeaXtNCwPw29TA" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_BC32YMrWEeOt57ZaJqAnzg" name="ControlRule">
               <generalization xmi:type="uml:Generalization" xmi:id="_5NiGgEv-EeWXgvUwfkuadg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_pSR5kMrWEeOt57ZaJqAnzg" name="switchControl_switch_1">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pSR5kcrWEeOt57ZaJqAnzg" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pSR5ksrWEeOt57ZaJqAnzg" value="1"/>
-              </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_G3MacPfzEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_EL4OsMrWEeOt57ZaJqAnzg" name="FcPortSetSpec">
@@ -2196,15 +2152,9 @@ Not all parameters need be selected and applied.</body>
                   <value xsi:nil="true"/>
                 </defaultValue>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_ajD3MPfqEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_xI3CAMrbEeOt57ZaJqAnzg" name="LtpAssociationRule">
               <generalization xmi:type="uml:Generalization" xmi:id="_1M1RMEv-EeWXgvUwfkuadg" general="_k5nWYI2wEeO38ZmbECnvbg"/>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_NF5icACFEeaXtNCwPw29TA" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:AssociationClass" xmi:id="_d8DKUM96EeOwEItOulyh6w" name="IngressSwitchSelection" memberEnd="_d8DKUc96EeOwEItOulyh6w _d6lKsM96EeOwEItOulyh6w">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_rz8d8PFKEeOb0bs-xqaPmA" name="setMember" visibility="public">
@@ -2220,15 +2170,11 @@ Not all parameters need be selected and applied.</body>
               </ownedEnd>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_KWXB8PFMEeOb0bs-xqaPmA" name="SwitchPropertySpec-Pac">
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_ZNgYMACrEeaXtNCwPw29TA" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_R99SwCNREeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="_ZDdvkPFMEeOb0bs-xqaPmA" name="IngressFcPortSetSpec-Pac">
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_dXz1cACrEeaXtNCwPw29TA" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-              </ownedAttribute>
-            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ZDdvkPFMEeOb0bs-xqaPmA" name="IngressFcPortSetSpec-Pac" isAbstract="true"/>
             <packagedElement xmi:type="uml:AssociationClass" xmi:id="_Q575MBBEEeS-tqfHkf_O5w" name="EgressSwitchSelection" memberEnd="_Q575MRBEEeS-tqfHkf_O5w _Q4JwgBBEEeS-tqfHkf_O5w">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_1OgVMBvOEeSzeoKP7VQE4w" name="setMember" visibility="public">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1OgVMRvOEeSzeoKP7VQE4w" value="1"/>
@@ -2355,7 +2301,8 @@ Not all parameters need be selected and applied.</body>
           </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_ks0xML7VEeSdssyZX-p90g" name="Diagrams">
             <ownedComment xmi:type="uml:Comment" xmi:id="_ILMHcMrXEeOt57ZaJqAnzg">
-              <body>Switch will state reversion rules and options and ranges of delays allowed etc. Parameters will be ranges</body>
+              <body>&lt;p>Switch will state reversion rules and options and ranges of delays allowed etc. Parameters will be ranges&lt;/p>
+</body>
             </ownedComment>
             <ownedComment xmi:type="uml:Comment" xmi:id="_e7qOkMrXEeOt57ZaJqAnzg">
               <body>Ingress FcPort set will identify range of instances of this FcPort per FC of the type, optional priorities and the roles etc of the FcPort. Also expresses lock-out options.</body>
@@ -2364,15 +2311,11 @@ Not all parameters need be selected and applied.</body>
               <body>Fundamental behavior for ingress switch is traffic from ingress selected by switch passes through switchto all egresses.</body>
             </ownedComment>
             <ownedComment xmi:type="uml:Comment" xmi:id="_aE2McMreEeOt57ZaJqAnzg">
-              <body>SwitchControl provides control options for the switch and  or switch set and indicates whether the switch can be locked etc.</body>
+              <body>&lt;p>SwitchControl provides control options for the switch and or switch set and indicates whether the switch can be locked etc.&lt;/p>
+</body>
             </ownedComment>
             <ownedComment xmi:type="uml:Comment" xmi:id="_oVtqAMreEeOt57ZaJqAnzg">
-              <body>Rules such as:&#xD;
-- Always on&#xD;
-- No constraint&#xD;
-- If sw1 is on sw2 is null, if sw2 is on sw1 is null &#xD;
-- if sw1 in fcspec x is on then sw1 in fcspec y is off (in fcSwitchGroupSpec)&#xD;
-- if sw1 in fcspec x is selecting FcPortSet a member I then ...&#xD;
+              <body>&lt;p>Rules such as: - Always on - No constraint - If sw1 is on sw2 is null, if sw2 is on sw1 is null - if sw1 in fcspec x is on then sw1 in fcspec y is off (in fcSwitchGroupSpec) - if sw1 in fcspec x is selecting FcPortSet a member I then ...&lt;/p>
 </body>
             </ownedComment>
             <ownedComment xmi:type="uml:Comment" xmi:id="_wTm_cMxkEeONyOeN2Mx8mQ">
@@ -2413,8 +2356,8 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QIRpgRiZEeSh8KVgZCMyDw"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QIRpghiZEeSh8KVgZCMyDw" value="*"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_p-wJIPfqEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_44wtwCNBEeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_K6G_sBiSEeSh8KVgZCMyDw" name="ClientSpec">
@@ -2422,13 +2365,13 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gzlQkRiWEeSh8KVgZCMyDw"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gzlQkhiWEeSh8KVgZCMyDw" value="*"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_pEQ1gACrEeaXtNCwPw29TA" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_Lzr28CNTEeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_-M4psBiSEeSh8KVgZCMyDw" name="MappingInteractionRule">
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_bQn7QPf_EeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_5gXtECNREeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_JH4XoBiTEeSh8KVgZCMyDw" name="TerminationSpec">
@@ -2436,8 +2379,8 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3I3icRiUEeSh8KVgZCMyDw"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3I3ichiUEeSh8KVgZCMyDw" value="1"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_yxxd8PfqEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrkIUCNTEeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_OGNS0BiTEeSh8KVgZCMyDw" name="AdapterPropertySpec">
@@ -2453,8 +2396,8 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GuNDIRiWEeSh8KVgZCMyDw"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GuNDIhiWEeSh8KVgZCMyDw" value="*"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_At65oPf0EeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_tjiusCNREeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_cWBngBiTEeSh8KVgZCMyDw" name="PoolPropertySpec">
@@ -2473,13 +2416,13 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_psjm8RiXEeSh8KVgZCMyDw"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_psjm8hiXEeSh8KVgZCMyDw" value="*"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_WEploPf_EeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_0cfjgCNREeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_We3KYBiUEeSh8KVgZCMyDw" name="ConnectionSpec">
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_VE-44ACFEeaXtNCwPw29TA" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_eFxuQCNTEeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_bJaN8BiUEeSh8KVgZCMyDw" name="ConnectionPointAndAdapterSpec">
@@ -2487,8 +2430,8 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RB90QRmOEeSzeoKP7VQE4w"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RB90QhmOEeSzeoKP7VQE4w" value="1"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_bGrFIPfrEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_h2e_wCNTEeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_GntusBiYEeSh8KVgZCMyDw" name="ProviderViewSpec">
@@ -2496,22 +2439,22 @@ Not all parameters need be selected and applied.</body>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bc2xkRiYEeSh8KVgZCMyDw"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bc2xkhiYEeSh8KVgZCMyDw" value="*"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_vBV38ACrEeaXtNCwPw29TA" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_plc2kCNTEeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_MVTuMBiZEeSh8KVgZCMyDw" name="ServerSpec">
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_i30WIPf_EeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_81ICYCNREeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_BIroQBiaEeSh8KVgZCMyDw" name="LtpSpec">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_HPhqsBiaEeSh8KVgZCMyDw" name="_lpSpecList" type="_FU2nYBiSEeSh8KVgZCMyDw" isOrdered="true" aggregation="shared" association="_HP3B4BiaEeSh8KVgZCMyDw">
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HPhqsRiaEeSh8KVgZCMyDw" value="1"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HPhqsRiaEeSh8KVgZCMyDw"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPhqshiaEeSh8KVgZCMyDw" value="*"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_taAvEPfqEeWZLpttORC7Bw" name="id">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_90MtACNBEeaXHrqB2x3c_w" name="uuid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
             </packagedElement>
           </packagedElement>
@@ -2615,15 +2558,9 @@ Not all parameters need be selected and applied.</body>
             <ownedComment xmi:type="uml:Comment" xmi:id="_q3ZmoLA7EeSXJ6XI-2nsRw">
               <body>Describes the capabilities of the Link focussing on link asymmetries and constraints.</body>
             </ownedComment>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_0lXBUACDEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_wokUACNTEeaXHrqB2x3c_w" name="uuid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
-          </packagedElement>
-          <packagedElement xmi:type="uml:Association" xmi:id="_DjpgMKNSEeS9Obpdy8FCjA" name="LinkHasLinkSpec" memberEnd="_DjpgMaNSEeS9Obpdy8FCjA _DjfvMKNSEeS9Obpdy8FCjA">
-            <ownedEnd xmi:type="uml:Property" xmi:id="_DjpgMaNSEeS9Obpdy8FCjA" name="link" type="_oGqnjVLNEeO75dO39GbF8Q" association="_DjpgMKNSEeS9Obpdy8FCjA">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DjpgMqNSEeS9Obpdy8FCjA"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DjpgM6NSEeS9Obpdy8FCjA" value="*"/>
-            </ownedEnd>
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_KjlfMJgMEeSjhfRBVH9_gQ" name="SpecAndProfile-Sketch">
@@ -2643,8 +2580,8 @@ Not all parameters need be selected and applied.</body>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OunqUZgOEeSjhfRBVH9_gQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OunqUpgOEeSjhfRBVH9_gQ" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_5t2d8ACrEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_4YsBYCNTEeaXHrqB2x3c_w" name="uuid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_hXvMcJgMEeSjhfRBVH9_gQ" name="ProfileInstance">
@@ -2660,8 +2597,8 @@ Not all parameters need be selected and applied.</body>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1nVtwZgWEeSeO5hX75xH1g" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1nVtwpgWEeSeO5hX75xH1g" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_i1BhUACFEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="__eKPQCNTEeaXHrqB2x3c_w" name="uuid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_pK3KgJgMEeSjhfRBVH9_gQ" name="EntityInstanceBehaviorConstrainedByProfile" memberEnd="_pK3KgZgMEeSjhfRBVH9_gQ _pKuAkJgMEeSjhfRBVH9_gQ">
@@ -2679,8 +2616,8 @@ Not all parameters need be selected and applied.</body>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XymSoZgWEeSeO5hX75xH1g" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XymSopgWEeSeO5hX75xH1g" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_mMAEMACFEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_BHXowCNUEeaXHrqB2x3c_w" name="uuid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="__XpVwJgMEeSjhfRBVH9_gQ" name="EntityInstaneCapabilityConstrainedBySpecInstance" memberEnd="__XpVwZgMEeSjhfRBVH9_gQ __XgL0JgMEeSjhfRBVH9_gQ">
@@ -2696,8 +2633,8 @@ Not all parameters need be selected and applied.</body>
             </ownedEnd>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_Du1jAJgOEeSjhfRBVH9_gQ" name="AnyEntityClass">
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_rM_44ACFEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_N3E1kCNUEeaXHrqB2x3c_w" name="uuid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_Ouw0QJgOEeSjhfRBVH9_gQ" name="EntityInstanceConformsToClass" memberEnd="_Ouw0QZgOEeSjhfRBVH9_gQ _OunqUJgOEeSjhfRBVH9_gQ">
@@ -2829,9 +2766,6 @@ At this point it appears that this is not necessary however it has been left in 
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-VM6YRihEeSh8KVgZCMyDw"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-VM6YhihEeSh8KVgZCMyDw" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_Z0VSYADREeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_-VhDcBihEeSh8KVgZCMyDw" name="ViewAbstractionRuleExplainssHowLtpRelatestToLtpInOtherView" memberEnd="_-VhDcRihEeSh8KVgZCMyDw _-VM6YBihEeSh8KVgZCMyDw">
           <ownedEnd xmi:type="uml:Property" xmi:id="_-VhDcRihEeSh8KVgZCMyDw" name="viewAbstractionRule" type="_9bj8oBihEeSh8KVgZCMyDw" association="_-VhDcBihEeSh8KVgZCMyDw">
@@ -2865,9 +2799,6 @@ At this point it appears that this is not necessary however it has been left in 
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_c1f1cVZ6EeOVGaP4lO41SQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c1f1clZ6EeOVGaP4lO41SQ" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_cQlugACGEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_5GhX4FZ2EeOVGaP4lO41SQ" name="Port">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_LXPWMFZ3EeOVGaP4lO41SQ" name="Role" visibility="public">
@@ -2880,9 +2811,6 @@ At this point it appears that this is not necessary however it has been left in 
             <ownedAttribute xmi:type="uml:Property" xmi:id="_S4YzcFZ3EeOVGaP4lO41SQ" name="_boundPort" type="_5GhX4FZ2EeOVGaP4lO41SQ" association="_S4h9YFZ3EeOVGaP4lO41SQ">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S4YzcVZ3EeOVGaP4lO41SQ"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S4YzclZ3EeOVGaP4lO41SQ" value="1"/>
-            </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_fyS6sACGEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="__otSgFZ2EeOVGaP4lO41SQ" name="ComponentHasPorts" memberEnd="__otSgVZ2EeOVGaP4lO41SQ __olWsFZ2EeOVGaP4lO41SQ">
@@ -2897,16 +2825,8 @@ At this point it appears that this is not necessary however it has been left in 
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S4h9Y1Z3EeOVGaP4lO41SQ" value="1"/>
             </ownedEnd>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_VZ3RsFZ3EeOVGaP4lO41SQ" name="System">
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_jBk6IACGEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedAttribute>
-          </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_MZH0gFZ4EeOVGaP4lO41SQ" name="AttributePackage">
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_IlnHIADSEeaXtNCwPw29TA" name="id">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedAttribute>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VZ3RsFZ3EeOVGaP4lO41SQ" name="System"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_MZH0gFZ4EeOVGaP4lO41SQ" name="AttributePackage"/>
           <packagedElement xmi:type="uml:Association" xmi:id="_Qo8q8FZ4EeOVGaP4lO41SQ" name="ComponentHasConditionalAttributes" memberEnd="_Qo8q8VZ4EeOVGaP4lO41SQ _Qoxr0FZ4EeOVGaP4lO41SQ">
             <ownedEnd xmi:type="uml:Property" xmi:id="_Qo8q8VZ4EeOVGaP4lO41SQ" name="component" type="_3AVHcFZ2EeOVGaP4lO41SQ" association="_Qo8q8FZ4EeOVGaP4lO41SQ">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qo8q8lZ4EeOVGaP4lO41SQ" value="1"/>
@@ -2951,9 +2871,6 @@ At this point it appears that this is not necessary however it has been left in 
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5ZCYFYIEeW5zoktRlwOmg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5cFsFYIEeW5zoktRlwOmg" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_pAJKUACGEeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_JAQSYFYFEeW5zoktRlwOmg" name="Sketch::LTP">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_QsLcQVYFEeW5zoktRlwOmg" name="_supportingLtpInOtherViewRef" type="_JAQSYFYFEeW5zoktRlwOmg" association="_QsIY8FYFEeW5zoktRlwOmg">
@@ -2963,9 +2880,6 @@ At this point it appears that this is not necessary however it has been left in 
           <ownedAttribute xmi:type="uml:Property" xmi:id="_i38pIFYFEeW5zoktRlwOmg" name="_supportedLtpInOtherViewRef" type="_JAQSYFYFEeW5zoktRlwOmg" association="_i37bAFYFEeW5zoktRlwOmg">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__eUhwFYHEeW5zoktRlwOmg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__eYMIFYHEeW5zoktRlwOmg" value="*"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_r4iTwACGEeaXtNCwPw29TA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_QsIY8FYFEeW5zoktRlwOmg" name="LtpSupportedByLtpInOtherView" memberEnd="_QsK1MFYFEeW5zoktRlwOmg _QsLcQVYFEeW5zoktRlwOmg">
@@ -3007,8 +2921,8 @@ At this point it appears that this is not necessary however it has been left in 
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_kr10UEDrEeWHCPNn7aoIVw" name="ExplanatoryFiguresUsedIndDocumentsAndSlides"/>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_6v5MYPZ8EeWZLpttORC7Bw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6v5zcPZ8EeWZLpttORC7Bw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_eJr1UCM8EeaXHrqB2x3c_w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eJwGwCM8EeaXHrqB2x3c_w" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="../MEF%20Common%20Information%20Model%20Profile/OpenModel_Profile.profile.uml#_0tZP0NyQEeW6C_FaABjU5w"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../MEF%20Common%20Information%20Model%20Profile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
@@ -3022,7 +2936,7 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:Experimental xmi:id="_3anQEKyMEeS5HuAudtqItw" base_StructuralFeature="_SI-YgKQbEeS9Obpdy8FCjA" base_Element="_SI-YgKQbEeS9Obpdy8FCjA"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_kv5iQaQZEeS9Obpdy8FCjA" base_StructuralFeature="_kv5iQKQZEeS9Obpdy8FCjA" partOfObjectKey="1"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_pVOuoKQZEeS9Obpdy8FCjA" base_StructuralFeature="_pVOHkKQZEeS9Obpdy8FCjA"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_JsreoK4AEeSXJ6XI-2nsRw" base_StructuralFeature="_Jsq3kK4AEeSXJ6XI-2nsRw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_JsreoK4AEeSXJ6XI-2nsRw" base_StructuralFeature="_Jsq3kK4AEeSXJ6XI-2nsRw" partOfObjectKey="1"/>
   <OpenModel_Profile:Preliminary xmi:id="_K2XlAL7fEeSdssyZX-p90g" base_StructuralFeature="_Jsq3kK4AEeSXJ6XI-2nsRw" base_Element="_Jsq3kK4AEeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_cF5RoK4AEeSXJ6XI-2nsRw" base_StructuralFeature="_cF4qkK4AEeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:Preliminary xmi:id="_NCoBML7fEeSdssyZX-p90g" base_StructuralFeature="_cF4qkK4AEeSXJ6XI-2nsRw" base_Element="_cF4qkK4AEeSXJ6XI-2nsRw"/>
@@ -3030,13 +2944,13 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:Preliminary xmi:id="_WPJbIL7fEeSdssyZX-p90g" base_StructuralFeature="_-GPhcL7eEeSdssyZX-p90g" base_Element="_-GPhcL7eEeSdssyZX-p90g"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_zMt-IMDWEeSoNOrYOfaryg" base_StructuralFeature="_zMhw4MDWEeSoNOrYOfaryg"/>
   <OpenModel_Profile:Experimental xmi:id="_5FyDQMDWEeSoNOrYOfaryg" base_StructuralFeature="_zMhw4MDWEeSoNOrYOfaryg" base_Element="_zMhw4MDWEeSoNOrYOfaryg"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_Otj6YK4HEeSXJ6XI-2nsRw" base_StructuralFeature="_OtjTUK4HEeSXJ6XI-2nsRw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Otj6YK4HEeSXJ6XI-2nsRw" base_StructuralFeature="_OtjTUK4HEeSXJ6XI-2nsRw" partOfObjectKey="1"/>
   <OpenModel_Profile:Experimental xmi:id="_gPijYK4HEeSXJ6XI-2nsRw" base_StructuralFeature="_OtjTUK4HEeSXJ6XI-2nsRw" base_Element="_OtjTUK4HEeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_Sx6goK4HEeSXJ6XI-2nsRw" base_StructuralFeature="_Sx55kK4HEeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:Experimental xmi:id="_hUKpIK4HEeSXJ6XI-2nsRw" base_StructuralFeature="_Sx55kK4HEeSXJ6XI-2nsRw" base_Element="_Sx55kK4HEeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_bnwf8a4HEeSXJ6XI-2nsRw" base_StructuralFeature="_bnwf8K4HEeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:Experimental xmi:id="_ikjS8K4HEeSXJ6XI-2nsRw" base_StructuralFeature="_bnwf8K4HEeSXJ6XI-2nsRw" base_Element="_bnwf8K4HEeSXJ6XI-2nsRw"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_kOFqcbFmEeSZUdYfPSdgew" base_StructuralFeature="_kOFqcLFmEeSZUdYfPSdgew"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kOFqcbFmEeSZUdYfPSdgew" base_StructuralFeature="_kOFqcLFmEeSZUdYfPSdgew" partOfObjectKey="1"/>
   <OpenModel_Profile:Experimental xmi:id="_laNusL1AEeSTeMVkk1fdnQ" base_StructuralFeature="_kOFqcLFmEeSZUdYfPSdgew" base_Element="_kOFqcLFmEeSZUdYfPSdgew"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_sUoTwbFmEeSZUdYfPSdgew" base_StructuralFeature="_sUoTwLFmEeSZUdYfPSdgew"/>
   <OpenModel_Profile:Experimental xmi:id="_msTosL1AEeSTeMVkk1fdnQ" base_StructuralFeature="_sUoTwLFmEeSZUdYfPSdgew" base_Element="_sUoTwLFmEeSZUdYfPSdgew"/>
@@ -3087,8 +3001,6 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:OpenModelAttribute xmi:id="_n8_3cDK6EeS9t_pD0-sMng" base_StructuralFeature="_oGqnk1LNEeO75dO39GbF8Q"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_akdh0Fg5EeOGT-4_Vdnb5w" base_StructuralFeature="_oGqnllLNEeO75dO39GbF8Q"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_n8IUwDK6EeS9t_pD0-sMng" base_StructuralFeature="_oGqnllLNEeO75dO39GbF8Q"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_DjfvM6NSEeS9Obpdy8FCjA" base_StructuralFeature="_DjfvMKNSEeS9Obpdy8FCjA"/>
-  <OpenModel_Profile:Experimental xmi:id="_YxxDwKNSEeS9Obpdy8FCjA" base_StructuralFeature="_DjfvMKNSEeS9Obpdy8FCjA" base_Element="_DjfvMKNSEeS9Obpdy8FCjA"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_RtwvM6T3EeS9Obpdy8FCjA" base_StructuralFeature="_RtwvMKT3EeS9Obpdy8FCjA"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_yfZPIEC8EeWxhL2B6Peg6A" base_StructuralFeature="_yfYoEEC8EeWxhL2B6Peg6A"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_aldAUFg5EeOGT-4_Vdnb5w" base_Class="_oGqnr1LNEeO75dO39GbF8Q"/>
@@ -3111,7 +3023,7 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:OpenModelAttribute xmi:id="_1HbrkEDAEeWQeOKbNUpP9A" base_StructuralFeature="_1HbEgEDAEeWQeOKbNUpP9A"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_aq6IEFg5EeOGT-4_Vdnb5w" base_Class="_gROecFYXEeOVGaP4lO41SQ"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_nq1JYDK6EeS9t_pD0-sMng" base_Class="_gROecFYXEeOVGaP4lO41SQ"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_arrkIFg5EeOGT-4_Vdnb5w" base_StructuralFeature="_OwauQFeEEeOVGaP4lO41SQ" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_arrkIFg5EeOGT-4_Vdnb5w" base_StructuralFeature="_OwauQFeEEeOVGaP4lO41SQ"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_FZHBAFywEeOHhZKdZvU7vQ" base_StructuralFeature="_OwauQFeEEeOVGaP4lO41SQ"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_Hvis4FywEeOHhZKdZvU7vQ" base_StructuralFeature="_OwauQFeEEeOVGaP4lO41SQ"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_ntk7YDK6EeS9t_pD0-sMng" base_StructuralFeature="_OwauQFeEEeOVGaP4lO41SQ"/>
@@ -3282,6 +3194,7 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:Preliminary xmi:id="_7odKAL7WEeSdssyZX-p90g" base_Constraint="_gsh30K37EeSXJ6XI-2nsRw" base_Element="_gsh30K37EeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_BUweII2tEeO38ZmbECnvbg" base_Class="_BUcVEI2tEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_ajjzcI2uEeO38ZmbECnvbg" base_StructuralFeature="_ajjMYI2uEeO38ZmbECnvbg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_NIl6wI28EeO38ZmbECnvbg" base_StructuralFeature="_NIlTsI28EeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_iVKcoI2wEeO38ZmbECnvbg" base_Class="_iVJ1kI2wEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_w3-KsI3wEeO38ZmbECnvbg" base_StructuralFeature="_w39joI3wEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_IEiZwY22EeO38ZmbECnvbg" base_StructuralFeature="_IEiZwI22EeO38ZmbECnvbg" partOfObjectKey="1"/>
@@ -3302,14 +3215,15 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:Experimental xmi:id="_KIVGgLE6EeSZUdYfPSdgew" base_Class="_-ZWVQJP0EeOqfpp-ZJSmaA" base_Element="_-ZWVQJP0EeOqfpp-ZJSmaA"/>
   <OpenModel_Profile:Experimental xmi:id="_S5Sl0LE6EeSZUdYfPSdgew" base_Generalization="_JIYq0JP1EeOqfpp-ZJSmaA" base_Element="_JIYq0JP1EeOqfpp-ZJSmaA"/>
   <OpenModel_Profile:Experimental xmi:id="_NGL-wLE6EeSZUdYfPSdgew" base_Generalization="_5Zv80JP2EeOqfpp-ZJSmaA" base_Element="_5Zv80JP2EeOqfpp-ZJSmaA"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_77PyQY3tEeO38ZmbECnvbg" base_StructuralFeature="_77PyQI3tEeO38ZmbECnvbg"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_ZUzGMI3uEeO38ZmbECnvbg" base_StructuralFeature="_ZUyfII3uEeO38ZmbECnvbg" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_77PyQY3tEeO38ZmbECnvbg" base_StructuralFeature="_77PyQI3tEeO38ZmbECnvbg" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_ZUzGMI3uEeO38ZmbECnvbg" base_StructuralFeature="_ZUyfII3uEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_pXYZAI3uEeO38ZmbECnvbg" base_StructuralFeature="_pXXx8Y3uEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_bhhnAI3vEeO38ZmbECnvbg" base_StructuralFeature="_bhg_8Y3vEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_cbx2gY30EeO38ZmbECnvbg" base_StructuralFeature="_cbx2gI30EeO38ZmbECnvbg"/>
   <OpenModel_Profile:Experimental xmi:id="_IbTkALE6EeSZUdYfPSdgew" base_Association="_mZyWYI21EeO38ZmbECnvbg" base_Element="_mZyWYI21EeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_mZyWZI21EeO38ZmbECnvbg" base_StructuralFeature="_mZyWYY21EeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_mZnXQ421EeO38ZmbECnvbg" base_StructuralFeature="_mZnXQI21EeO38ZmbECnvbg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_NIvrxI28EeO38ZmbECnvbg" base_StructuralFeature="_NIvrwY28EeO38ZmbECnvbg"/>
   <OpenModel_Profile:Preliminary xmi:id="_1ph14NP9EeSkCochwz02Ig" base_Association="_pXXx8I3uEeO38ZmbECnvbg" base_Element="_pXXx8I3uEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_pXYZAY3uEeO38ZmbECnvbg" base_StructuralFeature="_pXXx9I3uEeO38ZmbECnvbg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_bhhnAY3vEeO38ZmbECnvbg" base_StructuralFeature="_bhg_9I3vEeO38ZmbECnvbg"/>
@@ -3326,7 +3240,7 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:OpenModelClass xmi:id="_rgfcwJoyEeOyHKqw-cQ_eg" base_Class="_rgdnkJoyEeOyHKqw-cQ_eg"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_mJTsQDK6EeS9t_pD0-sMng" base_Class="_rgdnkJoyEeOyHKqw-cQ_eg"/>
   <OpenModel_Profile:Experimental xmi:id="_3DPW8MP7EeSkD7NQ5om7rQ" base_Class="_rgdnkJoyEeOyHKqw-cQ_eg" base_Element="_rgdnkJoyEeOyHKqw-cQ_eg"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_v77tUZoyEeOyHKqw-cQ_eg" base_StructuralFeature="_v77tUJoyEeOyHKqw-cQ_eg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_v77tUZoyEeOyHKqw-cQ_eg" base_StructuralFeature="_v77tUJoyEeOyHKqw-cQ_eg" partOfObjectKey="1"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_mL0NsDK6EeS9t_pD0-sMng" base_StructuralFeature="_v77tUJoyEeOyHKqw-cQ_eg"/>
   <OpenModel_Profile:Experimental xmi:id="_7usZcMP7EeSkD7NQ5om7rQ" base_StructuralFeature="_v77tUJoyEeOyHKqw-cQ_eg" base_Element="_v77tUJoyEeOyHKqw-cQ_eg"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_xZiBg54IEeOO3om500DFKg" base_StructuralFeature="_xZiBgJ4IEeOO3om500DFKg"/>
@@ -3552,8 +3466,6 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:OpenModelAttribute xmi:id="_lEwfADK6EeS9t_pD0-sMng" base_StructuralFeature="_RCTLcRmOEeSzeoKP7VQE4w"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_-NxnsKNREeS9Obpdy8FCjA" base_Class="_-Npr4KNREeS9Obpdy8FCjA"/>
   <OpenModel_Profile:Experimental xmi:id="_CVwJsKNSEeS9Obpdy8FCjA" base_Class="_-Npr4KNREeS9Obpdy8FCjA" base_Element="_-Npr4KNREeS9Obpdy8FCjA"/>
-  <OpenModel_Profile:Experimental xmi:id="_LLBN4LAOEeSXJ6XI-2nsRw" base_Association="_DjpgMKNSEeS9Obpdy8FCjA" base_Element="_DjpgMKNSEeS9Obpdy8FCjA"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_DjpgNKNSEeS9Obpdy8FCjA" base_StructuralFeature="_DjpgMaNSEeS9Obpdy8FCjA"/>
   <OpenModel_Profile:Experimental xmi:id="_Unf0IJgMEeSjhfRBVH9_gQ" base_Package="_KjlfMJgMEeSjhfRBVH9_gQ" base_Element="_KjlfMJgMEeSjhfRBVH9_gQ"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_frJHwJgMEeSjhfRBVH9_gQ" base_Class="_frIgsJgMEeSjhfRBVH9_gQ"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_pKunoJgMEeSjhfRBVH9_gQ" base_StructuralFeature="_pKuAkJgMEeSjhfRBVH9_gQ"/>
@@ -3742,51 +3654,25 @@ At this point it appears that this is not necessary however it has been left in 
   <OpenModel_Profile:OpenModelAttribute xmi:id="_qw9fEJDlEeW1E_kO1HlPLw" base_StructuralFeature="_yODvUbA0EeSXJ6XI-2nsRw"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_qxDlsJDlEeW1E_kO1HlPLw" base_StructuralFeature="_-VhDcRihEeSh8KVgZCMyDw"/>
   <OpenModel_Profile:LikelyToChange xmi:id="_IzjF4JHLEeW1E_kO1HlPLw" base_Class="_oGqnr1LNEeO75dO39GbF8Q" base_Element="_oGqnr1LNEeO75dO39GbF8Q"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_Kx7WMffpEeWZLpttORC7Bw" base_StructuralFeature="_Kx7WMPfpEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_3dHBIPfpEeWZLpttORC7Bw" base_StructuralFeature="_3dGaEPfpEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_ajEeQPfqEeWZLpttORC7Bw" base_StructuralFeature="_ajD3MPfqEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_p-wJIffqEeWZLpttORC7Bw" base_StructuralFeature="_p-wJIPfqEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_taAvEffqEeWZLpttORC7Bw" base_StructuralFeature="_taAvEPfqEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_yxxd8ffqEeWZLpttORC7Bw" base_StructuralFeature="_yxxd8PfqEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_K9TN0ffrEeWZLpttORC7Bw" base_StructuralFeature="_K9TN0PfrEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_PQVJQffrEeWZLpttORC7Bw" base_StructuralFeature="_PQVJQPfrEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_bGrFIffrEeWZLpttORC7Bw" base_StructuralFeature="_bGrFIPfrEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_G3MacffzEeWZLpttORC7Bw" base_StructuralFeature="_G3MacPfzEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_S0jkUffzEeWZLpttORC7Bw" base_StructuralFeature="_S0jkUPfzEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_bTW8oPfzEeWZLpttORC7Bw" base_StructuralFeature="_bTWVkPfzEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_hTjkgPfzEeWZLpttORC7Bw" base_StructuralFeature="_hTi9cPfzEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_wfYOcffzEeWZLpttORC7Bw" base_StructuralFeature="_wfYOcPfzEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_At7gsPf0EeWZLpttORC7Bw" base_StructuralFeature="_At65oPf0EeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_WEploff_EeWZLpttORC7Bw" base_StructuralFeature="_WEploPf_EeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_bQn7Qff_EeWZLpttORC7Bw" base_StructuralFeature="_bQn7QPf_EeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_i30WIff_EeWZLpttORC7Bw" base_StructuralFeature="_i30WIPf_EeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_ukBCEfgAEeWZLpttORC7Bw" base_StructuralFeature="_ukBCEPgAEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_1hr-0fgAEeWZLpttORC7Bw" base_StructuralFeature="_1hr-0PgAEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="__JGlAfgAEeWZLpttORC7Bw" base_StructuralFeature="__JGlAPgAEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_nursgfgBEeWZLpttORC7Bw" base_StructuralFeature="_nursgPgBEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_tq7BcfgBEeWZLpttORC7Bw" base_StructuralFeature="_tq7BcPgBEeWZLpttORC7Bw" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_i_fMQACCEeaXtNCwPw29TA" base_StructuralFeature="_i9mV4ACCEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_zlwa8ACCEeaXtNCwPw29TA" base_StructuralFeature="_zlvz4ACCEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_0lXoYACDEeaXtNCwPw29TA" base_StructuralFeature="_0lXBUACDEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_OzPDcQCEEeaXtNCwPw29TA" base_StructuralFeature="_OzPDcACEEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_HthIgQCFEeaXtNCwPw29TA" base_StructuralFeature="_HthIgACFEeaXtNCwPw29TA"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_NF5icQCFEeaXtNCwPw29TA" base_StructuralFeature="_NF5icACFEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_VE_f8ACFEeaXtNCwPw29TA" base_StructuralFeature="_VE-44ACFEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_i1BhUQCFEeaXtNCwPw29TA" base_StructuralFeature="_i1BhUACFEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_mMArQACFEeaXtNCwPw29TA" base_StructuralFeature="_mMAEMACFEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_rM_44QCFEeaXtNCwPw29TA" base_StructuralFeature="_rM_44ACFEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQlugQCGEeaXtNCwPw29TA" base_StructuralFeature="_cQlugACGEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_fyS6sQCGEeaXtNCwPw29TA" base_StructuralFeature="_fyS6sACGEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_jBk6IQCGEeaXtNCwPw29TA" base_StructuralFeature="_jBk6IACGEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_pAJKUQCGEeaXtNCwPw29TA" base_StructuralFeature="_pAJKUACGEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_r4iTwQCGEeaXtNCwPw29TA" base_StructuralFeature="_r4iTwACGEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_oQ6vAQCVEeaXtNCwPw29TA" base_StructuralFeature="_oQ6vAACVEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_ZOM7wACrEeaXtNCwPw29TA" base_StructuralFeature="_ZNgYMACrEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_dXz1cQCrEeaXtNCwPw29TA" base_StructuralFeature="_dXz1cACrEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_pEQ1gQCrEeaXtNCwPw29TA" base_StructuralFeature="_pEQ1gACrEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_vBWfAACrEeaXtNCwPw29TA" base_StructuralFeature="_vBV38ACrEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_5t2d8QCrEeaXtNCwPw29TA" base_StructuralFeature="_5t2d8ACrEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_XBglQQCsEeaXtNCwPw29TA" base_StructuralFeature="_XBglQACsEeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_Z0V5cADREeaXtNCwPw29TA" base_StructuralFeature="_Z0VSYADREeaXtNCwPw29TA" partOfObjectKey="1"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_IlnHIQDSEeaXtNCwPw29TA" base_StructuralFeature="_IlnHIADSEeaXtNCwPw29TA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_rJzKwSM-EeaXHrqB2x3c_w" base_StructuralFeature="_rJzKwCM-EeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_W5Cx4SM_EeaXHrqB2x3c_w" base_StructuralFeature="_W5Cx4CM_EeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mKwocCM_EeaXHrqB2x3c_w" base_StructuralFeature="_mKwBYCM_EeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_44xU0CNBEeaXHrqB2x3c_w" base_StructuralFeature="_44wtwCNBEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_90MtASNBEeaXHrqB2x3c_w" base_StructuralFeature="_90MtACNBEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_fPPNgCNPEeaXHrqB2x3c_w" base_StructuralFeature="_fPOmcCNPEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_R99SwSNREeaXHrqB2x3c_w" base_StructuralFeature="_R99SwCNREeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_tjiusSNREeaXHrqB2x3c_w" base_StructuralFeature="_tjiusCNREeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_0cgKkCNREeaXHrqB2x3c_w" base_StructuralFeature="_0cfjgCNREeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_5gXtESNREeaXHrqB2x3c_w" base_StructuralFeature="_5gXtECNREeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_81ICYSNREeaXHrqB2x3c_w" base_StructuralFeature="_81ICYCNREeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Lzr28SNTEeaXHrqB2x3c_w" base_StructuralFeature="_Lzr28CNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_YrkIUSNTEeaXHrqB2x3c_w" base_StructuralFeature="_YrkIUCNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_eFxuQSNTEeaXHrqB2x3c_w" base_StructuralFeature="_eFxuQCNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_h2e_wSNTEeaXHrqB2x3c_w" base_StructuralFeature="_h2e_wCNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_plddoCNTEeaXHrqB2x3c_w" base_StructuralFeature="_plc2kCNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_wok7ECNTEeaXHrqB2x3c_w" base_StructuralFeature="_wokUACNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_4YsBYSNTEeaXHrqB2x3c_w" base_StructuralFeature="_4YsBYCNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="__eKPQSNTEeaXHrqB2x3c_w" base_StructuralFeature="__eKPQCNTEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_BHXowSNUEeaXHrqB2x3c_w" base_StructuralFeature="_BHXowCNUEeaXHrqB2x3c_w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_N3E1kSNUEeaXHrqB2x3c_w" base_StructuralFeature="_N3E1kCNUEeaXHrqB2x3c_w" partOfObjectKey="1"/>
 </xmi:XMI>
