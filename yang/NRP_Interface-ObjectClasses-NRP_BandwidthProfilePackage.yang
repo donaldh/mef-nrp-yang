@@ -4,7 +4,7 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
     import NRP_Interface-TypeDefinitions-NRP_Types {
         prefix NRP_Interface-TypeDefinitions-NRP_Types;
     }
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     grouping G_NRP_PcpCosId {
         leaf nrp_vlanTag {
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag;
@@ -20,12 +20,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             type string;
             description "Class of Service name.";
         }
-    }
-    list NRP_DscpCosId {
-        key 'nrp_cosName';
-        config true;
-        ordered-by system;
-        uses G_NRP_DscpCosId;
     }
     grouping G_NRP_DscpCosId {
         leaf nrp_ipVersion {
@@ -43,12 +37,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             description "Class of Service name.";
         }
     }
-    list NRP_PcpEecId {
-        key 'nrp_eecName';
-        config true;
-        ordered-by system;
-        uses G_NRP_PcpEecId;
-    }
     grouping G_NRP_PcpEecId {
         leaf nrp_vlanTag {
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_VlanTag;
@@ -64,12 +52,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             type string;
             description "Egress Equivelance Class name.";
         }
-    }
-    list NRP_DscpEecId {
-        key 'nrp_eecName';
-        config true;
-        ordered-by system;
-        uses G_NRP_DscpEecId;
     }
     grouping G_NRP_DscpEecId {
         leaf nrp_ipVersion {
@@ -93,12 +75,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             description "Egress Equivalence Class name.";
         }
     }
-    list NRP_EecIdentifier {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_EecIdentifier;
-    }
     grouping G_NRP_EecIdentifier {
         container nrp_pcpeecid {
             config true;
@@ -112,15 +88,9 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             config true;
             uses G_NRP_ServiceAccessPointEecId;
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
-    }
-    list NRP_PcpForColorEgressMap {
-        key 'nrp_vlanTag';
-        config true;
-        ordered-by system;
-        uses G_NRP_PcpForColorEgressMap;
     }
     grouping G_NRP_PcpForColorEgressMap {
         leaf nrp_vlanTag {
@@ -140,12 +110,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             description "Egress frame PCP value (S tag ot C tag is from vlanTag attribute), mapping from ingress CoS name and ingress frame color. ";
         }
     }
-    list NRP_EgressMap {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_EgressMap;
-    }
     grouping G_NRP_EgressMap {
         container nrp_deiforcoloregressmap {
             config true;
@@ -155,15 +119,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             config true;
             uses G_NRP_PcpForColorEgressMap;
         }
-        leaf id {
-            type string;
-        }
-    }
-    list NRP_DeiForColorEgressMap {
-        key 'nrp_vlanTag';
-        config true;
-        ordered-by system;
-        uses G_NRP_DeiForColorEgressMap;
     }
     grouping G_NRP_DeiForColorEgressMap {
         leaf nrp_vlanTag {
@@ -182,12 +137,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_DeiOrDiscard;
             description "Egress frame DEI value (S tag ot C tag is from vlanTag attribute), including the ingress color indication.";
         }
-    }
-    list NRP_BwpFlow {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_BwpFlow;
     }
     grouping G_NRP_BwpFlow {
         leaf nrp_bwpFlowIndex {
@@ -234,21 +183,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber;
             description "Adjusts the number of tokens requested for each external interface frame.";
         }
-        leaf-list nrp_bwpflowrank {
-            ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
-        }
-        leaf id {
-            type string;
-        }
-    }
-    list NRP_IngressBwpPerCosName {
-        key 'nrp_cosName';
-        config true;
-        ordered-by system;
-        uses G_NRP_IngressBwpPerCosName;
     }
     grouping G_NRP_IngressBwpPerCosName {
         leaf nrp_cosName {
@@ -259,12 +193,6 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             config true;
             uses G_NRP_BwpFlow;
         }
-    }
-    list NRP_EgressBwpPerEecName {
-        key 'nrp_eecName';
-        config true;
-        ordered-by system;
-        uses G_NRP_EgressBwpPerEecName;
     }
     grouping G_NRP_EgressBwpPerEecName {
         leaf nrp_eecName {
@@ -348,23 +276,13 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             uses G_NRP_DespColorId;
         }
     }
-    list NRP_BwpFlowRank {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_BwpFlowRank;
-    }
     grouping G_NRP_BwpFlowRank {
         leaf nrp_bwpFlowRankInEnvelope {
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber;
         }
-        leaf nrp_bwpflow {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
-        }
-        leaf id {
-            type string;
+        container nrp_bwpflow {
+            config true;
+            uses G_NRP_BwpFlow;
         }
     }
     list NRP_Envelope {
@@ -381,11 +299,9 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_NaturalNumber;
             description "Coupling flag for index zero. 0 for NO and 1 for YES (overflow Green tokens can be used as Yellow tokens)";
         }
-        leaf-list nrp_bwpflowrank {
-            ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlowRank/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
+        container nrp_bwpflowrank {
+            config true;
+            uses G_NRP_BwpFlowRank;
         }
     }
     grouping G_NRP_EtherTypeL2cpId {
@@ -416,7 +332,7 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
             config true;
             uses G_NRP_EtherTypeL2cpId;
         }
-        leaf id {
+        leaf name {
             type string;
         }
     }
@@ -427,7 +343,7 @@ module NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
         }
         list nrp_l2cpprotocolidentifier {
             description "List of L2CP Protocol Identifiers that map to the CoS Name.";
-            key 'id';
+            key 'name';
             config true;
             ordered-by system;
             uses G_NRP_L2cpProtocolIdentifier;

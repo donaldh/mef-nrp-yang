@@ -1,7 +1,7 @@
 module CoreModel-CoreFoundationModule-TypeDefinitions {
     namespace "uri:onf:CoreModel-CoreFoundationModule-TypeDefinitions";
     prefix CoreModel-CoreFoundationModule-TypeDefinitions;
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     typedef DateAndTime {
         type string;
     }

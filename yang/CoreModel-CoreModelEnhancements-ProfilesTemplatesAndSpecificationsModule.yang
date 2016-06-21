@@ -4,9 +4,9 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
     import CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages {
         prefix CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages;
     }
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     list MultiSwitchedUniFlow {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_MultiSwitchedUniFlow;
@@ -15,14 +15,14 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
         list _ingressFcPort {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_IngressFcPortSet;
             min-elements 1;
         }
         list _egressFcPort {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_EgressFcPortSet;
@@ -34,20 +34,17 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         }
         leaf ingressFcPortSet {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf egressFcPortSet {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
-        }
-        leaf id {
-            type string;
         }
     }
     list IngressFcPortSet {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_IngressFcPortSet;
@@ -55,12 +52,9 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
     grouping G_IngressFcPortSet {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
-        leaf id {
-            type string;
-        }
     }
     list EgressFcPortSet {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_EgressFcPortSet;
@@ -68,12 +62,9 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
     grouping G_EgressFcPortSet {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
-        leaf id {
-            type string;
-        }
     }
     list ConfigurationAndSwitchControl {
-        key 'id uuid';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ConfigurationAndSwitchControl;
@@ -82,7 +73,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status deprecated;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_GlobalClass;
         list switchControlRule {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_ControlRule;
@@ -98,9 +89,6 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             type string;
             min-elements 1;
         }
-        leaf id {
-            type string;
-        }
     }
     list FcSpec {
         key 'uuid';
@@ -112,24 +100,22 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_GlobalClass;
         list multiSwitchedUniFlow {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_MultiSwitchedUniFlow;
-            min-elements 1;
         }
         list switchControl {
-            key 'id uuid';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_ConfigurationAndSwitchControl;
         }
         list fcPortSpec {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_FcPortSetSpec;
-            min-elements 1;
         }
         leaf fcSwitchGroupSpec {
             type leafref {
@@ -162,12 +148,9 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             config true;
             uses G_LtpAssociationRule;
         }
-        leaf id {
-            type string;
-        }
     }
     list ControlRule {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ControlRule;
@@ -178,12 +161,9 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf switchControl_switch_1 {
             type string;
         }
-        leaf id {
-            type string;
-        }
     }
     list FcPortSetSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_FcPortSetSpec;
@@ -194,30 +174,27 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list ingressFcPortSet {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:IngressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf-list egressFcPortSet {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:EgressFcPortSet/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf ltpAssociationRule {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpAssociationRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf role {
             type string;
             default true;
         }
-        leaf id {
-            type string;
-        }
     }
     list LtpAssociationRule {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_LtpAssociationRule;
@@ -225,28 +202,20 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
     grouping G_LtpAssociationRule {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
-        leaf id {
-            type string;
-        }
     }
     list SwitchPropertySpec_Pac {
-        key 'id';
+        key 'uuid';
         status deprecated;
         config true;
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
-    list IngressFcPortSetSpec_Pac {
-        key 'id';
+    grouping G_IngressFcPortSetSpec_Pac {
         status deprecated;
-        config true;
-        leaf id {
-            type string;
-        }
     }
     list LpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_LpSpec;
@@ -262,7 +231,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             uses G_TerminationSpec;
         }
         list _adapterPropertySpecList {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_AdapterPropertySpec;
@@ -272,17 +241,17 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             uses G_ProviderViewSpec;
         }
         list _serverSpecList {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_ServerSpec;
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list ClientSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ClientSpec;
@@ -292,27 +261,27 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _mappingInteractionRuleRefList {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:MappingInteractionRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:MappingInteractionRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list MappingInteractionRule {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_MappingInteractionRule;
     }
     grouping G_MappingInteractionRule {
         status deprecated;
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list TerminationSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_TerminationSpec;
@@ -323,12 +292,12 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
             config true;
             uses G_ConnectionSpec;
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list AdapterPropertySpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_AdapterPropertySpec;
@@ -336,7 +305,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
     grouping G_AdapterPropertySpec {
         status deprecated;
         list _poolPropertySpecList {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_PoolPropertySpec;
@@ -344,21 +313,21 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _mappingInteractionRuleRefList {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:MappingInteractionRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:MappingInteractionRule/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         list _mappingInteractionRuleList {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_MappingInteractionRule;
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list PoolPropertySpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_PoolPropertySpec;
@@ -376,27 +345,27 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _adapterPropertySpecRefList {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AdapterPropertySpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AdapterPropertySpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list ConnectionSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ConnectionSpec;
     }
     grouping G_ConnectionSpec {
         status deprecated;
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list ConnectionPointAndAdapterSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ConnectionPointAndAdapterSpec;
@@ -405,15 +374,15 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status deprecated;
         leaf _connectionSpec {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ConnectionSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list ProviderViewSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ProviderViewSpec;
@@ -423,27 +392,27 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _poolPropertySpecList {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:PoolPropertySpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:PoolPropertySpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list ServerSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ServerSpec;
     }
     grouping G_ServerSpec {
         status deprecated;
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list LtpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_LtpSpec;
@@ -453,53 +422,48 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         leaf-list _lpSpecList {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
-            min-elements 1;
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list LinkSpec {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_LinkSpec;
-    }
-    grouping G_LinkSpec {
+        key 'uuid';
         status deprecated;
-        leaf id {
+        config true;
+        leaf uuid {
             type string;
         }
     }
     list AnyEntityInstance {
-        key 'id';
+        key 'uuid';
         status deprecated;
         config true;
         ordered-by system;
         leaf-list _profileRefList {
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ProfileInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ProfileInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf _specRef {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf _class {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list ProfileInstance {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ProfileInstance;
@@ -508,25 +472,25 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status deprecated;
         leaf _specInstanceRef {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecInstance/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf _profileClass {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ProfileClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:ProfileClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf _class {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list SpecInstance {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_SpecInstance;
@@ -535,32 +499,32 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         status deprecated;
         leaf specClass {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:SpecClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
         leaf _classRef {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:AnyEntityClass/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list AnyEntityClass {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_AnyEntityClass;
     }
     grouping G_AnyEntityClass {
         status deprecated;
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
     list SpecClass {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_SpecClass;
@@ -570,7 +534,7 @@ module CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule 
         uses G_AnyEntityClass;
     }
     list ProfileClass {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ProfileClass;

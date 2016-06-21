@@ -10,16 +10,7 @@ module NRP_Interface-ObjectClasses-NRP_SpecPackage {
     import NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage {
         prefix NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage;
     }
-    import CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule {
-        prefix CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule;
-    }
-    revision 2016-04-12{}
-    list NRP_TerminationSpec {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_TerminationSpec;
-    }
+    revision 2016-06-21{}
     grouping G_NRP_TerminationSpec {
         uses NetworkResource-Main-ObjectClasses:G_CeTerminSpec;
         leaf nrp_physicalLayer {
@@ -28,8 +19,8 @@ module NRP_Interface-ObjectClasses-NRP_SpecPackage {
 Reference MEF 10.3, Section 9.2.";
         }
         list nrp_syncMode {
-            description "The Synchronous Mode Service Attribute is a list with one item for each of the physical links. When the value of an item is “Enabled,” the bits transmitted from the CEN to the CE on the physical link corresponding to the item can be used by the CE as a bit clock reference.
-Reference MEF 10.3, Section 9.3.";
+            description "<p>The Synchronous Mode Service Attribute is a list with one item for each of the physical links. When the value of an item is &quot;Enabled,&quot; the bits transmitted from the CEN to the CE on the physical link corresponding to the item can be used by the CE as a bit clock reference. Reference MEF 10.3, Section 9.3.</p>
+";
             key 'linkId';
             config true;
             ordered-by system;
@@ -72,7 +63,7 @@ MEF 6.2, Section 8.2.1. ";
             description "The Network Interface relationship to supporting zero to many Logical Interface flow points.";
             ordered-by system;
             type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_ConnAdaptSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
+                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_ConnAdaptSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:uuid';
             }
         }
         leaf-list nrp_envelope {
@@ -89,7 +80,7 @@ MEF 6.2, Section 8.2.2.";
         }
     }
     list NRP_ENNI_TerminationSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_NRP_TerminationSpec;
         leaf nrp_linkAggLinkMegEnabled {
@@ -99,12 +90,12 @@ MEF 26.2";
         }
     }
     list NRP_INNI_TerminationSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_NRP_TerminationSpec;
     }
     list NRP_UNI_TerminationSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_NRP_TerminationSpec;
         container nrp_defaultCeVlanId {
@@ -129,21 +120,19 @@ MEF 10.3, Section 9.18";
         leaf nrp_operatoruniprofile {
             type string;
         }
-        leaf nrp_ingressBwpUni {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
+        container nrp_ingressBwpUni {
             description "MEF 10.3, Section 9.14";
+            config true;
+            uses NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:G_NRP_BwpFlow;
         }
-        leaf nrp_egressBwpUni {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
+        container nrp_egressBwpUni {
             description "MEF 10.3, Section 9.15";
+            config true;
+            uses NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:G_NRP_BwpFlow;
         }
     }
     list NRP_EvcEndpoint_ConnAdaptSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_NRP_EvcEndpoint_ConnAdaptSpec;
@@ -187,16 +176,12 @@ that apply to the Test MEG";
             }
         }
     }
-    list NRP_IvcEndpoint_ConnAdaptSpec {
-        key 'id';
-        config true;
-        ordered-by system;
+    augment "/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_ConnAdaptSpec" {
         uses G_NRP_IvcEndpoint_ConnAdaptSpec;
     }
     grouping G_NRP_IvcEndpoint_ConnAdaptSpec {
-        uses G_NRP_ConnAdaptSpec;
         leaf nrp_ivcEndPointId {
-            type NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45;
+            type string;
             description "The EVC End Point Identification. This attribute is adapted from MEF 26.2. MEF 10.3 uses \"EVC per UNI\" for EVC End Point, therefore there is no identificaiton attribute. ";
         }
         leaf nrp_testMegEnabled {
@@ -208,13 +193,13 @@ that apply to the Test MEG";
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_EndPointRole;
             description "The EVC End Point Role is ROOF or LEAF.";
         }
-        leaf-list nrp_ivcEndPointMap {
+        list nrp_ivcEndPointMap {
             description "This attribute provides the list of CE-VLAN IDs that maps to the EVC. MEF 10.3 and MEF 6.2 list this attriubte (CE-VLAN ID/EVC map) as UNI service attribute while MEF 26.2 decided to move this on as endpoint service attribute, just as MEF 10.1 and MEF 6.1 did. Decided to move this one to endpoint to be consistent. To be consitent, changing its name to EvcEntPointMap (MEF 26.2 lists as OVC Endpoint Map).
 ";
+            key 'vlanId';
+            config true;
             ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_EndPointMap/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+            uses G_NRP_EndPointMap;
             min-elements 1;
         }
         leaf nrp_subscriberMegMipEbabled {
@@ -223,7 +208,7 @@ that apply to the Test MEG";
         }
     }
     list NRP_ConnAdaptSpec {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_NRP_ConnAdaptSpec;
@@ -235,10 +220,9 @@ that apply to the Test MEG";
             config true;
             uses NRP_Interface-TypeDefinitions-NRP_Types:G_NRP_SourceMacAddressLimit;
         }
-        leaf nrp_CeExternalInterface {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_TerminationSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+        container nrp_CeExternalInterface {
+            config true;
+            uses G_NRP_TerminationSpec;
         }
         container nrp_egressMap {
             description "MEF 7.3";
@@ -253,15 +237,13 @@ that apply to the Test MEG";
             config true;
             uses NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:G_NRP_ColorIdentifier;
         }
-        leaf nrp_ingressBwpFlow {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
+        container nrp_ingressBwpFlow {
+            config true;
+            uses NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:G_NRP_BwpFlow;
         }
-        leaf nrp_egressBwpFlow {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
+        container nrp_egressBwpFlow {
+            config true;
+            uses NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:G_NRP_BwpFlow;
         }
         container nrp_cosidentifier {
             config true;
@@ -284,7 +266,7 @@ of entries identifying protocols to be Peered where each entry consists of
 {Destination Address, Protocol Identifier} or {Destination Address, Protocol
 Identifier, Link Identifier}.
 MEF 45, Section 8.2";
-            key 'protocolId';
+            key 'linkId';
             config true;
             ordered-by system;
             uses NRP_Interface-TypeDefinitions-NRP_Types:G_NRP_L2cpPeering;
@@ -295,33 +277,29 @@ MEF 45, Section 8.2";
         config true;
         ordered-by system;
         uses G_NRP_EdgeCeFcSpec;
-        leaf uuid {
-            type string;
-        }
-    }
-    augment "/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:FcSpec" {
-      container NRP_EdgeCeFcSpec {
-        uses G_NRP_EdgeCeFcSpec;
-      }
     }
     grouping G_NRP_EdgeCeFcSpec {
+        uses G_NRP_CeFcSpec;
         list nrp_evcEndpoint {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_NRP_EvcEndpoint_ConnAdaptSpec;
+            min-elements 1;
         }
-        leaf-list nrp_ovcEndpoint {
+        list nrp_ovcEndpoint {
+            key 'uuid';
+            config true;
             ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_OvcEndpoint_ConnAdaptSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+            uses G_NRP_OvcEndpoint_ConnAdaptSpec;
+            uses G_NRP_ConnAdaptSpec;
         }
-        leaf-list nrp_ivcEndpoint {
+        list nrp_ivcEndpoint {
+            key 'uuid';
+            config true;
             ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_IvcEndpoint_ConnAdaptSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+            uses G_NRP_IvcEndpoint_ConnAdaptSpec;
+            uses G_NRP_ConnAdaptSpec;
         }
         leaf nrp_ceVlanIdPreservation {
             type boolean;
@@ -331,17 +309,10 @@ MEF 45, Section 8.2";
             type boolean;
             description "The CE-VLAN CoS preservation represents the PCP value relationship between the ingress Service Frame and its corresponding egress Service Frame(s). Reference MEF 10.3, Section 8.6.2.";
         }
-        leaf nrp_CeEvcFcPortSetSpec {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_CeEvcFcPortSetSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+        container nrp_CeEvcFcPortSetSpec {
+            config true;
+            uses G_NRP_CeEvcFcPortSetSpec;
         }
-    }
-    list NRP_ElasticServiceConstraintProfile {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_ElasticServiceConstraintProfile;
     }
     grouping G_NRP_ElasticServiceConstraintProfile {
         leaf nrp_cirUpperBound {
@@ -398,9 +369,6 @@ MEF 45, Section 8.2";
             config true;
             uses NRP_Interface-TypeDefinitions-NRP_Types:G_NRP_VlanId;
         }
-        leaf id {
-            type string;
-        }
     }
     list NRP_TransitCeFcSpec {
         key 'uuid';
@@ -419,29 +387,24 @@ MEF 45, Section 8.2";
             ordered-by system;
             type string;
         }
-        leaf-list nrp_ovcEndpoint {
+        list nrp_ovcEndpoint {
+            key 'uuid';
+            config true;
             ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_OvcEndpoint_ConnAdaptSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+            uses G_NRP_OvcEndpoint_ConnAdaptSpec;
+            uses G_NRP_ConnAdaptSpec;
         }
-        leaf-list nrp_ivcEndpoint {
+        list nrp_ivcEndpoint {
+            key 'uuid';
+            config true;
             ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_IvcEndpoint_ConnAdaptSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+            uses G_NRP_IvcEndpoint_ConnAdaptSpec;
+            uses G_NRP_ConnAdaptSpec;
         }
-        leaf nrp_CeEthFcPortSetSpec {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_CeEthFcPortSetSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+        container nrp_CeEthFcPortSetSpec {
+            config true;
+            uses G_NRP_CeEthFcPortSetSpec;
         }
-    }
-    list NRP_CeFcSpec {
-        key 'uuid';
-        config true;
-        ordered-by system;
-        uses G_NRP_CeFcSpec;
     }
     grouping G_NRP_CeFcSpec {
         uses NetworkResource-Main-ObjectClasses:G_CeFcSpec;
@@ -471,7 +434,7 @@ MEF 10.3, Section 8.2.";
         }
     }
     list NRP_EndPointMap {
-        key 'id';
+        key 'vlanId';
         config true;
         ordered-by system;
         uses G_NRP_EndPointMap;
@@ -497,8 +460,8 @@ MEF 10.3, Section 8.2.";
             config true;
             uses G_NRP_EndPointMapFormU;
         }
-        leaf id {
-            type string;
+        leaf vlanId {
+            type NRP_Interface-TypeDefinitions-NRP_Types:NRP_PositiveInteger;
         }
     }
     grouping G_NRP_EndPointMapFormE {
@@ -548,16 +511,12 @@ MEF 10.3, Section 8.2.";
             min-elements 1;
         }
     }
-    list NRP_OvcEndpoint_ConnAdaptSpec {
-        key 'id';
-        config true;
-        ordered-by system;
+    augment "/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_ConnAdaptSpec" {
         uses G_NRP_OvcEndpoint_ConnAdaptSpec;
     }
     grouping G_NRP_OvcEndpoint_ConnAdaptSpec {
-        uses G_NRP_ConnAdaptSpec;
         leaf nrp_ovcEndPointId {
-            type NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45;
+            type string;
             description "OVC End Point Identifier (MEF 26.2).";
         }
         leaf nrp_ovcEndPointRole {
@@ -592,9 +551,10 @@ MEF 10.3, Section 8.2.";
         }
     }
     list NRP_VUNI {
-        key 'id';
+        key 'uuid';
         config true;
         uses G_NRP_OvcEndpoint_ConnAdaptSpec;
+        uses G_NRP_ConnAdaptSpec;
         leaf nrp_vuniIdentifier {
             type NRP_Interface-TypeDefinitions-NRP_Types:NRP_Identifier45;
             description "This allows the SP/SO and the Operator to uniquely identify a VUNI for operations purposes";
@@ -624,43 +584,30 @@ MEF 10.3, Section 8.2.";
             ordered-by system;
             uses NRP_Interface-TypeDefinitions-NRP_Types:G_NRP_MepLevelAndDirection;
         }
-        leaf nrp_ingressbwp {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
+        container nrp_ingressbwp {
+            config true;
+            uses NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:G_NRP_BwpFlow;
         }
-        leaf nrp_egressbwp {
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:NRP_BwpFlow/NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:id';
-            }
+        container nrp_egressbwp {
+            config true;
+            uses NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage:G_NRP_BwpFlow;
         }
-        leaf-list nrp_ovcendpoint {
+        list nrp_ovcendpoint {
+            key 'uuid';
+            config true;
             ordered-by system;
-            type leafref {
-                path '/NRP_Interface-ObjectClasses-NRP_SpecPackage:NRP_OvcEndpoint_ConnAdaptSpec/NRP_Interface-ObjectClasses-NRP_SpecPackage:id';
-            }
+            uses G_NRP_OvcEndpoint_ConnAdaptSpec;
+            uses G_NRP_ConnAdaptSpec;
         }
-    }
-    list NRP_CeEvcFcPortSetSpec {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_CeEvcFcPortSetSpec;
     }
     grouping G_NRP_CeEvcFcPortSetSpec {
         uses NetworkResource-Main-ObjectClasses:G_CeEvcFcPortSetSpec;
-    }
-    list NRP_CeEthFcPortSetSpec {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_NRP_CeEthFcPortSetSpec;
     }
     grouping G_NRP_CeEthFcPortSetSpec {
         uses NetworkResource-Main-ObjectClasses:G_CeEthFcPortSetSpec;
     }
     list NRP_CeLtpSpec {
-        key 'id';
+        key 'uuid';
         config true;
         uses NetworkResource-Main-ObjectClasses:G_CeLtpSpec;
     }

@@ -10,10 +10,7 @@ module CoreModel-CoreNetworkModule-ObjectClasses {
     import CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule {
         prefix CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule;
     }
-    import CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed {
-        prefix CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed;
-    }
-    revision 2016-04-12{}
+    revision 2016-06-21{}
     list ForwardingDomain {
         key 'uuid';
         config true;
@@ -84,16 +81,16 @@ Aggregation is used as for the FD to allow changes in hierarchy.
                 path '/ForwardingConstruct/uuid';
             }
         }
-        leaf-list _fcRouteRefList {
+        list _fcRouteRefList {
             description "An FC object can have zero or more routes, each of which is defined as a list of lower level FC objects describing the flow across the network.";
+            key 'uuid';
+            config true;
             ordered-by system;
-            type leafref {
-                path '/CoreModel-CoreNetworkModule-ObjectClasses:FcRoute/CoreModel-CoreNetworkModule-ObjectClasses:id';
-            }
+            uses G_FcRoute;
         }
         list _fcPortList {
             description "The association of the FC to LTPs is made via FcPorts (essentially the ports of the FC).";
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_FcPort;
@@ -102,7 +99,7 @@ Aggregation is used as for the FD to allow changes in hierarchy.
         list _fcSwitchList {
             description "If an FC exposes protection (having two FcPorts that provide alternative identical inputs/outputs), the FC will have one or more associated FcSwitch objects.
 The arrangement of switches for a particular instance is described by a referenced FcSpec";
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_FcSwitch;
@@ -110,7 +107,7 @@ The arrangement of switches for a particular instance is described by a referenc
         list _configurationAndSwitchControlList {
             description "A multi-switch controller encapsulated in the FC.
 The multi-switch controller coordinates multiple switches in the same FC.";
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_ConfigurationAndSwitchController;
@@ -130,7 +127,7 @@ Is not present in more complex cases.";
         }
     }
     list NetworkControlDomain {
-        key 'id uuid';
+        key 'uuid';
         status current;
         config true;
         ordered-by system;
@@ -152,13 +149,10 @@ The domain is bounded by off-network links.";
         }
         list _networkElementRefList {
             description "The network elements within the scope of the NCD where each NE is within one and only one domain.";
-            key 'id uuid';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_NetworkElement;
-        }
-        leaf id {
-            type string;
         }
         max-elements 2;
         min-elements 1;
@@ -191,19 +185,11 @@ This association provides a direct summarization of the association via LinkPort
         }
         list _linkPortList {
             description "The association of the Link to LTPs is made via LinkPort (essentially the ports of the Link).";
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_LinkPort;
             min-elements 2;
-        }
-        leaf _linkSpecRef {
-            type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LinkSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
-            }
-            description "References the specification that describes the capability and internal structure of of the Link (e.g. asymmetric flows between points).
-The specification allows interpretation of LinkPort role and switch configurations etc.
-See also ForwardingConstruct.";
         }
         leaf-list _aggregatedLink {
             description "A link may formed from subordinate links (similar FD formations from subordiate FDs). This association is intended to cover concepts such as serial compound links. ";
@@ -220,7 +206,7 @@ Is not present in more complex cases.";
         }
     }
     list NetworkElement {
-        key 'id uuid';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_NetworkElement;
@@ -254,16 +240,44 @@ An LTP can be independent of an NE.";
             ordered-by system;
             uses G_LogicalTerminationPoint;
         }
-        leaf id {
-            type string;
-        }
     }
     grouping G_SdnController {
         status current;
         uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_GlobalClass;
     }
+    list FcPort {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_FcPort;
+    }
+    grouping G_FcPort {
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        leaf-list _ltpRefList {
+            description "The FcPort may be associated with more than one LTP when the FcPort is bidirectional and the LTPs are unidirectional.
+Multiple Ltp
+- Bidirectional FcPort to two Uni Ltps
+Zero Ltp
+- BreakBeforeMake transition
+- Planned Ltp not yet in place
+- Off-network LTP referenced through other mechanism";
+            ordered-by system;
+            type leafref {
+                path '/CoreModel-CoreNetworkModule-ObjectClasses:LogicalTerminationPoint/CoreModel-CoreNetworkModule-ObjectClasses:uuid';
+            }
+            max-elements 2;
+        }
+        leaf role {
+            type CoreModel-CoreNetworkModule-TypeDefinitions:PortRole;
+            description "Each FcPort of the FC has a role (e.g., working, protection, protected, symmetric, hub, spoke, leaf, root)  in the context of the FC with respect to the FC function. ";
+        }
+        leaf fcPortDirection {
+            type CoreModel-CoreNetworkModule-TypeDefinitions:PortDirection;
+            description "The orientation of defined flow at the FcPort.";
+        }
+    }
     list LayerProtocol {
-        key 'layerProtocolName';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_LayerProtocol;
@@ -276,7 +290,7 @@ An LTP can be independent of an NE.";
         }
         leaf _lpSpec {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LpSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
             description "The LpSpec identifies the interna structure of the LP explaining internal flexibilities, degree of termination and degree of adaptation on both client and server side.";
         }
@@ -321,7 +335,7 @@ Note the cleint LTP association should provide all necessary detail hence this a
         }
         list _lpList {
             description "Ordered list of LayerProtocols that this LTP is comprised of where the first entry in the list is the lowest server layer (e.g. physical)";
-            key 'layerProtocolName';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_LayerProtocol;
@@ -342,7 +356,7 @@ Reduces clutter removing the need for two additional LTPs and an FC with a pair 
         }
         leaf _ltpSpec {
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:id';
+                path '/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:LtpSpec/CoreModel-CoreModelEnhancements-ProfilesTemplatesAndSpecificationsModule:uuid';
             }
             description "The specification of the LTP defines internal structure of the LTP.
 The specification allows interpretation of organisatoon of LPs making up the LTP and also identifies which inter-LTP associations are valid.";
@@ -370,7 +384,7 @@ The referencing LTP is the rovider of capability.";
         }
     }
     list FcRoute {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_FcRoute;
@@ -385,12 +399,62 @@ The referencing LTP is the rovider of capability.";
             }
             min-elements 2;
         }
-        leaf id {
-            type string;
+    }
+    list FcSwitch {
+        key 'uuid';
+        config true;
+        ordered-by system;
+        uses G_FcSwitch;
+    }
+    grouping G_FcSwitch {
+        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
+        leaf holdOffTime {
+            type uint64;
+            description "This attribute indicates the time, in seconds, between declaration of unacceptable quality of signal on the currently selected FcPort, and the initialization of the protection switching algorithm. ";
+        }
+        leaf waitToRestoreTime {
+            type uint64;
+            description "If the protection system is revertive, this attribute specifies the amount of time, in seconds, to wait after the preferred FcPort returns to an acceptable state of operaion (e.g a fault has cleared) before restoring traffic to that preferred FcPort. ";
+        }
+        leaf protType {
+            type CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType;
+            description "Indicates the protection scheme that is used for the ProtectionGroup.";
+        }
+        leaf operType {
+            type CoreModel-CoreNetworkModule-TypeDefinitions:OperType;
+            description "This attribute whether or not the protection scheme is revertive or non-revertive. ";
+        }
+        leaf-list _selectedFcPortRefList {
+            description "Indicates which points are selected by the switch.";
+            ordered-by system;
+            type leafref {
+                path '/CoreModel-CoreNetworkModule-ObjectClasses:FcPort/CoreModel-CoreNetworkModule-ObjectClasses:uuid';
+            }
+            min-elements 1;
+        }
+        leaf-list _profileProxyRefList {
+            description "Provides a set of predefined values for switch control in place of the direct values avaiable via the FcSwitch or via _configurationAndSwitchControl ";
+            ordered-by system;
+            type leafref {
+                path '/CoreModel-CoreNetworkModule-ObjectClasses:ProfileProxy/CoreModel-CoreNetworkModule-ObjectClasses:profileProxyMode';
+            }
+        }
+        leaf _configurationAndSwitchControlRef {
+            type leafref {
+                path '/CoreModel-CoreNetworkModule-ObjectClasses:ConfigurationAndSwitchController/CoreModel-CoreNetworkModule-ObjectClasses:uuid';
+            }
+            description "A multi-switch controller external to the FcSwitch.
+The multi-switch controller coordinates multiple switches in the same FC or across multple FCs";
+        }
+        container _configurationAndSwitchControl {
+            description "A switch controller encapsulated in the FcSwitch.
+";
+            config true;
+            uses G_ConfigurationAndSwitchController;
         }
     }
     list LinkPort {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_LinkPort;
@@ -429,9 +493,6 @@ This attribute is used when an LTP cannot be referenced.";
             type CoreModel-CoreNetworkModule-TypeDefinitions:PortDirection;
             description "The orientation of defined flow at the LinkPort.";
         }
-        leaf id {
-            type string;
-        }
     }
     grouping G_TransferCost_Pac {
         list costCharacteristicList {
@@ -468,7 +529,7 @@ This attribute is used when an LTP cannot be referenced.";
             }
             min-elements 1;
         }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
@@ -507,7 +568,7 @@ Applies to TDM systems (and not packet).";
         }
         list queuingLatencyList {
             description "The effect on the latency of a queuing process. This only has significant effect for packet based systems and has a complex characteristic.";
-            key 'id';
+            key 'trafficProperty';
             config true;
             ordered-by system;
             uses CoreModel-CoreNetworkModule-TypeDefinitions:G_QueuingLatency;
@@ -589,7 +650,7 @@ Does not apply to TDM as the TDM protocols maintain strict order.";
         }
         list capacityAssignedToUserView {
             description "Capacity already assigned";
-            key 'id';
+            key 'totalSize';
             config true;
             ordered-by system;
             uses CoreModel-CoreNetworkModule-TypeDefinitions:G_Capacity;
@@ -655,7 +716,7 @@ Does not apply to TDM as the TDM protocols maintain strict order.";
             uses G_Validation_Pac;
         }
         list _layerTransition_Pac {
-            key 'id';
+            key 'uuid';
             config true;
             ordered-by system;
             uses G_LayerProtocolTransition_Pac;
@@ -665,105 +726,63 @@ Does not apply to TDM as the TDM protocols maintain strict order.";
     grouping G_Validation_Pac {
         list validationMechanismList {
             description "Provides details of the specific validation mechanism(s) used to confirm the presence of an intended topologicalEntity.";
-            key 'id';
+            key 'validationMechanism';
             config true;
             ordered-by system;
             uses CoreModel-CoreNetworkModule-TypeDefinitions:G_ValidationMechanism;
             min-elements 1;
         }
     }
-    list FcPort {
-        key 'id';
+    list ControlParameters {
+        key 'uuid';
         config true;
         ordered-by system;
-        uses G_FcPort;
+        uses G_ControlParameters;
     }
-    grouping G_FcPort {
-        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
-        leaf-list _ltpRefList {
-            description "The FcPort may be associated with more than one LTP when the FcPort is bidirectional and the LTPs are unidirectional.
-Multiple Ltp
-- Bidirectional FcPort to two Uni Ltps
-Zero Ltp
-- BreakBeforeMake transition
-- Planned Ltp not yet in place
-- Off-network LTP referenced through other mechanism";
-            ordered-by system;
-            type leafref {
-                path '/CoreModel-CoreNetworkModule-ObjectClasses:LogicalTerminationPoint/CoreModel-CoreNetworkModule-ObjectClasses:uuid';
-            }
-            max-elements 2;
-        }
-        leaf role {
-            type CoreModel-CoreNetworkModule-TypeDefinitions:PortRole;
-            description "Each FcPort of the FC has a role (e.g., working, protection, protected, symmetric, hub, spoke, leaf, root)  in the context of the FC with respect to the FC function. ";
-        }
-        leaf fcPortDirection {
-            type CoreModel-CoreNetworkModule-TypeDefinitions:PortDirection;
-            description "The orientation of defined flow at the FcPort.";
-        }
-        leaf id {
-            type string;
-        }
-    }
-    list FcSwitch {
-        key 'id';
-        config true;
-        ordered-by system;
-        uses G_FcSwitch;
-    }
-    grouping G_FcSwitch {
-        uses CoreModel-CoreFoundationModule-SuperClassesAndCommonPackages:G_LocalClass;
-        leaf holdOffTime {
-            type uint64;
-            description "This attribute indicates the time, in seconds, between declaration of unacceptable quality of signal on the currently selected FcPort, and the initialization of the protection switching algorithm. ";
+    grouping G_ControlParameters {
+        status deprecated;
+        leaf operType {
+            type CoreModel-CoreNetworkModule-TypeDefinitions:OperType;
+            description "This attribute whether or not the protection scheme is revertive or non-revertive. ";
         }
         leaf waitToRestoreTime {
             type uint64;
-            description "If the protection system is revertive, this attribute specifies the amount of time, in seconds, to wait after the preferred FcPort returns to an acceptable state of operaion (e.g a fault has cleared) before restoring traffic to that preferred FcPort. ";
+            description "If the protection system is revertive, this attribute specifies the amount of time, in seconds, to wait after a fault clears before restoring traffic to the protected protectionUnit that initiated the switching. Valid values for this attribute are integers.";
         }
         leaf protType {
             type CoreModel-CoreNetworkModule-TypeDefinitions:ProtectionType;
             description "Indicates the protection scheme that is used for the ProtectionGroup.";
         }
-        leaf operType {
-            type CoreModel-CoreNetworkModule-TypeDefinitions:OperType;
-            description "This attribute whether or not the protection scheme is revertive or non-revertive. ";
+        leaf holdOffTime {
+            type uint64;
+            description "This attribute indicates the time, in seconds, between declaration of signal degrade or signal fail, and the initialization of the protection switching algorithm. Valid values are integers in units of seconds.";
         }
-        leaf-list _selectedFcPortRefList {
-            description "Indicates which points are selected by the switch.";
-            ordered-by system;
-            type leafref {
-                path '/CoreModel-CoreNetworkModule-ObjectClasses:FcPort/CoreModel-CoreNetworkModule-ObjectClasses:id';
-            }
-            min-elements 1;
-        }
-        leaf-list _profileProxyRefList {
-            description "Provides a set of predefined values for switch control in place of the direct values avaiable via the FcSwitch or via _configurationAndSwitchControl ";
-            ordered-by system;
-            type leafref {
-                path '/CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:id';
-            }
-        }
-        leaf _configurationAndSwitchControlRef {
-            type leafref {
-                path '/CoreModel-CoreNetworkModule-ObjectClasses:ConfigurationAndSwitchController/CoreModel-CoreNetworkModule-ObjectClasses:id';
-            }
-            description "A multi-switch controller external to the FcSwitch.
-The multi-switch controller coordinates multiple switches in the same FC or across multple FCs";
-        }
-        container _configurationAndSwitchControl {
-            description "A switch controller encapsulated in the FcSwitch.
-";
-            config true;
-            uses G_ConfigurationAndSwitchController;
-        }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }
+    list ProfileProxy {
+        key 'profileProxyMode';
+        config true;
+        ordered-by system;
+        uses G_ProfileProxy;
+    }
+    grouping G_ProfileProxy {
+        status deprecated;
+        leaf profileProxyMode {
+            type string;
+            description "<p>A parameter profile may be used in a number of different ways: - Forces the values on the target with no opportunity to see or override the values in the target - Sets the values on the target that can be seen on the target - Sets the values on the target and supports override on the target so the target can be set away from the value in the profile - etc</p>
+";
+        }
+        container _controlParameters {
+            description "The control parameters that can be set int the profile and applied to the target.
+Not all parameters need be selected and applied.";
+            config true;
+            uses G_ControlParameters;
+        }
+    }
     list ConfigurationAndSwitchController {
-        key 'id';
+        key 'uuid';
         config true;
         ordered-by system;
         uses G_ConfigurationAndSwitchController;
@@ -778,37 +797,22 @@ The multi-switch controller coordinates multiple switches in the same FC or acro
             description "The switch being controlled.";
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreNetworkModule-ObjectClasses:FcSwitch/CoreModel-CoreNetworkModule-ObjectClasses:id';
+                path '/CoreModel-CoreNetworkModule-ObjectClasses:FcSwitch/CoreModel-CoreNetworkModule-ObjectClasses:uuid';
             }
         }
         container _controlParameters {
             description "The control parameters to be aplied if local parameters are used rather than profiles";
             config true;
-            uses CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:G_ControlParameters;
+            uses G_ControlParameters;
         }
         leaf-list _profileProxyRef {
             description "Applied profiles.";
             ordered-by system;
             type leafref {
-                path '/CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:ProfileProxy/CoreModel-CoreModelEnhancements-FcSwitchEnhancements_Developed:id';
+                path '/CoreModel-CoreNetworkModule-ObjectClasses:ProfileProxy/CoreModel-CoreNetworkModule-ObjectClasses:profileProxyMode';
             }
         }
-        leaf id {
-            type string;
-        }
-    }
-    list ConfigurationGroup {
-        key 'id';
-        status deprecated;
-        config true;
-        list _configurationAndSwitchControlRefList {
-            description "A controller operating in the scope defined.";
-            key 'id';
-            config true;
-            ordered-by system;
-            uses G_ConfigurationAndSwitchController;
-        }
-        leaf id {
+        leaf uuid {
             type string;
         }
     }

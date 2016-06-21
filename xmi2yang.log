@@ -1,17 +1,20 @@
+% node main.js                                                             
 CoreModel.uml read success!
 Warning:The type of attribute 'costAlgorithm' of class 'CostCharacteristics' is undefined!
 Warning:The type of attribute '_ltppList' of class 'NetworkElement' is undefined!
 Warning:The type of attribute 'configuredClientCapacity' of class 'LayerProtocol' is undefined!
 Warning:The type of attribute 'terminationState' of class 'LayerProtocol' is undefined!
-Warning:The type of attribute 'id' of class 'FcRoute' is undefined!
+Warning:Class LogicalTerminationPoint xmi:id=_eEpDMFX4EeOVGaP4lO41SQ can not be composited by itself!
+Warning:Class LogicalTerminationPoint xmi:id=_eEpDMFX4EeOVGaP4lO41SQ can not be composited by itself!
 Warning:The type of attribute '_ltpp' of class 'LinkPort' is undefined!
-Warning:The type of attribute 'SwichRule' of class 'ConfigurationAndSwitchController' is undefined!
 Warning:The type of attribute 'profileProxyMode' of class 'ProfileProxy' is undefined!
+Warning:The type of attribute 'SwichRule' of class 'ConfigurationAndSwitchController' is undefined!
 Warning:The type of attribute 'switchControl_switch_1' of class 'ControlRule' is undefined!
 Warning:The type of attribute 'role' of class 'FcPortSetSpec' is undefined!
 Warning:The type of attribute 'clientCapacity' of class 'PoolPropertySpec' is undefined!
 Warning:The type of attribute 'Role' of class 'Port' is undefined!
 NRP_Interface.uml read success!
+Warning:The type of attribute '_ltpRefList' of class 'LayerProtocolTransition_Pac' is undefined!
 NetworkResource.uml read success!
 xmi translate to yang successfully!
 write CoreModel-CoreNetworkModule-TypeDefinitions
@@ -30,5 +33,5 @@ write NRP_Interface-TypeDefinitions-NRP_Types
 write NRP_Interface-ObjectClasses-NRP_SpecPackage
 write NRP_Interface-ObjectClasses-NRP_BandwidthProfilePackage
 write NRP_Interface-ObjectClasses-TopologyPacs
+write NetworkResource-Main
 write NetworkResource-Main-ObjectClasses
-
