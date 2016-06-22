@@ -108,9 +108,8 @@ module mef-nrp-types {
     }
   }
   typedef NRP_NaturalNumber {
-    type enumeration {
-      enum ENABLED;
-      enum DISABLED;
+    type uint32 {
+      range "1..max";
     }
   }
   grouping G_NRP_SyncModePerLink {
@@ -172,9 +171,8 @@ MEF 45, Section 8.2";
     }
   }
   typedef NRP_PositiveInteger {
-    type enumeration {
-      enum ENABLED;
-      enum DISABLED;
+    type uint32 {
+      range "1..max";
     }
   }
   typedef NRP_VlanTag {
