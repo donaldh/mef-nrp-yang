@@ -1,5 +1,5 @@
 module onf-core-network-module {
-  namespace "uri:onf:core-network-module";
+  namespace "urn:onf:core-network-module";
   prefix onf-cn;
 
   import onf-core-network-types {
@@ -91,7 +91,7 @@ cases.";
   }
 
   augment "/nt:network-topology/nt:topology/nt:node/nt:termination-point" {
-    container fc-port {
+    container fc-port-attrs {
       uses G_FcPort;
     }
   }

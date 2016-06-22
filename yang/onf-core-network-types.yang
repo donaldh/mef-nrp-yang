@@ -1,5 +1,5 @@
 module onf-core-network-types {
-  namespace "uri:onf:core-network-types";
+  namespace "urn:onf:core-network-types";
   prefix onf-cnt;
 
   revision 2016-06-21 {
