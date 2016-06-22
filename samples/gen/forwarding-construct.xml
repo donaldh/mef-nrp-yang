@@ -1,0 +1,5 @@
+<ForwardingConstruct xmlns="uri:onf:CoreModel-CoreNetworkModule-ObjectClasses" xmlns:r="uri:onf:NetworkResource-Main-ObjectClasses" xmlns:nrp="uri:onf:NRP_Interface-ObjectClasses-NRP_SpecPackage">
+  
+  <uuid>Sample</uuid>
+  <_fcSpecRef>sample-spec</_fcSpecRef>
+</ForwardingConstruct>
