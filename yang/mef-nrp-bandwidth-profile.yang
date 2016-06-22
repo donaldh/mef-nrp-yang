@@ -139,59 +139,59 @@ Bandwidth Profile Algorithm.";
   grouping G_NRP_EgressBwpPerEecName {
   }
 
-    grouping G_NRP_ServiceAccessPointColorId {
-        leaf nrp_color {
-            type nrp-types:NRP_FrameColor;
-            description "Green or Yellow.";
-        }
+  grouping G_NRP_ServiceAccessPointColorId {
+    leaf nrp_color {
+      type nrp-types:NRP_FrameColor;
+      description "Green or Yellow.";
     }
-    grouping G_NRP_PcpColorId {
-        leaf nrp_vlanTag {
-            type nrp-types:NRP_VlanTag;
-            description "Which vlan tag pcp to be used for color identier, S tag or C tag. S-tag is not valid for EvcEndPoint. ";
-        }
-        leaf-list nrp_pcpValue {
-            description "List PCP values map to the same color.";
-            ordered-by system;
-            type nrp-types:NRP_NaturalNumber;
-            min-elements 1;
-        }
-        leaf nrp_color {
-            type nrp-types:NRP_FrameColor;
-            description "Green or Yellow.";
-        }
+  }
+  grouping G_NRP_PcpColorId {
+    leaf nrp_vlanTag {
+      type nrp-types:NRP_VlanTag;
+      description "Which vlan tag pcp to be used for color identier, S tag or C tag. S-tag is not valid for EvcEndPoint. ";
     }
-    grouping G_NRP_DeiColorId {
-        leaf nrp_vlanTag {
-            type nrp-types:NRP_VlanTag;
-            description "Which vlan tag pcp to be used for color identier, S tag or C tag. S-tag is not valid for EvcEndPoint. ";
-        }
-        leaf-list nrp_deiValue {
-            description "DEI=0 or DEI=1";
-            ordered-by system;
-            type nrp-types:NRP_NaturalNumber;
-            max-elements 2;
-            min-elements 1;
-        }
-        leaf nrp_color {
-            type nrp-types:NRP_FrameColor;
-            description "Green or Yellow";
-        }
+    leaf-list nrp_pcpValue {
+      description "List PCP values map to the same color.";
+      ordered-by system;
+      type nrp-types:NRP_NaturalNumber;
+      min-elements 1;
     }
-    grouping G_NRP_DespColorId {
-        leaf nrp_ipVersion {
-            type nrp-types:NRP_IpVersion;
-            description "IPv4, or IPv6, or both IPv4 and IPv6.";
-        }
-        leaf-list nrp_dscpValue {
-            description "List DSCP values map to the same color.";
-            ordered-by system;
-            type nrp-types:NRP_NaturalNumber;
-        }
-        leaf nrp_color {
-            type nrp-types:NRP_FrameColor;
-            description "Green or Yellow";
-        }
+    leaf nrp_color {
+      type nrp-types:NRP_FrameColor;
+      description "Green or Yellow.";
     }
+  }
+  grouping G_NRP_DeiColorId {
+    leaf nrp_vlanTag {
+      type nrp-types:NRP_VlanTag;
+      description "Which vlan tag pcp to be used for color identier, S tag or C tag. S-tag is not valid for EvcEndPoint. ";
+    }
+    leaf-list nrp_deiValue {
+      description "DEI=0 or DEI=1";
+      ordered-by system;
+      type nrp-types:NRP_NaturalNumber;
+      max-elements 2;
+      min-elements 1;
+    }
+    leaf nrp_color {
+      type nrp-types:NRP_FrameColor;
+      description "Green or Yellow";
+    }
+  }
+  grouping G_NRP_DespColorId {
+    leaf nrp_ipVersion {
+      type nrp-types:NRP_IpVersion;
+      description "IPv4, or IPv6, or both IPv4 and IPv6.";
+    }
+    leaf-list nrp_dscpValue {
+      description "List DSCP values map to the same color.";
+      ordered-by system;
+      type nrp-types:NRP_NaturalNumber;
+    }
+    leaf nrp_color {
+      type nrp-types:NRP_FrameColor;
+      description "Green or Yellow";
+    }
+  }
 
 }
