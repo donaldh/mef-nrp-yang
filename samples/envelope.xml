@@ -1,0 +1,21 @@
+<nrp-envelopes xmlns="urn:mef:nrp-bandwidth-profile">
+  <nrp-envelope>
+    <nrp_envelopeId>simple-envelope</nrp_envelopeId>
+    <nrp_bwpflowrank>
+      <nrp_bwpFlowRankInEnvelope>1</nrp_bwpFlowRankInEnvelope>
+      <nrp_bwpflow>
+        <nrp_bwpFlowIndex>1</nrp_bwpFlowIndex>
+        <nrp_cir>1000</nrp_cir>
+        <nrp_cirMax>10000</nrp_cirMax>
+        <nrp_cbs>1000</nrp_cbs>
+        <nrp_eir>1000</nrp_eir>
+        <nrp_eirMax>10000</nrp_eirMax>
+        <nrp_ebs>1000</nrp_ebs>
+        <nrp_couplingFlag>1</nrp_couplingFlag>
+        <nrp_colorMode>COLOR_AWARE</nrp_colorMode>
+        <nrp_rank>1</nrp_rank>
+        <nrp_tokenRequestOffset>1</nrp_tokenRequestOffset>
+      </nrp_bwpflow>
+    </nrp_bwpflowrank>
+  </nrp-envelope>
+</nrp-envelopes>

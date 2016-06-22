@@ -1,0 +1,9 @@
+<fc-specs xmlns="urn:onf:core-specs">
+  <fc-spec>
+    <uuid>simple-spec</uuid>
+    <termination-spec xmlns="urn:mef:nrp-specs">
+      <nrp_linkOamEnabled>true</nrp_linkOamEnabled>
+      <nrp_envelope>simple-envelope</nrp_envelope>
+    </termination-spec>
+  </fc-spec>
+</fc-specs>

@@ -1,0 +1,15 @@
+<network-topology xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+  <topology>
+    <topology-id>mef-network-resources</topology-id>
+    <node>
+      <node-id>asr-101</node-id>
+      <termination-point>
+        <tp-id>GigabitEthernet0/0/1/17</tp-id>
+        <fc-port-attrs xmlns="uri:onf:core-network-module">
+          <role>primary</role>
+          <fcPortDirection>BIDIRECTIONAL</fcPortDirection>
+        </fc-port-attrs>
+      </termination-point>
+    </node>
+  </topology>
+</network-topology>

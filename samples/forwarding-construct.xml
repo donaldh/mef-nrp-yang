@@ -1,5 +1,18 @@
-<ForwardingConstruct xmlns="uri:onf:CoreModel-CoreNetworkModule-ObjectClasses" xmlns:r="uri:onf:NetworkResource-Main-ObjectClasses" xmlns:nrp="uri:onf:NRP_Interface-ObjectClasses-NRP_SpecPackage">
-  
-  <uuid>Sample</uuid>
-  <_fcSpecRef>sample-spec</_fcSpecRef>
-</ForwardingConstruct>
+<forwarding-constructs xmlns="uri:onf:core-network-module">
+  <forwarding-construct>
+    <uuid>hello</uuid>
+    <fcPort>
+      <topology>mef-network-resources</topology>
+      <node>asr-101</node>
+      <tp>GigabitEthernet0/0/1/19</tp>
+    </fcPort>
+    <fcPort>
+      <topology>mef-network-resources</topology>
+      <node>asr-101</node>
+      <tp>GigabitEthernet0/0/1/17</tp>
+    </fcPort>
+    <fcSpec>simple-spec</fcSpec>
+    <forwardingDirection>BIDIRECTIONAL</forwardingDirection>
+    <layerProtocolName>hello</layerProtocolName>
+  </forwarding-construct>
+</forwarding-constructs>
