@@ -23,146 +23,147 @@ module mef-nrp-specs {
     }
   }
 
-    grouping G_NRP_TerminationSpec {
-        leaf nrp_physicalLayer {
-            type nrp-types:NRP_PhysicalLayer;
-            description "This attribute is a list of physical layers, one for each physical link implementing the UNI or
+  grouping G_NRP_TerminationSpec {
+    leaf nrp_physicalLayer {
+      type nrp-types:NRP_PhysicalLayer;
+      description "This attribute is a list of physical layers, one for each physical link implementing the UNI or
 ENNI. Different physical links can use different physical layers. The Physical Layer for each
 physical link implementing the UNI or ENNI MUST be one of the PHYs listed in IEEE Std 802.3 –
 2012 but excluding 1000BASE-PX-D and 1000BASE-PX-U.  Reference MEF 10.3, Section 9.2.";
-        }
-        list nrp_syncMode {
-            description "<p>The Synchronous Mode Service Attribute is a list with one item for each of the physical
+    }
+    list nrp_syncMode {
+      description "<p>The Synchronous Mode Service Attribute is a list with one item for each of the physical
 links. When the value of an item is &quot;Enabled,&quot; the bits transmitted from the CEN to
 the CE on the physical link corresponding to the item can be used by the CE as a bit clock
 reference. Reference MEF 10.3, Section 9.3.</p>
 ";
-            key 'linkId';
-            config true;
-            ordered-by system;
-            uses nrp-types:G_NRP_SyncModePerLink;
-        }
-        leaf nrp_numberOfLinks {
-            type nrp-types:NRP_NaturalNumber;
-            description "This attribute specifies the number of links at the Ethernet Service Interface (UNI or ENNI).
+      key 'linkId';
+      config true;
+      ordered-by system;
+      uses nrp-types:G_NRP_SyncModePerLink;
+    }
+    leaf nrp_numberOfLinks {
+      type nrp-types:NRP_NaturalNumber;
+      description "This attribute specifies the number of links at the Ethernet Service Interface (UNI or ENNI).
 MEF 10.3, Section 9.4.";
-        }
-        leaf nrp_resiliency {
-            type nrp-types:NRP_InterfaceResiliency;
-            description "This attribute value is one of None, 2-Link Active/Standby, All Active, or Other.  MEF 10.3,
+    }
+    leaf nrp_resiliency {
+      type nrp-types:NRP_InterfaceResiliency;
+      description "This attribute value is one of None, 2-Link Active/Standby, All Active, or Other.  MEF 10.3,
 Section 9.5.  MEF 10.3.2, MEF 26.2
 ";
-        }
-        container nrp_portConvsIdToAggLinkMap {
-            description "The Port Conversation ID to Aggregation Link Map Attribute is applicable only when the
+    }
+    container nrp_portConvsIdToAggLinkMap {
+      description "The Port Conversation ID to Aggregation Link Map Attribute is applicable only when the
 EthernetServiceInterface resiliency attribute has the value of All Active. Its value is a Port
 Conversation ID to Aggregation Link Map as defined in IEEE Std 802.1AX – 2014.  MEF 10.3.2";
-            config true;
-            uses nrp-types:G_NRP_ConversationIdToAggrgationLinkMap;
-        }
-        leaf nrp_maxFrameSize {
-            type nrp-types:NRP_NaturalNumber;
-            description "This value limits the length of frames carried by an EVC/OVC that associates an EVC/OVC End
+      config true;
+      uses nrp-types:G_NRP_ConversationIdToAggrgationLinkMap;
+    }
+    leaf nrp_maxFrameSize {
+      type nrp-types:NRP_NaturalNumber;
+      description "This value limits the length of frames carried by an EVC/OVC that associates an EVC/OVC End
 Point. The minimum of this maxinum number for UNI and ENNI are different.  MEF 10.3, Section
 9.7.";
-        }
-        leaf nrp_linkOamEnabled {
-            type boolean;
-            description "When the value of the Link OAM attribute is Enabled, Link OAM musd tbe run on all physical links
+    }
+    leaf nrp_linkOamEnabled {
+      type boolean;
+      description "When the value of the Link OAM attribute is Enabled, Link OAM musd tbe run on all physical links
 in the UNI/ENNI.  MEF 10.3, Section 9.16.";
-        }
-        leaf nrp_tokenShareEnabled {
-            type boolean;
-            description "When the value of the Token Share Service attribute is Enabled, at least one Envelope at the
+    }
+    leaf nrp_tokenShareEnabled {
+      type boolean;
+      description "When the value of the Token Share Service attribute is Enabled, at least one Envelope at the
 UNI/ENNI MUST be able to have two or more Bandwidth Profiles mapped to it.  MEF 6.2, Section
 8.2.1.";
-        }
-        leaf-list nrp_CeServiceAccessPoint {
-            description "The Network Interface relationship to supporting zero to many Logical Interface flow points.";
-            ordered-by system;
-            type leafref {
-                path '/conn-adapt-specs/conn-adapt-spec/uuid';
-            }
-        }
-        leaf-list nrp_envelope {
-            description "MEF 10.3, Section 12.1.  MEF 6.2, Section 8.2.2.";
-            ordered-by system;
-            type leafref {
-                path '/nrp-bwp:nrp-envelopes/nrp-bwp:nrp-envelope/nrp-bwp:nrp_envelopeId';
-            }
-        }
-        leaf nrp_serviceProviderUniId {
-            type string;
-            description "MEF 10.3, Section 9.1.";
-        }
     }
-
-    container conn-adapt-specs {
-      list conn-adapt-spec {
-        key "uuid";
-        leaf uuid {
-          type string;
-        }
-        uses G_NRP_ConnAdaptSpec;
+    leaf-list nrp_CeServiceAccessPoint {
+      description "The Network Interface relationship to supporting zero to many Logical Interface flow points.";
+      ordered-by system;
+      type leafref {
+        path '/conn-adapt-specs/conn-adapt-spec/uuid';
       }
     }
+    leaf-list nrp_envelope {
+      description "MEF 10.3, Section 12.1.  MEF 6.2, Section 8.2.2.";
+      ordered-by system;
+      type leafref {
+        path '/nrp-bwp:nrp-envelopes/nrp-bwp:nrp-envelope/nrp-bwp:nrp_envelopeId';
+      }
+    }
+    leaf nrp_serviceProviderUniId {
+      type string;
+      description "MEF 10.3, Section 9.1.";
+    }
+  }
 
-    grouping G_NRP_ConnAdaptSpec {
-        container nrp_sourceMacAddressLimit {
-            description "MEF 10.3, Section 10.9";
-            config true;
-            uses nrp-types:G_NRP_SourceMacAddressLimit;
-        }
-        container nrp_CeExternalInterface {
-            config true;
-            uses G_NRP_TerminationSpec;
-        }
-        container nrp_egressMap {
-            description "MEF 7.3";
-            config true;
-            uses nrp-bwp:G_NRP_EgressMap;
-        }
-        container nrp_eecIdentifier {
-            config true;
-            uses nrp-bwp:G_NRP_EecIdentifier;
-        }
-        container nrp_coloridentifier {
-            config true;
-            uses nrp-bwp:G_NRP_ColorIdentifier;
-        }
-        container nrp_ingressBwpFlow {
-            config true;
-            uses nrp-bwp:G_NRP_BwpFlow;
-        }
-        container nrp_egressBwpFlow {
-            config true;
-            uses nrp-bwp:G_NRP_BwpFlow;
-        }
-        container nrp_cosidentifier {
-            config true;
-            uses nrp-bwp:G_NRP_DataFrameCosIdentifier;
-        }
-        container nrp_ingressbwppercosname {
-            config true;
-            uses nrp-bwp:G_NRP_IngressBwpPerCosName;
-        }
-        container nrp_egressbwppereecname {
-            config true;
-            uses nrp-bwp:G_NRP_EgressBwpPerEecName;
-        }
-        leaf nrp_l2cpAddressSet {
-            type nrp-types:NRP_L2cpAddressSet;
-        }
-        list nrp_l2cpPeering {
-            description "The L2CP Peering service attribute value MUST be an empty list, or a list
+  container conn-adapt-specs {
+    list conn-adapt-spec {
+      key "uuid";
+      leaf uuid {
+        type string;
+      }
+      uses G_NRP_ConnAdaptSpec;
+    }
+  }
+
+  grouping G_NRP_ConnAdaptSpec {
+    container nrp_sourceMacAddressLimit {
+      description "MEF 10.3, Section 10.9";
+      config true;
+      uses nrp-types:G_NRP_SourceMacAddressLimit;
+    }
+    container nrp_CeExternalInterface {
+      config true;
+      uses G_NRP_TerminationSpec;
+    }
+    container nrp_egressMap {
+      description "MEF 7.3";
+      config true;
+      uses nrp-bwp:G_NRP_EgressMap;
+    }
+    container nrp_eecIdentifier {
+      config true;
+      uses nrp-bwp:G_NRP_EecIdentifier;
+    }
+    container nrp_coloridentifier {
+      config true;
+      uses nrp-bwp:G_NRP_ColorIdentifier;
+    }
+    container nrp_ingressBwpFlow {
+      config true;
+      uses nrp-bwp:G_NRP_BwpFlow;
+    }
+    container nrp_egressBwpFlow {
+      config true;
+      uses nrp-bwp:G_NRP_BwpFlow;
+    }
+    container nrp_cosidentifier {
+      config true;
+      uses nrp-bwp:G_NRP_DataFrameCosIdentifier;
+    }
+    container nrp_ingressbwppercosname {
+      config true;
+      uses nrp-bwp:G_NRP_IngressBwpPerCosName;
+    }
+    container nrp_egressbwppereecname {
+      config true;
+      uses nrp-bwp:G_NRP_EgressBwpPerEecName;
+    }
+    leaf nrp_l2cpAddressSet {
+      type nrp-types:NRP_L2cpAddressSet;
+    }
+    list nrp_l2cpPeering {
+      description "The L2CP Peering service attribute value MUST be an empty list, or a list
 of entries identifying protocols to be Peered where each entry consists of
 {Destination Address, Protocol Identifier} or {Destination Address, Protocol
 Identifier, Link Identifier}.
 MEF 45, Section 8.2";
-            key 'linkId';
-            config true;
-            ordered-by system;
-            uses nrp-types:G_NRP_L2cpPeering;
-        }
+      key 'linkId';
+      config true;
+      ordered-by system;
+      uses nrp-types:G_NRP_L2cpPeering;
     }
+  }
+
 }
