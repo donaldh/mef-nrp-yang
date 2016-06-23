@@ -43,4 +43,13 @@ module onf-core-network-types {
     type string;
   }
 
+  typedef TerminationDirection {
+    type enumeration {
+      enum BIDIRECTIONAL;
+      enum SINK;
+      enum SOURCE;
+      enum UNDEFINED_OR_UNKNOWN;
+    }
+  }
+
 }

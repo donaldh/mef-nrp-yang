@@ -17,8 +17,8 @@ module mef-nrp-specs {
   revision 2016-06-21 {
   }
 
-  augment "/onf-cs:fc-specs/onf-cs:fc-spec" {
-    container termination-spec {
+  augment "/onf-cs:lp-specs/onf-cs:lp-spec/onf-cs:terminationSpec" {
+    container nrp-termination-spec-attrs {
       uses G_NRP_TerminationSpec;
     }
   }
@@ -28,7 +28,7 @@ module mef-nrp-specs {
       type nrp-types:NRP_PhysicalLayer;
       description "This attribute is a list of physical layers, one for each physical link implementing the UNI or
 ENNI. Different physical links can use different physical layers. The Physical Layer for each
-physical link implementing the UNI or ENNI MUST be one of the PHYs listed in IEEE Std 802.3 –
+physical link implementing the UNI or ENNI MUST be one of the PHYs listed in IEEE Std 802.3 -
 2012 but excluding 1000BASE-PX-D and 1000BASE-PX-U.  Reference MEF 10.3, Section 9.2.";
     }
     list nrp_syncMode {
@@ -56,7 +56,7 @@ Section 9.5.  MEF 10.3.2, MEF 26.2
     container nrp_portConvsIdToAggLinkMap {
       description "The Port Conversation ID to Aggregation Link Map Attribute is applicable only when the
 EthernetServiceInterface resiliency attribute has the value of All Active. Its value is a Port
-Conversation ID to Aggregation Link Map as defined in IEEE Std 802.1AX – 2014.  MEF 10.3.2";
+Conversation ID to Aggregation Link Map as defined in IEEE Std 802.1AX - 2014.  MEF 10.3.2";
       config true;
       uses nrp-types:G_NRP_ConversationIdToAggrgationLinkMap;
     }
@@ -81,7 +81,7 @@ UNI/ENNI MUST be able to have two or more Bandwidth Profiles mapped to it.  MEF 
       description "The Network Interface relationship to supporting zero to many Logical Interface flow points.";
       ordered-by system;
       type leafref {
-        path '/conn-adapt-specs/conn-adapt-spec/uuid';
+        path '/onf-cs:lp-specs/onf-cs:lp-spec/onf-cs:uuid';
       }
     }
     leaf-list nrp_envelope {
@@ -97,12 +97,8 @@ UNI/ENNI MUST be able to have two or more Bandwidth Profiles mapped to it.  MEF 
     }
   }
 
-  container conn-adapt-specs {
-    list conn-adapt-spec {
-      key "uuid";
-      leaf uuid {
-        type string;
-      }
+  augment "/onf-cs:lp-specs/onf-cs:lp-spec/onf-cs:adapterSpec" {
+    container nrp-conn-adapt-spec-attrs {
       uses G_NRP_ConnAdaptSpec;
     }
   }

@@ -66,4 +66,87 @@ module onf-core-specs {
     }
   }
 
+  container ltp-specs {
+    list ltp-spec {
+      key 'uuid';
+      config true;
+      leaf uuid {
+        type string;
+      }
+      uses G_LtpSpec;
+    }
+  }
+
+  grouping G_LtpSpec {
+  }
+
+  container lp-specs {
+    list lp-spec {
+      key 'uuid';
+      config true;
+      leaf uuid {
+        type string;
+      }
+      uses G_LayerProtocolSpec;
+    }
+  }
+
+  grouping G_LayerProtocolSpec {
+    container adapterSpec {
+      config true;
+      uses G_ConnectionPointAndAdapterSpec;
+    }
+    container terminationSpec {
+      config true;
+      uses G_TerminationSpec;
+    }
+    list adapterPropertySpecList {
+      key 'uuid';
+      config true;
+      leaf uuid {
+        type string;
+      }
+      ordered-by system;
+      uses G_AdapterPropertySpec;
+    }
+    container providerViewSpec {
+      config true;
+      uses G_ProviderViewSpec;
+    }
+    list serverSpecList {
+      key 'uuid';
+      config true;
+      leaf uuid {
+        type string;
+      }
+      ordered-by system;
+      uses G_ServerSpec;
+    }
+  }
+
+  container termination-specs {
+    list termination-spec {
+      key 'uuid';
+      config true;
+      leaf uuid {
+        type string;
+      }
+      uses G_TerminationSpec;
+    }
+  }
+
+  grouping G_TerminationSpec {
+  }
+
+  grouping G_ConnectionPointAndAdapterSpec {
+  }
+
+  grouping G_AdapterPropertySpec {
+  }
+
+  grouping G_ProviderViewSpec {
+  }
+
+  grouping G_ServerSpec {
+  }
 }

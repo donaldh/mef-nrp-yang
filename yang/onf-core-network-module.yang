@@ -56,7 +56,7 @@ objects describing the flow across the network.";
       description "The association of the FC to LTPs is made via FcPorts (essentially the ports of the FC).";
       key 'topology node tp';
       config true;
-      uses onf-cs:ltp-ref;
+      uses G_FcPort;
       min-elements 2;
     }
     leaf fcSpec {
@@ -90,13 +90,8 @@ cases.";
     }
   }
 
-  augment "/nt:network-topology/nt:topology/nt:node/nt:termination-point" {
-    container fc-port-attrs {
-      uses G_FcPort;
-    }
-  }
-
   grouping G_FcPort {
+    uses onf-cs:ltp-ref;
     leaf role {
       type onf-cnt:PortRole;
       description "Each FcPort of the FC has a role (e.g., working, protection, protected, symmetric, hub, spoke,
@@ -105,6 +100,69 @@ leaf, root) in the context of the FC with respect to the FC function.";
     leaf fcPortDirection {
       type onf-cnt:PortDirection;
       description "The orientation of defined flow at the FcPort.";
+    }
+  }
+
+  augment "/nt:network-topology/nt:topology/nt:node/nt:termination-point" {
+    container ltp-attrs {
+      uses G_LogicalTerminationPoint;
+    }
+  }
+
+  grouping G_LogicalTerminationPoint {
+    list lpList {
+      description "Ordered list of LayerProtocols that this LTP is comprised of where the first entry in the list is the lowest server layer (e.g. physical)";
+      key 'uuid';
+      config true;
+      leaf uuid {
+        type string;
+      }
+      uses G_LayerProtocol;
+    }
+    leaf ltpSpec {
+      type leafref {
+        path '/onf-cs:ltp-specs/onf-cs:ltp-spec/onf-cs:uuid';
+      }
+      description "The specification of the LTP defines internal structure of the LTP.  The specification allows
+interpretation of organisatoon of LPs making up the LTP and also identifies which inter-LTP
+associations are valid.";
+    }
+    leaf ltpDirection {
+      type onf-cnt:TerminationDirection;
+      description "The overall directionality of the LTP.
+- A BIDIRECTIONAL LTP must have at least some LPs that are BIDIRECTIONAL but may also have some SINK and/or SOURCE LPs.
+- A SINK LTP can only contain SINK LPs
+- A SOURCE LTP can only contain SOURCE LPs";
+    }
+  }
+
+  grouping G_LayerProtocol {
+    leaf layerProtocolName {
+      type onf-cnt:LayerProtocolName;
+      description "Indicate the specific layer-protocol described by the LayerProtocol entity.";
+    }
+    leaf lpSpec {
+      type leafref {
+        path '/onf-cs:lp-specs/onf-cs:lp-spec/onf-cs:uuid';
+      }
+      description "The LpSpec identifies the interna structure of the LP explaining internal flexibilities, degree
+of termination and degree of adaptation on both client and server side.";
+    }
+    leaf configuredClientCapacity {
+      type string;
+      description "Provides a summarized view of the client capacity that is configurable for use.  Note the cleint
+LTP association should provide all necessary detail hence this attribute is questionable.";
+    }
+    leaf lpDirection {
+      type onf-cnt:TerminationDirection;
+      description "The overall directionality of the LP.
+- A BIDIRECTIONAL LP will have some SINK and/or SOURCE flowss.
+- A SINK LP can only contain elements with SINK flows or CONTRA_DIRECTION_SOURCE flows
+- A SOURCE LP can only contain SOURCE flows or CONTRA_DIRECTION_SINK flows";
+    }
+    leaf terminationState {
+      type string;
+      description "Indicates whether the layer is terminated and if so how.";
     }
   }
 
