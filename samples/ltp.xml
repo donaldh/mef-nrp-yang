@@ -5,10 +5,10 @@
       <node-id>asr-101</node-id>
       <termination-point>
         <tp-id>GigabitEthernet0/0/1/17</tp-id>
-        <fc-port-attrs xmlns="uri:onf:core-network-module">
-          <role>primary</role>
-          <fcPortDirection>BIDIRECTIONAL</fcPortDirection>
-        </fc-port-attrs>
+        <ltp-attrs xmlns="urn:onf:core-network-module">
+          <ltpSpec></ltpSpec>
+          <ltpDirection>BIDIRECTIONAL</ltpDirection>
+        </ltp-attrs>
       </termination-point>
     </node>
   </topology>
