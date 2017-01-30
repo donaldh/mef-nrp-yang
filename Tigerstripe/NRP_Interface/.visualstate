@@ -8,19 +8,19 @@
       <location x="30" y="30"/>
       <size width="200" height="80"/>
       <style backgroundColor="16777182" foregroundColor="9671466"/>
-      <targetConnections source="//@layers.0/@shapes.1" target="//@layers.0/@shapes.0"/>
       <targetConnections source="//@layers.0/@shapes.2" target="//@layers.0/@shapes.0"/>
-    </shapes>
-    <shapes xsi:type="org.eclipse.tigerstripe.dependencies:Subject" sourceConnections="//@layers.0/@shapes.0/@targetConnections.0 //@layers.0/@shapes.2/@targetConnections.0" wasLayouting="true" externalId="PROJECT.CoreModel" kind="//@kinds.0">
-      <location x="255" y="30"/>
-      <size width="200" height="80"/>
-      <style backgroundColor="16777182" foregroundColor="9671466"/>
+      <targetConnections source="//@layers.0/@shapes.1" target="//@layers.0/@shapes.0"/>
     </shapes>
     <shapes xsi:type="org.eclipse.tigerstripe.dependencies:Subject" sourceConnections="//@layers.0/@shapes.0/@targetConnections.1" wasLayouting="true" externalId="PROJECT.NetworkResource" kind="//@kinds.0">
       <location x="480" y="30"/>
       <size width="200" height="80"/>
       <style backgroundColor="16777182" foregroundColor="9671466"/>
-      <targetConnections source="//@layers.0/@shapes.1" target="//@layers.0/@shapes.2"/>
+      <targetConnections source="//@layers.0/@shapes.2" target="//@layers.0/@shapes.1"/>
+    </shapes>
+    <shapes xsi:type="org.eclipse.tigerstripe.dependencies:Subject" sourceConnections="//@layers.0/@shapes.0/@targetConnections.0 //@layers.0/@shapes.1/@targetConnections.0" wasLayouting="true" externalId="PROJECT.CoreModel" kind="//@kinds.0">
+      <location x="255" y="30"/>
+      <size width="200" height="80"/>
+      <style backgroundColor="16777182" foregroundColor="9671466"/>
     </shapes>
   </layers>
 </org.eclipse.tigerstripe.dependencies:Diagram>

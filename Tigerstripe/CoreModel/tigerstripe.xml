@@ -6,6 +6,7 @@
 <description/>
 <provider/>
 <property name="defaultArtifactPackage">org.mef</property>
+<property name="clearDirectoryBeforeGenerate">true</property>
 </project>
 <repositories>
 <repository baseDir=".">
@@ -14,13 +15,13 @@
 </repositories>
 <plugins>
 <plugin disableLogging="false" enabled="true" groupId="Cisco Systems" logLevel="3" pluginId="xmp-yang-generator(1.2.95.qualifier)" version="1.2.95.qualifier">
-<property name="contact">Ken Chambers kchamber@cisco.com\nChris Hartley chrhartl@cisco.com</property>
+<property name="contact">Donald Hunter donaldh@cisco.com</property>
 <property name="implementation">src/main/resources</property>
 <property name="yangPrefix">onf-core</property>
 <property name="organization">Cisco Systems\n170 West Tasman Drive\nSan Jose, CA 95134-1706\nUSA</property>
 <property name="namespace">urn:cisco:params:xml:ns:yang:xmpim</property>
 <property name="isXmpModel">false</property>
-<property name="revisionDate">2014-01-01</property>
+<property name="revisionDate">2016-04-28</property>
 <property name="defaultStringLength">0</property>
 </plugin>
 </plugins>
